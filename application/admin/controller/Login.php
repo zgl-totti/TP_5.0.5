@@ -25,7 +25,7 @@ class Login extends Controller{
                             $condition['id']=$result['id'];
                             $update['lastlogin']=time();
                             $update['lastip']=input('server.REMOTE_ADDR');
-                            model('Admin')->save($condition,$update);
+                            model('Admin')->saveAdmin($condition,$update);
                             $res['status']=1;
                             $res['info']='登录成功！';
                             return $res;
@@ -67,7 +67,7 @@ class Login extends Controller{
                     $admin['token']=uniqid();
                     $admin['password']=md5(md5($data['password']).$admin['token']);
                     $admin['addtime']=time();
-                    $result=model('Admin')->add($admin);
+                    $result=model('Admin')->addAdmin($admin);
                     if($result){
                         $res['status']=1;
                         $res['info']='注册成功！';
@@ -92,7 +92,7 @@ class Login extends Controller{
         }
     }
 
-    public function loginout(){
+    public function logout(){
         Session::delete('aid');
         $this->redirect('index');
     }

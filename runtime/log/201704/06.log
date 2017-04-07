@@ -1,0 +1,2386 @@
+[ 2017-04-06T11:15:15+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/index/index.html
+[ log ] 127.0.0.1/TP_new/public/admin/index/index.html [运行时间：0.069003s][吞吐率：14.49req/s] [内存消耗：2,032.13kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/index/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/collapse
+[ log ] 127.0.0.1/TP_new/public/admin/layout/collapse [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：1,969.45kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'collapse',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Layout->collapse[ D:\phpstudy\WWW\TP_new\application\admin\controller\Layout.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\layout\collapsed-sidebar.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/css/bootstrap.min.css
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/css/bootstrap.min.css [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：1,662.27kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'css' => 'bootstrap.min.css',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/css/style.css
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/css/style.css [运行时间：0.062004s][吞吐率：16.13req/s] [内存消耗：1,662.15kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'css' => 'style.css',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/css/animated-masonry-gallery.css
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/css/animated-masonry-gallery.css [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：1,662.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'css' => 'animated-masonry-gallery.css',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.js [运行时间：0.057003s][吞吐率：17.54req/s] [内存消耗：1,662.05kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/css/jtree.css
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/css/jtree.css [运行时间：0.158009s][吞吐率：6.33req/s] [内存消耗：1,662.12kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'css' => 'jtree.css',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/css/rotated-gallery.css
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/css/rotated-gallery.css [运行时间：0.157009s][吞吐率：6.37req/s] [内存消耗：1,662.22kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'css' => 'rotated-gallery.css',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/app.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/app.js [运行时间：0.104006s][吞吐率：9.61req/s] [内存消耗：1,662.01kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'app.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/css/material.css
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/css/material.css [运行时间：0.157009s][吞吐率：6.37req/s] [内存消耗：1,662.12kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'css' => 'material.css',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/css/sweet-alerts/sweetalert.css
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/css/sweet-alerts/sweetalert.css [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：1,662.15kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/css,*/*;q=0.1',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'css' => 'sweet-alerts',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery-ui-1.10.3.custom.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery-ui-1.10.3.custom.min.js [运行时间：0.060003s][吞吐率：16.67req/s] [内存消耗：1,662.10kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery-ui-1.10.3.custom.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/app.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/app.js [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：1,662.01kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'app.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/bootstrap.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/bootstrap.min.js [运行时间：0.079005s][吞吐率：12.66req/s] [内存消耗：1,662.14kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'bootstrap.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.nicescroll.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.nicescroll.min.js [运行时间：0.118007s][吞吐率：8.47req/s] [内存消耗：1,662.17kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.nicescroll.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/wow.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/wow.min.js [运行时间：0.118007s][吞吐率：8.47req/s] [内存消耗：1,662.09kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'wow.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery-ui-1.10.3.custom.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery-ui-1.10.3.custom.min.js [运行时间：0.118007s][吞吐率：8.47req/s] [内存消耗：1,662.10kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery-ui-1.10.3.custom.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/chartist.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/chartist.min.js [运行时间：0.126007s][吞吐率：7.94req/s] [内存消耗：1,662.00kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'chartist.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:24+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.loadmask.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.loadmask.min.js [运行时间：0.123007s][吞吐率：8.13req/s] [内存消耗：1,662.27kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.loadmask.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/materialize.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/materialize.js [运行时间：0.088005s][吞吐率：11.36req/s] [内存消耗：1,662.02kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'materialize.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/example.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/example.png [运行时间：0.105006s][吞吐率：9.52req/s] [内存消耗：1,662.22kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'example.png',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/CustomChart.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/CustomChart.js [运行时间：0.212013s][吞吐率：4.72req/s] [内存消耗：1,662.02kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'CustomChart.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/bootstrap.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/bootstrap.min.js [运行时间：0.151008s][吞吐率：6.62req/s] [内存消耗：1,662.14kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'bootstrap.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.accordion.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.accordion.js [运行时间：0.087005s][吞吐率：11.49req/s] [内存消耗：1,662.20kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.accordion.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/nvd3/nv.d3.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/nvd3/nv.d3.js [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：1,662.07kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'nvd3',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/widgets.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/widgets.js [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：1,662.09kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'widgets.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/build/d3.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/build/d3.min.js [运行时间：0.237014s][吞吐率：4.22req/s] [内存消耗：1,662.04kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'build',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/sparkline.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/sparkline.js [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：1,662.06kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'sparkline.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/weather.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/weather.js [运行时间：0.089005s][吞吐率：11.24req/s] [内存消耗：1,662.09kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'weather.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/core.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/core.js [运行时间：0.110006s][吞吐率：9.09req/s] [内存消耗：1,662.01kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'core.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/bic_calendar.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/bic_calendar.js [运行时间：0.047003s][吞吐率：21.28req/s] [内存消耗：1,662.00kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'bic_calendar.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.nicescroll.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.nicescroll.min.js [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：1,662.17kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.nicescroll.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.countTo.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.countTo.js [运行时间：0.062003s][吞吐率：16.13req/s] [内存消耗：1,662.18kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.countTo.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/flags/india-flag.jpg
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/flags/india-flag.jpg [运行时间：0.084005s][吞吐率：11.90req/s] [内存消耗：1,662.14kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'flags',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/flags/usa.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/flags/usa.png [运行时间：0.110007s][吞吐率：9.09req/s] [内存消耗：1,662.17kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'flags',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/flags/gm.gif
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/flags/gm.gif [运行时间：0.152009s][吞吐率：6.58req/s] [内存消耗：1,662.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'flags',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/one.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/one.png [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：1,662.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/two.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/two.png [运行时间：0.151008s][吞吐率：6.62req/s] [内存消耗：1,662.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar.jpeg
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar.jpeg [运行时间：0.151009s][吞吐率：6.62req/s] [内存消耗：1,662.22kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar.jpeg',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/seven.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/seven.png [运行时间：0.111006s][吞吐率：9.01req/s] [内存消耗：1,662.27kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/wow.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/wow.min.js [运行时间：0.170010s][吞吐率：5.88req/s] [内存消耗：1,662.09kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'wow.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/three.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/three.png [运行时间：0.124007s][吞吐率：8.06req/s] [内存消耗：1,662.27kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/eight.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/eight.png [运行时间：0.145008s][吞吐率：6.90req/s] [内存消耗：1,662.27kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/five.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/five.png [运行时间：0.141008s][吞吐率：7.09req/s] [内存消耗：1,662.19kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:25+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/nine.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/nine.png [运行时间：0.203012s][吞吐率：4.93req/s] [内存消耗：1,662.19kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/ten.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/ten.png [运行时间：0.105006s][吞吐率：9.52req/s] [内存消耗：1,662.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/six.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/six.png [运行时间：0.139008s][吞吐率：7.19req/s] [内存消耗：1,662.23kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/images/avatar/four.png
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/images/avatar/four.png [运行时间：0.164010s][吞吐率：6.10req/s] [内存消耗：1,662.19kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'images' => 'avatar',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.loadmask.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.loadmask.min.js [运行时间：0.136008s][吞吐率：7.35req/s] [内存消耗：1,662.27kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.loadmask.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.accordion.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.accordion.js [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：1,662.20kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.accordion.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/materialize.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/materialize.js [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：1,662.02kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'materialize.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/chartist.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/chartist.min.js [运行时间：0.054003s][吞吐率：18.52req/s] [内存消耗：1,662.00kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'chartist.min.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/CustomChart.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/CustomChart.js [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：1,662.02kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'CustomChart.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/build/d3.min.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/build/d3.min.js [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：1,662.04kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'build',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/nvd3/nv.d3.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/nvd3/nv.d3.js [运行时间：0.053003s][吞吐率：18.87req/s] [内存消耗：1,662.07kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'nvd3',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/sparkline.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/sparkline.js [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：1,662.06kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'sparkline.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/weather.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/weather.js [运行时间：0.058004s][吞吐率：17.24req/s] [内存消耗：1,662.09kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'weather.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/bic_calendar.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/bic_calendar.js [运行时间：0.051002s][吞吐率：19.61req/s] [内存消耗：1,662.00kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'bic_calendar.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/widgets.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/widgets.js [运行时间：0.051003s][吞吐率：19.61req/s] [内存消耗：1,662.09kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'widgets.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/core.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/core.js [运行时间：0.095006s][吞吐率：10.53req/s] [内存消耗：1,662.01kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'core.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/assets/js/jquery.countTo.js
+[ log ] 127.0.0.1/TP_new/public/admin/layout/assets/js/jquery.countTo.js [运行时间：0.050003s][吞吐率：20.00req/s] [内存消耗：1,662.18kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'assets',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+  'js' => 'jquery.countTo.js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:18:01+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/collapse
+[ log ] 127.0.0.1/TP_new/public/admin/layout/collapse [运行时间：0.060004s][吞吐率：16.67req/s] [内存消耗：1,971.48kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'collapse',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Layout->collapse[ D:\phpstudy\WWW\TP_new\application\admin\controller\Layout.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\layout\collapsed-sidebar.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:18:27+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin/layout/index.html
+[ log ] 127.0.0.1/TP_new/public/admin/layout/index.html [运行时间：0.061004s][吞吐率：16.39req/s] [内存消耗：1,662.13kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'layout',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin/layout/collapse',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:18:55+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.061003s][吞吐率：16.39req/s] [内存消耗：1,725.33kb] [文件加载：46]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:31:44+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/index.html
+[ log ] 127.0.0.1/TP_new/public/index.html [运行时间：0.049003s][吞吐率：20.41req/s] [内存消耗：1,347.74kb] [文件加载：38]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491441025; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:34:45+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.080004s][吞吐率：12.50req/s] [内存消耗：2,031.70kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:35:42+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,031.75kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T11:36:10+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.064003s][吞吐率：15.62req/s] [内存消耗：2,031.70kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T13:39:13+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.068003s][吞吐率：14.71req/s] [内存消耗：2,031.76kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T13:40:29+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.059003s][吞吐率：16.95req/s] [内存消耗：2,027.34kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T13:44:14+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.064004s][吞吐率：15.62req/s] [内存消耗：2,024.55kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T13:46:15+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.067004s][吞吐率：14.92req/s] [内存消耗：2,023.96kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T13:49:40+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/line-area-charts.html
+[ log ] 127.0.0.1/TP_new/public/line-area-charts.html [运行时间：0.059004s][吞吐率：16.95req/s] [内存消耗：1,380.38kb] [文件加载：40]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'line-area-charts',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://127.0.0.1/TP_new/public/admin',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T13:55:47+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.074004s][吞吐率：13.51req/s] [内存消耗：2,018.62kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T13:57:52+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.068004s][吞吐率：14.70req/s] [内存消耗：2,019.16kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T14:10:15+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.069004s][吞吐率：14.49req/s] [内存消耗：2,023.63kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T14:13:34+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.072004s][吞吐率：13.89req/s] [内存消耗：2,023.62kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T16:32:36+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.295017s][吞吐率：3.39req/s] [内存消耗：2,024.05kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T16:43:50+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,024.05kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T16:45:01+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.058003s][吞吐率：17.24req/s] [内存消耗：2,024.05kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T16:45:11+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.085005s][吞吐率：11.76req/s] [内存消耗：2,024.04kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T17:32:19+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.082005s][吞吐率：12.19req/s] [内存消耗：2,024.05kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-04-06T17:34:34+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_new/public/admin
+[ log ] 127.0.0.1/TP_new/public/admin [运行时间：0.066004s][吞吐率：15.15req/s] [内存消耗：2,024.05kb] [文件加载：48]
+[ info ] [ LANG ] D:\phpstudy\WWW\TP_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => '127.0.0.1',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15b045f039f0-0ef6a92ad086c7-3c365601-1fa400-15b045f03a05c; PHPSESSID=r6b3kap0peobpdqs5d2vul74e6; CNZZDATA726388=cnzz_eid%3D1950031059-1490425825-http%253A%252F%252F127.0.0.1%252F%26ntime%3D1491446425',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpstudy\WWW\TP_new\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

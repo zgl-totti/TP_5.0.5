@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html";i:1491384945;s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\left.html";i:1491383621;s:71:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\top.html";i:1491384284;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\index\index.html";i:1491536261;s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\left.html";i:1491531251;s:71:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\top.html";i:1491442577;s:73:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\right.html";i:1491442894;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +30,7 @@
     <!-- <div class="progress">
         <div class="indeterminate"></div>
     </div> -->
-    <div class="loader">加载中...</div>
+    <div class="loader">刷新中...</div>
 </div>
 <div class="wrapper ">
 
@@ -46,233 +46,182 @@
     <!-- admin-logo -->
     <ul class="list-unstyled menu-parent" id="mainMenu">
         <li class='current'>
-            <a href="index.html" class="current waves-effect waves-light">
+            <a href="<?php echo url('Index/index'); ?>" class="current waves-effect waves-light">
                 <i class="icon ti-home"></i>
-                <span class="text ">Dashboard</span>
+                <span class="text ">后台首页</span>
             </a>
         </li>
         <li class="submenu">
-            <a class="waves-effect waves-light" href="#layouts">
+            <a class="waves-effect waves-light" href="#system">
+                <i class="icon ti-briefcase"></i>
+                <span class="text">系统管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="system">
+                <li><a href="<?php echo url('Admin/index'); ?>">管理员列表</a></li>
+                <li><a href="<?php echo url('Admin/add'); ?>">添加管理员</a></li>
+                <li><a href="<?php echo url('Admin/changeinfo'); ?>">个人信息修改</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#menu">
                 <i class="icon ti-layout"></i>
-                <span class="text">Unique Layouts</span>
+                <span class="text">菜单管理</span>
                 <i class="chevron ti-angle-right"></i>
             </a>
-            <ul class="list-unstyled">
-                <li><a href="collapsed-sidebar.html">Collapsed Sidebar</a></li>
-                <li><a href="left-sidebar-version2.html">Menu with header</a></li>
-                <li><a href="horizontal-menu.html">Horizontal Menu</a></li>
-                <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                <li><a href="boxed-layout.html">Boxed Layout</a></li>
-                <li><a href="static-sidebar.html">Static Sidebar</a></li>
+            <ul class="list-unstyled" id="menu">
+                <li><a href="">菜单列表</a></li>
+                <li><a href="">添加菜单</a></li>
             </ul>
         </li>
         <li class="submenu">
-            <a class="waves-effect waves-light" href="#piluku_premium">
+            <a class="waves-effect waves-light" href="#permission">
                 <i class="icon ti-gift"></i>
-                <span class="text">Piluku Premium</span>
+                <span class="text">权限管理</span>
                 <i class="chevron ti-angle-right"></i>
             </a>
-            <ul class="list-unstyled" id="piluku_premium">
-                <li><a href="widgets.html">Widgets</a></li>
-                <li><a href="tasks.html">Tasks</a></li>
-                <li><a href="mailbox.html">Mailbox</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="invoice.html">Invoice</a></li>
-                <li><a href="timeline.html">Timeline</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="masonry-gallery.html">Masonry Gallery</a></li>
-                <li><a href="rotated-gallery.html">Rotated Gallery</a></li>
+            <ul class="list-unstyled" id="permission">
+                <li><a href="widgets.html">管理组列表</a></li>
+                <li><a href="tasks.html">添加管理组</a></li>
+                <li><a href="mailbox.html">权限列表</a></li>
+                <li><a href="profile.html">添加权限</a></li>
             </ul>
         </li>
-        <li>
+        <!--<li>
             <a href="typography.html">
                 <i class="icon ti-smallcap"></i>
-                <span class="text">Typography</span>
+                <span class="text">字体设置</span>
             </a>
-        </li>
-        <li class="submenu">
-            <a class="waves-effect waves-light" href="#components">
-                <i class="icon ti-briefcase"></i>
-                <span class="text">Components</span>
-                <i class="chevron ti-angle-right"></i>
-            </a>
-            <ul class="list-unstyled" id="components">
-                <li class="submenu">
-                    <a class="waves-effect waves-light" href="#alerts">
-                        Alerts
-						<span class="pull-right drop-arrow">
-							<i class="drop-indicator ti-angle-right chevron"></i>
-						</span>
-                    </a>
-                    <ul class="list-unstyled" id="alerts">
-                        <li><a href="basic-alerts.html">Basic Alerts</a></li>
-                        <li><a href="sweet-alerts.html">Sweet Alerts</a></li>
-                    </ul>
-                </li>
-                <li><a href="progress-bars.html">Progress Bars</a></li>
-                <li><a href="dropdowns.html">Dropdowns</a></li>
-                <li><a href="info-boxes.html">Info Boxes</a></li>
-                <li><a href="notifications.html">Notifications</a></li>
-                <li><a href="buttons.html">Buttons</a></li>
-                <li><a href="tree-view.html">Tree View</a></li>
-                <li><a href="css3-animations.html">CSS3 Animations</a></li>
-                <li><a href="sliders.html">Sliders</a></li>
-                <li><a href="nestable-lists.html">Nestable Lists</a></li>
-                <li><a href="carousel.html">Carousel</a></li>
-                <li><a href="portlets.html">Portlets</a></li>
-                <li class="submenu">
-                    <a class="waves-effect waves-light" href="#icons">
-                        Icons
-						<span class="pull-right drop-arrow">
-							<i class="drop-indicator ti-angle-right chevron"></i>
-						</span>
-                    </a>
-                    <ul class="list-unstyled" id="icons">
-                        <li><a href="ion-icons.html">Ion Icons</a></li>
-                        <li><a href="font-awesome.html">Font Awesome</a></li>
-                        <li><a href="themify.html">Themify Icons</a></li>
-                    </ul>
-                </li>
-                <li><a href="tooltips.html">Tooltips</a></li>
-                <li><a href="labels-badges.html">Labels Badges</a></li>
-                <li><a href="list-groups.html">List Groups</a></li>
-                <li><a href="breadcrumbs-wells.html">Breadcrumbs</a></li>
-                <li><a href="tabs-accordions.html">Tabs Accordions</a></li>
-                <li><a href="file-manager.html">File Manager</a></li>
-                <li><a href="modals.html">Modals</a></li>
-                <li><a href="pagination.html">Pagination</a></li>
-
-            </ul>
-        </li>
-        <li class="submenu">
-            <a class="waves-effect waves-light" href="#forms_elements">
-                <i class="icon ti-book"></i>
-                <span class="text">Forms</span>
-                <i class="chevron ti-angle-right"></i>
-            </a>
-            <ul class="list-unstyled">
-                <li><a href="dropzone-file-upload.html">Dropzone File Upload</a></li>
-                <li><a href="form-validation.html">Form Validation</a></li>
-                <li><a href="form-wizard.html">Form Wizard</a></li>
-                <li><a href="input-groups.html">Input Groups</a></li>
-                <li><a href="form-elements.html">Form Elements</a></li>
-                <li><a href="multiple-file-upload.html">Multiple File Upload</a></li>
-                <li><a href="image-crop-zoom.html">Image Crop Zoom</a></li>
-                <li><a href="wysiwig.html">WYZIWIG &amp; Markdown</a></li>
-            </ul>
-        </li>
-        <li class="submenu">
-            <a class="waves-effect waves-light" href="#tables">
-                <i class="icon ti-layout-grid2"></i>
-                <span class="text">Tables</span>
-                <i class="chevron ti-angle-right"></i>
-            </a>
-            <ul class="list-unstyled" id="tables">
-                <li><a href="basic-tables.html">Basic Tables</a></li>
-                <li><a href="dynamic-tables.html">Dynamic Tables</a></li>
-                <li><a href="editable-tables.html">Editable Tables</a></li>
-                <li><a href="users-table.html">Users Table</a></li>
-            </ul>
-        </li>
-        <li class="submenu">
-            <a class="waves-effect waves-light" href="#piluku_utility">
-                <i class="icon ti-heart"></i>
-                <span class="text">Piluku Utility</span>
-                <i class="chevron ti-angle-right"></i>
-            </a>
-            <ul class="list-unstyled" id="piluku_utility">
-                <li class="submenu">
-                    <a class="waves-effect waves-light" href="#register">
-                        Register
-						<span class="pull-right drop-arrow">
-							<i class="drop-indicator ti-angle-right chevron"></i>
-						</span>
-                    </a>
-                    <ul class="list-unstyled" id="register">
-                        <li><a href="signup.html">Modal One</a></li>
-                        <li><a href="signup2.html">Modal Two</a></li>
-                    </ul>
-                </li>
-                <li class="submenu">
-                    <a class="waves-effect waves-light" href="#login">
-                        Login
-						<span class="pull-right drop-arrow">
-							<i class="drop-indicator ti-angle-right chevron"></i>
-						</span>
-                    </a>
-                    <ul class="list-unstyled" id="login">
-                        <li><a href="signin.html">Modal One</a></li>
-                        <li><a href="signin2.html">Modal Two</a></li>
-                    </ul>
-                </li>
-                <li><a href="forgot-password.html">Forgot Password</a></li>
-                <li><a href="lock-screen.html">Lock Screen</a></li>
-                <li><a href="lock-screen2.html">Lock Screen 2</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="404.html">404</a></li>
-                <li><a href="505.html">505</a></li>
-                <li><a href="template.html">Template</a></li>
-            </ul>
-        </li>
-        <li class="submenu">
-            <a class="waves-effect waves-light" href="#charts">
-                <i class="icon ti-bar-chart-alt"></i>
-                <span class="text">Charts</span>
-                <i class="chevron ti-angle-right"></i>
-            </a>
-            <ul class="list-unstyled" id="charts">
-                <li><a href="line-area-charts.html">Line &amp; Area Charts</a></li>
-                <li><a href="bar-charts.html">Bar Charts</a></li>
-                <li><a href="pie-charts.html">Pie Charts</a></li>
-                <li><a href="nvd3-charts.html">NVD3 Charts</a></li>
-            </ul>
-        </li>
-        <li class="submenu">
-            <a class="waves-effect waves-light" href="#maps">
-                <i class="icon ti-location-pin"></i>
-                <span class="text">Maps</span>
-                <i class="chevron ti-angle-right"></i>
-            </a>
-            <ul class="list-unstyled" id="maps">
-                <li class="submenu">
-                    <a class="waves-effect waves-light" href="#google_maps">
-                        Google Maps
-						<span class="pull-right drop-arrow">
-							<i class="drop-indicator ti-angle-right chevron"></i>
-						</span>
-                    </a>
-                    <ul class="list-unstyled" id="google_maps">
-                        <li><a href="google-maps.html">Basic Maps</a></li>
-                        <li><a href="markers-maps.html">Markers Maps</a></li>
-                        <li><a href="routes-maps.html">Routes Maps</a></li>
-                    </ul>
-                </li>
-                <li><a href="vector-maps.html">Vector Maps</a></li>
-            </ul>
-        </li>
+        </li>-->
 
         <li class="submenu">
-            <a class="waves-effect waves-light" href="#menu_levels">
+            <a class="waves-effect waves-light" href="#navigation">
                 <i class="icon ti-layout-list-thumb"></i>
-                <span class="text">Menu Levels</span>
+                <span class="text">导航管理</span>
                 <i class="chevron ti-angle-right"></i>
             </a>
-            <ul class="list-unstyled" id="menu_levels">
-                <li class="submenu">
-                    <a class="waves-effect waves-light" href="#menu_level_one">Menu Level 1.1
-						<span class="pull-right drop-arrow">
-							<i class="drop-indicator ti-angle-right chevron"></i>
-						</span>
-                    </a>
-                    <ul class="list-unstyled" id="menu_level_one">
-                        <li><a href="#">Menu Level 2.1</a></li>
-                        <li><a href="#">Menu Level 2.2</a></li>
-                        <li><a href="#">Menu Level 2.3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Menu Level 1.2</a></li>
-                <li><a href="#">Menu Level 1.3</a></li>
+            <ul class="list-unstyled" id="navigation">
+                <li><a href="#">导航列表</a></li>
+                <li><a href="#">添加导航</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#member">
+                <i class="icon-user"></i>
+                <span class="text">会员管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="member">
+                <li><a href="">会员列表</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#mail">
+                <i class="ion-android-mail"></i>
+                <span class="text">信息管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="mail">
+                <li><a href="basic-tables.html">信息列表</a></li>
+                <li><a href="dynamic-tables.html">发送信息</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#brand">
+                <i class="icon ti-book"></i>
+                <span class="text">品牌管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="brand">
+                <li><a href="dropzone-file-upload.html">品牌列表</a></li>
+                <li><a href="form-validation.html">添加品牌</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#category">
+                <i class="icon ti-layout-grid2"></i>
+                <span class="text">分类管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="category">
+                <li><a href="basic-tables.html">分类列表</a></li>
+                <li><a href="dynamic-tables.html">添加分类</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#goods">
+                <i class="icon-briefcase"></i>
+                <span class="text">商品管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="goods">
+                <li><a href="basic-tables.html">商品列表</a></li>
+                <li><a href="dynamic-tables.html">添加商品</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#order">
+                <i class="icon-bell"></i>
+                <span class="text">订单管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="order">
+                <li><a href="basic-tables.html">订单列表</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#advertise">
+                <i class="ion-cube"></i>
+                <span class="text">广告管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="advertise">
+                <li><a href="">广告列表</a></li>
+                <li><a href="">添加广告</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#comment">
+                <i class="ion-ios-pricetag"></i>
+                <span class="text">评论管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="comment">
+                <li><a href="">评论列表</a></li>
+                <li><a href="">添加评论</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#activity">
+                <i class="ion-social-snapchat-outline"></i>
+                <span class="text">活动管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="activity">
+                <li><a href="">活动列表</a></li>
+                <li><a href="">添加活动</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#feedback">
+                <i class="ion-ios-analytics"></i>
+                <span class="text">反馈管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="feedback">
+                <li><a href="">反馈列表</a></li>
+                <li><a href="">添加反馈</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a class="waves-effect waves-light" href="#bottom">
+                <i class="icon ti-bar-chart-alt"></i>
+                <span class="text">底部管理</span>
+                <i class="chevron ti-angle-right"></i>
+            </a>
+            <ul class="list-unstyled" id="bottom">
+                <li><a href="">底部列表</a></li>
+                <li><a href="">添加底部</a></li>
             </ul>
         </li>
     </ul>
@@ -291,7 +240,7 @@
 
 		<form class="navbar-left" role="search">
 			<div class="search">
-				<input type="text" class="form-control" placeholder="Search">
+				<input type="text" class="form-control" name="keywords" placeholder="搜索...">
 			</div>
 		</form>
 		<ul class="nav navbar-nav navbar-right top-elements">
@@ -415,22 +364,22 @@
 			<li class="piluku-dropdown dropdown">
 				<!-- @todo Change design here, its bit of odd or not upto usable -->
 
-				<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false"><span class="avatar-holder"><img src="__PUBLIC__/admin/images/avatar.jpeg" alt=""></span><span class="avatar_info">Bootstrap</span><span class="drop-icon"><!-- <i class="ion ion-chevron-down"></i> --></span></a>
+				<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false"><span class="avatar-holder"><img src="__PUBLIC__/admin/images/avatar.jpeg" alt=""></span><span class="avatar_info">用户名</span><span class="drop-icon"><!-- <i class="ion ion-chevron-down"></i> --></span></a>
 				<ul class="dropdown-menu dropdown-piluku-menu  animated fadeInUp wow avatar_drop neat_drop dropdown-right" data-wow-duration="1500ms" role="menu">
 					<li>
-						<a href="profile.html"> <i class="ion-android-settings"></i>Settings</a>
+						<a href="profile.html"> <i class="ion-android-settings"></i>设置</a>
 					</li>
 					<li>
-						<a href="mailbox.html"> <i class="ion-android-chat"></i>Messages</a>
+						<a href="mailbox.html"> <i class="ion-android-chat"></i>信息</a>
 					</li>
 					<li>
-						<a href="dropzone-file-upload.html"> <i class="ion-android-cloud-circle"></i>Upload</a>
+						<a href="dropzone-file-upload.html"> <i class="ion-android-cloud-circle"></i>上传</a>
 					</li>
 					<li>
-						<a href="profile.html"> <i class="ion-android-create"></i>Edit profile</a>
+						<a href="profile.html"> <i class="ion-android-create"></i>编辑</a>
 					</li>
 					<li>
-						<a href="lock-screen.html" class="logout_button"><i class="ion-power"></i>Logout</a>
+						<a href="lock-screen.html" class="logout_button"><i class="ion-power"></i>退出</a>
 					</li>
 				</ul>
 			</li>
@@ -1614,439 +1563,440 @@
 
 </div>  
 
-	<div class="side-bar right-bar ">
-		<div class="contacts">
-			<div class="col col-md-12">
-				<ul class="tabs">
-					<li class="tab col-md-3"><a href="#test1" class="active">Chat</a></li>
-					<li class="tab col-md-3"><a href="#test2">Settings</a></li>
-					<li class="tab col-md-3"><a href="#test3">Messages</a></li>
-				</ul>
-			</div>
-			<div class="content-holder">
-				<div id="test1" class="col-md-12 no_padding">					
-					<div class="panel-body no_padding">
-						<div class="panel-group piluku-accordion piluku-accordion-two" id="accordionOne" role="tablist" aria-multiselectable="true">
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingModalOne">
-									<h4 class="panel-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionOne" href="#collapseModalOne" aria-expanded="true" aria-controls="collapseOne">
-											Online <i class="chevron ti-angle-down"></i>
-										</a>
-									</h4>
-								</div>
-								<div id="collapseModalOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									<div class="panel-body no_padding">
-										<ul class="list-group contacts-list">
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/one.png" alt="">
-													</div>
-													<span class="name">Richards carlson</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/two.png" alt="">
-													</div>
-													<span class="name">Firing Arc</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/three.png" alt="">
-													</div>
-													<span class="name">strapzen</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/four.png" alt="">
-													</div>
-													<span class="name">Reeves</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/five.png" alt="">
-													</div>
-													<span class="name">Bootstrap Guru</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/six.png" alt="">
-													</div>
-													<span class="name">Carlson</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/seven.png" alt="">
-													</div>
-													<span class="name">Paris hilton</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/eight.png" alt="">
-													</div>
-													<span class="name">Henry Richards</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/nine.png" alt="">
-													</div>
-													<span class="name">Richie Rich</span>
-													<i class="ion ion-record online"></i>
-												</a>
-											</li>
+    
+<div class="side-bar right-bar ">
+    <div class="contacts">
+        <div class="col col-md-12">
+            <ul class="tabs">
+                <li class="tab col-md-3"><a href="#test1" class="active">Chat</a></li>
+                <li class="tab col-md-3"><a href="#test2">Settings</a></li>
+                <li class="tab col-md-3"><a href="#test3">Messages</a></li>
+            </ul>
+        </div>
+        <div class="content-holder">
+            <div id="test1" class="col-md-12 no_padding">
+                <div class="panel-body no_padding">
+                    <div class="panel-group piluku-accordion piluku-accordion-two" id="accordionOne" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingModalOne">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionOne" href="#collapseModalOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Online <i class="chevron ti-angle-down"></i>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseModalOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body no_padding">
+                                    <ul class="list-group contacts-list">
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/one.png" alt="">
+                                                </div>
+                                                <span class="name">Richards carlson</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/two.png" alt="">
+                                                </div>
+                                                <span class="name">Firing Arc</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/three.png" alt="">
+                                                </div>
+                                                <span class="name">strapzen</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/four.png" alt="">
+                                                </div>
+                                                <span class="name">Reeves</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/five.png" alt="">
+                                                </div>
+                                                <span class="name">Bootstrap Guru</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/six.png" alt="">
+                                                </div>
+                                                <span class="name">Carlson</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/seven.png" alt="">
+                                                </div>
+                                                <span class="name">Paris hilton</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/eight.png" alt="">
+                                                </div>
+                                                <span class="name">Henry Richards</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/nine.png" alt="">
+                                                </div>
+                                                <span class="name">Richie Rich</span>
+                                                <i class="ion ion-record online"></i>
+                                            </a>
+                                        </li>
 
-										</ul>	
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingModalTwo">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordionOne" href="#collapseModalTwo" aria-expanded="false" aria-controls="collapseTwo">
-											offline
-										</a>
-									</h4>
-								</div>
-								<div id="collapseModalTwo" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingTwo">
-									
-									<div class="panel-body no_padding">
-										<ul class="list-group contacts-list">
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/one.png" alt="">
-													</div>
-													<span class="name">Richards carlson</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/two.png" alt="">
-													</div>
-													<span class="name">Firing Arc</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/three.png" alt="">
-													</div>
-													<span class="name">strapzen</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/four.png" alt="">
-													</div>
-													<span class="name">Reeves</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/five.png" alt="">
-													</div>
-													<span class="name">Bootstrap Guru</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/six.png" alt="">
-													</div>
-													<span class="name">Carlson</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/seven.png" alt="">
-													</div>
-													<span class="name">Paris hilton</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/eight.png" alt="">
-													</div>
-													<span class="name">Henry Richards</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/nine.png" alt="">
-													</div>
-													<span class="name">Richie Rich</span>
-													<i class="ion ion-record offline"></i>
-												</a>
-											</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingModalTwo">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordionOne" href="#collapseModalTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        offline
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseModalTwo" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingTwo">
 
-										</ul>	
-									</div>
-									
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="headingModalThree">
-									<h4 class="panel-title">
-										<a class="collapsed" data-toggle="collapse" data-parent="#accordionOne" href="#collapseModalThree" aria-expanded="false" aria-controls="collapseThree">
-											Away
-										</a>
-									</h4>
-								</div>
-								<div id="collapseModalThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">									
-									<div class="panel-body no_padding">
-										<ul class="list-group contacts-list">
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/one.png" alt="">
-													</div>
-													<span class="name">Richards carlson</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/two.png" alt="">
-													</div>
-													<span class="name">Firing Arc</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/three.png" alt="">
-													</div>
-													<span class="name">strapzen</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/four.png" alt="">
-													</div>
-													<span class="name">Reeves</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/five.png" alt="">
-													</div>
-													<span class="name">Bootstrap Guru</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/six.png" alt="">
-													</div>
-													<span class="name">Carlson</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/seven.png" alt="">
-													</div>
-													<span class="name">Paris hilton</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/eight.png" alt="">
-													</div>
-													<span class="name">Henry Richards</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-											<li class="list-group-item">
-												<a href="#">
-													<div class="avatar">
-														<img src="__PUBLIC__/admin/images/avatar/nine.png" alt="">
-													</div>
-													<span class="name">Richie Rich</span>
-													<i class="ion ion-record away"></i>
-												</a>
-											</li>
-										</ul>	
-									</div>
-								</div>
-							</div>
-						</div>	
-					</div> 
-				</div>
-				<div id="test2" class="col-md-12 no_padding">
-				<br>										
-					<div class="form-group">
-						<div class="toggle-switch">
-							<label class="col-sm-8 control-label">Reminders</label>
-							<div class="col-sm-4">
-								<input type="checkbox" class="mark-complete" id="toggle-switch" name="" value="" checked="">
-								<div class="toggle">
-									<label for="toggle-switch"><i></i>
-									</label>
-								</div>
-							</div>
-						</div>
-						<div class="toggle-switch">
-							<label class="col-sm-8 control-label">theme options</label>
-							<div class="col-sm-4">
-								<input type="checkbox" class="mark-complete" id="toggle-switch1" name="" value="" checked="">
-								<div class="toggle">
-									<label for="toggle-switch1"><i></i>
-									</label>
-								</div>
-							</div>
-						</div>
-						<div class="toggle-switch">
-							<label class="col-sm-8 control-label">dark / light theme</label>
-							<div class="col-sm-4">
-								<input type="checkbox" class="mark-complete" id="toggle-switch2" name="" value="" checked="">
-								<div class="toggle">
-									<label for="toggle-switch2"><i></i>
-									</label>
-								</div>
-							</div>
-						</div>
-						<div class="toggle-switch">
-							<label class="col-sm-8 control-label">Email Updates</label>
-							<div class="col-sm-4">
-								<input type="checkbox" class="mark-complete" id="toggle-switch3" name="" value="" checked="">
-								<div class="toggle">
-									<label for="toggle-switch3"><i></i>
-									</label>
-								</div>
-							</div>
-						</div>
-						<div class="toggle-switch">
-							<label class="col-sm-8 control-label">Notifications</label>
-							<div class="col-sm-4">
-								<input type="checkbox" class="mark-complete" id="toggle-switch4" name="" value="" checked="">
-								<div class="toggle">
-									<label for="toggle-switch4"><i></i>
-									</label>
-								</div>
-							</div>
-						</div>							
+                                <div class="panel-body no_padding">
+                                    <ul class="list-group contacts-list">
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/one.png" alt="">
+                                                </div>
+                                                <span class="name">Richards carlson</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/two.png" alt="">
+                                                </div>
+                                                <span class="name">Firing Arc</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/three.png" alt="">
+                                                </div>
+                                                <span class="name">strapzen</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/four.png" alt="">
+                                                </div>
+                                                <span class="name">Reeves</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/five.png" alt="">
+                                                </div>
+                                                <span class="name">Bootstrap Guru</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/six.png" alt="">
+                                                </div>
+                                                <span class="name">Carlson</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/seven.png" alt="">
+                                                </div>
+                                                <span class="name">Paris hilton</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/eight.png" alt="">
+                                                </div>
+                                                <span class="name">Henry Richards</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/nine.png" alt="">
+                                                </div>
+                                                <span class="name">Richie Rich</span>
+                                                <i class="ion ion-record offline"></i>
+                                            </a>
+                                        </li>
 
-						<div class="form-group check-radio">
-							<label class="col-sm-9 control-label">Loader animation</label>
-							<div class="col-sm-3">
-								<ul class="list-inline checkboxes-radio">
-									<li class="ms-hover">
-										<input type="checkbox" class="mark-complete" id="c1">
-										<label for="c1"><span></span></label>
-									</li>                                                                               
-								</ul>
-							</div>
-						</div>
-						<div class="form-group check-radio">
-							<label class="col-sm-9 control-label">delay load</label>
-							<div class="col-sm-3">
-								<ul class="list-inline checkboxes-radio">
-									<li class="ms-hover">
-										<input type="checkbox" class="mark-complete" id="c2">
-										<label for="c2"><span></span></label>
-									</li>                                                                               
-								</ul>
-							</div>
-						</div>
-						<div class="form-group check-radio">
-							<label class="col-sm-9 control-label">Graphs animations</label>
-							<div class="col-sm-3">
-								<ul class="list-inline checkboxes-radio">
-									<li class="ms-hover">
-										<input type="checkbox" class="mark-complete" id="c3" checked="">
-										<label for="c3"><span></span></label>
-									</li>                                                                               
-								</ul>
-							</div>
-						</div>
-					</div>						
-				</div>
-				<div id="test3" class="col-md-12 no_padding">
-					<div class="heading no_border_bottom">
-						Todays
-						<div class="left"><a href="#"><i class="ion-android-refresh"></i></a></div>
-						<div class="right"><a href="#"><i class="ion-gear-a"></i></a></div>						
-					</div>
-					<div class="list-group message-list">
-						<a href="#" class="list-group-item">
-							<h4 class="list-group-item-heading">henry richards</h4>
-							<p class="list-group-item-text">has pushed all the code to github and saved some fixes too..</p>
-						</a>
-						<a href="#" class="list-group-item">
-							<h4 class="list-group-item-heading">mary </h4>
-							<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus officiis vero magnam amet, quas corru</p>
-						</a>							
-					</div>	
-					<div class="heading no_border_bottom">
-						june 15 1990
-						<div class="left"><a href="#"><i class="ion-android-refresh"></i></a></div>
-						<div class="right"><a href="#"><i class="ion-gear-a"></i></a></div>						
-					</div>
-					<div class="list-group message-list">
-						<a href="#" class="list-group-item">
-							<h4 class="list-group-item-heading">henry richards</h4>
-							<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus officiis vero magnam amet, quas corru</p>
-						</a>
-						<a href="#" class="list-group-item">
-							<h4 class="list-group-item-heading">mary </h4>
-							<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus officiis vero magnam amet, quas corru</p>
-						</a>							
-					</div>	
-				</div>
-			</div>
-			<!-- content_holder -->
-		</div>
-	</div>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingModalThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionOne" href="#collapseModalThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Away
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseModalThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body no_padding">
+                                    <ul class="list-group contacts-list">
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/one.png" alt="">
+                                                </div>
+                                                <span class="name">Richards carlson</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/two.png" alt="">
+                                                </div>
+                                                <span class="name">Firing Arc</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/three.png" alt="">
+                                                </div>
+                                                <span class="name">strapzen</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/four.png" alt="">
+                                                </div>
+                                                <span class="name">Reeves</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/five.png" alt="">
+                                                </div>
+                                                <span class="name">Bootstrap Guru</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/six.png" alt="">
+                                                </div>
+                                                <span class="name">Carlson</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/seven.png" alt="">
+                                                </div>
+                                                <span class="name">Paris hilton</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/eight.png" alt="">
+                                                </div>
+                                                <span class="name">Henry Richards</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <a href="#">
+                                                <div class="avatar">
+                                                    <img src="__PUBLIC__/admin/images/avatar/nine.png" alt="">
+                                                </div>
+                                                <span class="name">Richie Rich</span>
+                                                <i class="ion ion-record away"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="test2" class="col-md-12 no_padding">
+                <br>
+                <div class="form-group">
+                    <div class="toggle-switch">
+                        <label class="col-sm-8 control-label">Reminders</label>
+                        <div class="col-sm-4">
+                            <input type="checkbox" class="mark-complete" id="toggle-switch" name="" value="" checked="">
+                            <div class="toggle">
+                                <label for="toggle-switch"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toggle-switch">
+                        <label class="col-sm-8 control-label">theme options</label>
+                        <div class="col-sm-4">
+                            <input type="checkbox" class="mark-complete" id="toggle-switch1" name="" value="" checked="">
+                            <div class="toggle">
+                                <label for="toggle-switch1"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toggle-switch">
+                        <label class="col-sm-8 control-label">dark / light theme</label>
+                        <div class="col-sm-4">
+                            <input type="checkbox" class="mark-complete" id="toggle-switch2" name="" value="" checked="">
+                            <div class="toggle">
+                                <label for="toggle-switch2"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toggle-switch">
+                        <label class="col-sm-8 control-label">Email Updates</label>
+                        <div class="col-sm-4">
+                            <input type="checkbox" class="mark-complete" id="toggle-switch3" name="" value="" checked="">
+                            <div class="toggle">
+                                <label for="toggle-switch3"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toggle-switch">
+                        <label class="col-sm-8 control-label">Notifications</label>
+                        <div class="col-sm-4">
+                            <input type="checkbox" class="mark-complete" id="toggle-switch4" name="" value="" checked="">
+                            <div class="toggle">
+                                <label for="toggle-switch4"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group check-radio">
+                        <label class="col-sm-9 control-label">Loader animation</label>
+                        <div class="col-sm-3">
+                            <ul class="list-inline checkboxes-radio">
+                                <li class="ms-hover">
+                                    <input type="checkbox" class="mark-complete" id="c1">
+                                    <label for="c1"><span></span></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group check-radio">
+                        <label class="col-sm-9 control-label">delay load</label>
+                        <div class="col-sm-3">
+                            <ul class="list-inline checkboxes-radio">
+                                <li class="ms-hover">
+                                    <input type="checkbox" class="mark-complete" id="c2">
+                                    <label for="c2"><span></span></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="form-group check-radio">
+                        <label class="col-sm-9 control-label">Graphs animations</label>
+                        <div class="col-sm-3">
+                            <ul class="list-inline checkboxes-radio">
+                                <li class="ms-hover">
+                                    <input type="checkbox" class="mark-complete" id="c3" checked="">
+                                    <label for="c3"><span></span></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="test3" class="col-md-12 no_padding">
+                <div class="heading no_border_bottom">
+                    Todays
+                    <div class="left"><a href="#"><i class="ion-android-refresh"></i></a></div>
+                    <div class="right"><a href="#"><i class="ion-gear-a"></i></a></div>
+                </div>
+                <div class="list-group message-list">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">henry richards</h4>
+                        <p class="list-group-item-text">has pushed all the code to github and saved some fixes too..</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">mary </h4>
+                        <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus officiis vero magnam amet, quas corru</p>
+                    </a>
+                </div>
+                <div class="heading no_border_bottom">
+                    june 15 1990
+                    <div class="left"><a href="#"><i class="ion-android-refresh"></i></a></div>
+                    <div class="right"><a href="#"><i class="ion-gear-a"></i></a></div>
+                </div>
+                <div class="list-group message-list">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">henry richards</h4>
+                        <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus officiis vero magnam amet, quas corru</p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">mary </h4>
+                        <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto accusamus officiis vero magnam amet, quas corru</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- content_holder -->
+    </div>
+</div>
 	<!-- /Right-bar -->
 </div>
 <!-- wrapper -->
