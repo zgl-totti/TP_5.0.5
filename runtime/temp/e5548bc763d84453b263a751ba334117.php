@@ -1,21 +1,21 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\admin\index.html";i:1491557539;s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\left.html";i:1491618363;s:71:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\top.html";i:1491617825;s:73:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\right.html";i:1491442894;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:77:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\admin\changeinfo.html";i:1491617457;s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\left.html";i:1491531251;s:71:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\top.html";i:1491557621;s:73:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\right.html";i:1491442894;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
-
-    <title>管理员列表</title>
-
+    
+    <title>修改个人信息</title>
+    
     <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
     <!-- Bootstrap CSS -->
-
+    
     <link rel='stylesheet' href='__PUBLIC__/admin/css/bootstrap.min.css'>
     <link rel='stylesheet' href='__PUBLIC__/admin/css/material.css'>
     <link rel='stylesheet' href='__PUBLIC__/admin/css/style.css'>
-
+    
     <script src='__PUBLIC__/admin/js/jquery.js'></script>
     <script src='__PUBLIC__/admin/js/app.js'></script>
     <script>
@@ -23,9 +23,15 @@
             $('.piluku-preloader').addClass('hidden');
         });
         $(function(){
-            $('.btn-orange').click(function(){
-                var id=$(this).attr('id');
-                $.post("<?php echo url('Admin/changestatus'); ?>",{id:id},function(res){
+            $("select").click(function(){
+                var flag = this.value;
+                $("#avatar").attr("src",flag);
+            });
+            $('.btn-primary').click(function(){
+                $('#form').submit();
+            });
+            $('#form').submit(function(){
+                $.post("<?php echo url('Admin/edit'); ?>",$('#form').serialize(),function(res){
                     if(res.status==1){
                         layer.msg(res.info,{icon:6},function(){
                             location="<?php echo url('Admin/index'); ?>";
@@ -35,22 +41,6 @@
                     }
                 })
             })
-            $('.btn-red').click(function(){
-                var id=$(this).attr('id');
-                layer.confirm('确定要删除吗？', {
-                    btn: ['确定','取消'] //按钮
-                }, function(){
-                    $.post("<?php echo url('Admin/del'); ?>",{id:id},function(res){
-                        if(res.status==1){
-                            layer.msg(res.info,{icon:6},function(){
-                                location="<?php echo url('Admin/index'); ?>";
-                            });
-                        }else{
-                            layer.msg(res.info,{icon:5});
-                        }
-                    })
-                });
-            })
         })
     </script>
 </head>
@@ -59,11 +49,9 @@
   <!-- <div class="progress">
       <div class="indeterminate"></div>
   </div> -->
-  <div class="loader">刷新中...</div>
+  <div class="loader">Loading...</div>
 </div>
 <div class="wrapper ">
-
-  
 
 
 <div class="left-bar ">
@@ -153,7 +141,7 @@
                 <i class="chevron ti-angle-right"></i>
             </a>
             <ul class="list-unstyled" id="mail">
-                <li><a href="<?php echo url('Mail/index'); ?>">信息列表</a></li>
+                <li><a href="basic-tables.html">信息列表</a></li>
                 <li><a href="dynamic-tables.html">发送信息</a></li>
             </ul>
         </li>
@@ -261,19 +249,19 @@
 
 <div class="content" id="content">
 	
-	<div class="overlay"></div>			
-	
-	
+	<div class="overlay"></div>
+
+    
 <div class="top-bar">
 	<nav class="navbar navbar-default top-bar">
 		<div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i>
 		</div>
 
-		<!--<form class="navbar-left" role="search">
+		<form class="navbar-left" role="search">
 			<div class="search">
 				<input type="text" class="form-control" name="keywords" placeholder="搜索...">
 			</div>
-		</form>-->
+		</form>
 		<ul class="nav navbar-nav navbar-right top-elements">
 			<!--<li class="piluku-dropdown dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="flag_img" src="__PUBLIC__/admin/images/flags/india-flag.jpg" alt=""> English<span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
@@ -425,138 +413,62 @@
 
 </div>
     <!-- /top-bar -->
-	
+
 	<!-- main content -->
 	<div class="main-content">
-		<div class="manage_buttons">
-			<div class="row">
-				<div class="col-md-3 search">
-					<form action="<?php echo url('Admin/index'); ?>" method="get">
-						<input type="text" name="keywords" value="<?php echo !empty($keywrods)?$keywords:''; ?>" id="search" class="form-control" placeholder="Search User">
-					</form>
-				</div>
-				<div class="col-md-9">
-					<div class="buttons-list">
-						<div class="pull-right-btn">
-							<a href="<?php echo url('Admin/add'); ?>" class="btn btn-primary">添加管理员</a>
-							<div class="piluku-dropdown dropdown">
-								<button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-									<i class="ion-android-more-horizontal"></i>
-								</button>
-								<ul class="dropdown-menu dropdown-regular-menu animated fadeInUp wow language-drop neat_drop" data-wow-duration="1500ms" role="menu">
-									<li><a href="#">Link One</a></li>
-									<li><a href="#">Link One</a></li>
-									<li><a href="#">Link One</a></li>
-									<li><a href="#">Link One</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-				</div>
+		<!-- *** Editable Tables *** -->
+		<!-- panel -->
+		<div class="panel panel-piluku">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+                    修改个人信息
+				</h3>
 			</div>
+			<div class="panel-body">
+                <form action="#" id="form">
+                    <input type="hidden" name="id" value="<?php echo $info['id']; ?>" />
+                    <table id="user" class="table table-bordered table-striped table-hover" style="margin-top:30px;">
+                        <tbody>
+                            <tr>
+                                <td>用户名</td>
+                                <td><input type="text" name="username" value="<?php echo $info['username']; ?>" disabled /></td>
+                            </tr>
+                            <tr>
+                                <td>密码</td>
+                                <td><input type="text" name="password" /></td>
+                            </tr>
+                            <tr>
+                                <td>电话</td>
+                                <td><input type="text" name="phone" value="<?php echo $info['phone']; ?>" /></td>
+                            </tr>
+                            <tr>
+                                <td>头像</td>
+                                <td>
+                                    <select name="avatar" style="width: 160px;height: 40px;">
+                                        <option value="__PUBLIC__/admin/images/avatar/1.jpeg">1</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/2.png">2</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/3.png">3</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/4.png">4</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/5.png">5</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/6.png">6</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/7.png">7</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/8.png">8</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/9.png">9</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/10.png">10</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/11.png">11</option>
+                                    </select>
+                                    <img src="__PUBLIC__/admin/images/avatar/1.jpeg" id="avatar" style="width: 40px;border-radius: 50%">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" style="font-weight:bold;margin: 50px auto">确定</button>
+                </form>
+            </div>
 		</div>
+		<!-- /panel -->
 
-		<div class="row">
-			<div class="col-md-12">
-				<!-- panel -->
-				<div class="panel panel-piluku panel-users">
-					<div class="panel-heading">
-						<h3 class="panel-title">
-							管理员列表
-							<span class="panel-options">
-								<a href="#" class="panel-refresh">
-									<i class="icon ti-reload"></i> 
-								</a>
-								<a href="#" class="panel-minimize">
-									<i class="icon ti-angle-up"></i> 
-								</a>
-								<a href="#" class="panel-close">
-									<i class="icon ti-close"></i> 
-								</a>
-							</span>
-						</h3>
-					</div>
-					<div class="panel-body nopadding">
-						<div class="table-responsive">
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th  class="text-center">编号</th>
-                                        <th  class="text-center">头像</th>
-										<th  class="text-center">用户名</th>
-                                        <th  class="text-center">电话</th>
-                                        <th  class="text-center">身份</th>
-										<th  class="text-center">添加时间</th>
-										<th  class="text-center">最近登录</th>
-										<th  class="text-center">登录ip</th>
-										<th  class="text-center">账号状态</th>
-										<th  class="text-center">操作</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="table-row">
-										<td class="text-center">1</td>
-                                        <td class="text-center">
-                                            <img src="__PUBLIC__/admin/images/avatar.jpeg" alt="user">
-                                        </td>
-										<td class="text-center">John</td>
-										<td class="text-center">65730011</td>
-										<td class="text-center">超级管理员</td>
-										<td class="text-center">2017-04-07 10:33:20</td>
-										<td class="text-center">2017-04-07 10:35:20</td>
-										<td class="text-center">127.0.0.1</td>
-										<td class="text-center">激活</td>
-										<td class="text-center">
-                                            <a href="#" class="btn btn-orange"><i class="icon-bell"></i></a>
-                                            <a href="#" class="btn btn-green"><i class="ion ion-edit"></i></a>
-                                            <a href="#" class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a>
-                                        </td>
-									</tr>
-
-                                    <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($k % 2 );++$k;?>
-                                        <tr class="table-row">
-                                            <td class="text-center"><?php echo $k; ?></td>
-                                            <td class="text-center">
-                                                <img src="<?php echo $val['avatar']; ?>" alt="user">
-                                            </td>
-                                            <td class="text-center"><?php echo $val['username']; ?></td>
-                                            <td class="text-center"><?php echo $val['phone']; ?></td>
-                                            <td class="text-center"><?php echo !empty($val['permission']) && $val['permission']==1?'超级管理员':'普通管理员'; ?></td>
-                                            <td class="text-center"><?php echo date('Y-m-d H:i:s',$val['addtime']); ?></td>
-                                            <td class="text-center"><?php echo date('Y-m-d H:i:s',$val['lastlogin']); ?></td>
-                                            <td class="text-center"><?php echo $val['lastip']; ?></td>
-                                            <td class="text-center"><?php echo !empty($val['status']) && $val['status']==1?'激活':'停权'; ?></td>
-                                            <td class="text-center">
-                                                <a href="#" id="<?php echo $val['id']; ?>" class="btn btn-orange"><i class="icon-bell"></i></a>
-                                                <a href="<?php echo url('Admin/edit',['id'=>$val['id']]); ?>" class="btn btn-green"><i class="ion ion-edit"></i></a>
-                                                <a href="#" id="<?php echo $val['id']; ?> " class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; endif; else: echo "" ;endif; ?>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<!-- /panel -->
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="pagination small-pagination pull-right">
-					<li><a href="#"><i class="ion ion-ios-arrow-left"></i></a></li>
-					<li><a href="#">1</a></li>
-					<li class="active"><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#"><i class="ion ion-ios-arrow-right"></i></a></li>
-				</ul>
-			</div>
-		</div>
 	</div>
-	<!-- /main content -->		
 
 </div>  
 
@@ -1006,6 +918,9 @@
 <script src='__PUBLIC__/admin/js/jquery.accordion.js'></script>
 <script src='__PUBLIC__/admin/js/materialize.js'></script>
 <script src='__PUBLIC__/admin/js/bic_calendar.js'></script>
+<script src='__PUBLIC__/admin/js/bootstrap-editable.min.js'></script>
+<script src='__PUBLIC__/admin/js/jquery.listarea.js'></script>
+<script src='__PUBLIC__/admin/js/editable-tables.js'></script>
 <script src='__PUBLIC__/admin/js/core.js'></script>
 
 <script src="__PUBLIC__/admin/js/jquery.countTo.js"></script>

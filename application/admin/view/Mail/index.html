@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+    
+    <title>信息列表</title>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+    <!-- Bootstrap CSS -->
+    
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/material.css'>
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/style.css'>
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/animated-masonry-gallery.css'>
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/rotated-gallery.css'>
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/sweet-alerts/sweetalert.css'>
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/jtree.css'>
+    <script src='__PUBLIC__/admin/js/jquery.js'></script>
+    <script src='__PUBLIC__/admin/js/app.js'></script>
+    <script>
+        jQuery(window).load(function () {
+            $('.piluku-preloader').addClass('hidden');
+        });
+    </script>
+</head>
+<body>
+  <div class="piluku-preloader text-center">
+  <!-- <div class="progress">
+      <div class="indeterminate"></div>
+  </div> -->
+  <div class="loader">Loading...</div>
+</div>
+<div class="wrapper">
+
+  
+{include file="Public/left" /}
+<!-- left-bar -->
+
+<div class="content" id="content">
+	
+	<div class="overlay"></div>			
+	
+    {include file="Public/top" /}
+    <!-- /top-bar -->
+	
+	<div class="main-content">
+		<div class="mail_holder">
+			<!-- col-md-2 -->
+			<div class="mail_body">								
+				<div class="mail_list_block col-md-4 col-sm-6 no_padding col-xs-12 col-lg-4">
+					<div class="mail_list">
+						<div class="search_bar_block">													    
+							<div class="search_icon_block">
+								<input type="text" class="form-control" id="inputSuccess3" placeholder="search for mails">
+								<span class="ion-search form-control-feedback" aria-hidden="true"></span>		
+							</div>
+						</div>
+						<ul class="list-unstyled mails_holder">
+							<li>
+								<a href="#">
+									<div class="message_list_block">
+										<div class="left">
+											<div class="avatar_holder">
+												<img src="__PUBLIC__/admin/images/avatar/two.png" alt="">
+											</div>
+										</div>
+										<div class="right">
+											<span class="name">Praveen kaligatla</span>
+											<div class="pull-right right_details">
+												<ul class="list-unstyled list-inline">
+													<li>12:30</li>
+													<li><i class="ion ion-record flatRedc status"></i></li>
+													<li><i class="ion-android-attach"></i></li>
+												</ul>
+											</div>
+											<h4>Research have been going on the project will report the results asap in a few days.</h4>
+										</div>
+										<!-- right -->													
+									</div>
+								</a>
+                                {volist name='list' id='val'}
+                                    <a href="#">
+                                        <div class="message_list_block">
+                                            <div class="left">
+                                                <div class="avatar_holder">
+                                                    <img src="{$val.avatar}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <span class="name">{$val.username}</span>
+                                                <div class="pull-right right_details">
+                                                    <ul class="list-unstyled list-inline">
+                                                        <li>{:date('Y-m-d H:i:s',$val['time'])}</li>
+                                                        <li><i class="ion ion-record flatRedc status"></i></li>
+                                                        <li><i class="ion-android-attach"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <h4>{$val.title}</h4>
+                                            </div>
+                                            <!-- right -->
+                                        </div>
+                                    </a>
+                                {/volist}
+							</li>												
+						</ul>
+					</div>
+					<!-- mail-list -->
+				</div>
+				<!-- col-md-4 -->
+				<!-- mail_list_block -->									
+				<div class="col-md-4 col-lg-6 col-sm-12 col-xs-12 no_padding mail_brief_holder">
+					<div class="heading_block">
+						<h1>Project discus <span>today 12.30am</span></h1>
+						<div class="btn-group pull-right action_buttons" role="group" aria-label="...">
+							<button type="button" class="btn btn-default"><i class="ion-reply"></i></button>
+							<button type="button" class="btn btn-default"><i class="ion-reply-all"></i></button>
+							<button type="button" class="btn btn-default"><i class="ion-android-arrow-forward"></i></button>
+							<button type="button" class="btn btn-default"><i class="ion-android-attach"></i></button>
+							<button type="button" class="btn btn-default"><i class="ion-ios-trash"></i></button>
+						</div>
+					</div>
+					<!-- heading_block -->
+					<div class="mail_brief_body">
+						<img src="__PUBLIC__/admin/images/sample.jpg" alt="">
+						<h4>lets do it today!</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus maxime odio facilis, corporis eum impedit ea,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis est, mollitia in! Reprehenderit voluptatem, porro distinctio iste in eos quam dicta sunt at fuga! Facilis inventore laboriosam perferendis placeat, delectus!</p>
+						<ul class="list-group attachment">
+							<li class="list-group-item">									    
+								<a href="#"><i class="ti-microsoft-alt flatBluec"></i> Windows.exe <span><i class="ti-download"></i></span></a>
+							</li>									  
+							<li class="list-group-item">									    
+								<a href="#"><i class="ti-android flatGreenc"></i> andriod.apk <span><i class="ti-download"></i></span></a>
+							</li>
+							<li class="list-group-item">									    
+								<a href="#"><i class="ti-cloud-down"></i> download all<span><i class="ti-download"></i></span></a>
+							</li>
+						</ul>
+						<textarea class="form-control" rows="4" placeholder="enter message here.."></textarea>
+						<a href="#" class="btn btn-primary reply">Reply message</a>
+					</div>
+					<!-- mail_brief_body -->
+				</div>
+			</div>
+			<!-- mail-body -->											
+		</div>
+		<!-- mail-holder -->				
+	</div>
+
+</div>  
+
+	{include file="Public/right" /}
+	<!-- /Right-bar -->
+</div>
+<!-- wrapper -->
+<script src='__PUBLIC__/admin/js/jquery-ui-1.10.3.custom.min.js'></script>
+<script src='__PUBLIC__/admin/js/bootstrap.min.js'></script>
+<script src='__PUBLIC__/admin/js/jquery.nicescroll.min.js'></script>
+<script src='__PUBLIC__/admin/js/wow.min.js'></script>
+<script src='__PUBLIC__/admin/js/jquery.loadmask.min.js'></script>
+<script src='__PUBLIC__/admin/js/jquery.accordion.js'></script>
+<script src='__PUBLIC__/admin/js/materialize.js'></script>
+<script src='__PUBLIC__/admin/js/bic_calendar.js'></script>
+<script src='__PUBLIC__/admin/js/widgets.js'></script>
+<script src='__PUBLIC__/admin/js/core.js'></script>
+
+<script src="__PUBLIC__/admin/js/jquery.countTo.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\login\index.html";i:1491635550;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +24,10 @@
                 $('form').submit();
             });
             $('form').submit(function(){
-                $.post("{:url('Login/index')}",$('form').serialize(),function(res){
+                $.post("<?php echo url('Login/index'); ?>",$('form').serialize(),function(res){
                     if(res.status==1){
                         layer.msg(res.info,{icon:6},function(){
-                            location="{:url('Index/index')}";
+                            location="<?php echo url('Index/index'); ?>";
                         });
                     }else{
                         layer.msg(res.info,{icon:5});

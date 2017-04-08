@@ -229,4 +229,46 @@ class Admin extends Base{
             }
         }
     }
+
+    //修改个人信息
+    public function changeinfo(){
+        if(request()->isAjax()){
+            $id=input('post.id');
+            $where['id']=$id;
+            $password=trim(input('post.password'));
+            $data['phone']=trim(input('post.phone'));
+            $data['avatar']=trim(input('post.avatar'));
+            if($password){
+                $data['token']=uniqid();
+                $data['password']=md5(md5($password).$data['token']);
+                $row=model('Admin')->saveAdmin($where,$data);
+                if($row){
+                    $res['status'] = 1;
+                    $res['info'] = '修改成功！';
+                    return $res;
+                }else{
+                    $res['status'] = 2;
+                    $res['info'] = '修改失败！';
+                    return $res;
+                }
+            }else{
+                $row=model('Admin')->saveAdmin($where,$data);
+                if($row){
+                    $res['status'] = 1;
+                    $res['info'] = '修改成功！';
+                    return $res;
+                }else{
+                    $res['status'] = 2;
+                    $res['info'] = '修改失败！';
+                    return $res;
+                }
+            }
+        }else{
+            $aid=Session::get('aid');
+            $where['id']=$aid;
+            $info=model('Admin')->getOne($where);
+            $this->assign('info',$info);
+            return $this->fetch();
+        }
+    }
 }

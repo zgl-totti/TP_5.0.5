@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+    
+    <title>修改个人信息</title>
+    
+    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+    <!-- Bootstrap CSS -->
+    
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/material.css'>
+    <link rel='stylesheet' href='__PUBLIC__/admin/css/style.css'>
+    
+    <script src='__PUBLIC__/admin/js/jquery.js'></script>
+    <script src='__PUBLIC__/admin/js/app.js'></script>
+    <script>
+        jQuery(window).load(function () {
+            $('.piluku-preloader').addClass('hidden');
+        });
+        $(function(){
+            $("select").click(function(){
+                var flag = this.value;
+                $("#avatar").attr("src",flag);
+            });
+            $('.btn-primary').click(function(){
+                $('#form').submit();
+            });
+            $('#form').submit(function(){
+                $.post("{:url('Admin/edit')}",$('#form').serialize(),function(res){
+                    if(res.status==1){
+                        layer.msg(res.info,{icon:6},function(){
+                            location="{:url('Admin/index')}";
+                        });
+                    }else{
+                        layer.msg(res.info,{icon:5});
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body class="" >
+  <div class="piluku-preloader text-center">
+  <!-- <div class="progress">
+      <div class="indeterminate"></div>
+  </div> -->
+  <div class="loader">Loading...</div>
+</div>
+<div class="wrapper ">
+
+{include file="Public/left" /}
+<!-- left-bar -->
+
+<div class="content" id="content">
+	
+	<div class="overlay"></div>
+
+    {include file="Public/top" /}
+    <!-- /top-bar -->
+
+	<!-- main content -->
+	<div class="main-content">
+		<!-- *** Editable Tables *** -->
+		<!-- panel -->
+		<div class="panel panel-piluku">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+                    修改个人信息
+				</h3>
+			</div>
+			<div class="panel-body">
+                <form action="#" id="form">
+                    <input type="hidden" name="id" value="{$info.id}" />
+                    <table id="user" class="table table-bordered table-striped table-hover" style="margin-top:30px;">
+                        <tbody>
+                            <tr>
+                                <td>用户名</td>
+                                <td><input type="text" name="username" value="{$info.username}" disabled /></td>
+                            </tr>
+                            <tr>
+                                <td>密码</td>
+                                <td><input type="text" name="password" /></td>
+                            </tr>
+                            <tr>
+                                <td>电话</td>
+                                <td><input type="text" name="phone" value="{$info.phone}" /></td>
+                            </tr>
+                            <tr>
+                                <td>头像</td>
+                                <td>
+                                    <select name="avatar" style="width: 160px;height: 40px;">
+                                        <option value="__PUBLIC__/admin/images/avatar/1.jpeg">1</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/2.png">2</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/3.png">3</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/4.png">4</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/5.png">5</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/6.png">6</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/7.png">7</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/8.png">8</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/9.png">9</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/10.png">10</option>
+                                        <option value="__PUBLIC__/admin/images/avatar/11.png">11</option>
+                                    </select>
+                                    <img src="__PUBLIC__/admin/images/avatar/1.jpeg" id="avatar" style="width: 40px;border-radius: 50%">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" style="font-weight:bold;margin: 50px auto">确定</button>
+                </form>
+            </div>
+		</div>
+		<!-- /panel -->
+
+	</div>
+
+</div>  
+
+	{include file="Public/right" /}
+	<!-- /Right-bar -->
+</div>
+<!-- wrapper -->
+
+<script src='__PUBLIC__/admin/js/jquery-ui-1.10.3.custom.min.js'></script>
+<script src='__PUBLIC__/admin/js/bootstrap.min.js'></script>
+<script src='__PUBLIC__/admin/js/jquery.nicescroll.min.js'></script>
+<script src='__PUBLIC__/admin/js/wow.min.js'></script>
+<script src='__PUBLIC__/admin/js/jquery.loadmask.min.js'></script>
+<script src='__PUBLIC__/admin/js/jquery.accordion.js'></script>
+<script src='__PUBLIC__/admin/js/materialize.js'></script>
+<script src='__PUBLIC__/admin/js/bic_calendar.js'></script>
+<script src='__PUBLIC__/admin/js/bootstrap-editable.min.js'></script>
+<script src='__PUBLIC__/admin/js/jquery.listarea.js'></script>
+<script src='__PUBLIC__/admin/js/editable-tables.js'></script>
+<script src='__PUBLIC__/admin/js/core.js'></script>
+
+<script src="__PUBLIC__/admin/js/jquery.countTo.js"></script>
+</body>
+</html>

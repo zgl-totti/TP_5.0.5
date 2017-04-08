@@ -4,7 +4,7 @@ namespace app\admin\validate;
 use think\Validate;
 
 class Admin extends Validate{
-    protected $rule=[
+    protected $rules=[
         'username'=>'require|between:5,12',
         'password'=>'require|between:5,12'
     ];
