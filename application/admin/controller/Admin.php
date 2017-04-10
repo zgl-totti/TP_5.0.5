@@ -8,16 +8,14 @@ class Admin extends Base{
     public function index(){
         if(request()->isGet()){
             $keywords=trim(input('get.keywords'));
+        }
+        if($keywords){
             $where=['username|phone'=>"%$keywords%"];
         }else{
             $where='';
         }
-        $aid=Session::get('aid');
-        $condition['id']=$aid;
-        $userinfo=model('Admin')->getOne($condition);
         $list=model('Admin')->getList($where,10);
         $this->assign('keywords',$keywords);
-        $this->assign('userinfo',$userinfo);
         $this->assign('list',$list);
         $this->assign('page',$list->render());
         return $this->fetch();
@@ -143,7 +141,7 @@ class Admin extends Base{
             $id=input('param.id');
             $where['id']=$id;
             $info=model('Admin')->getOne($where);
-            $this->assign('userinfo',$info);
+            $this->assign('info',$info);
             return $this->fetch();
         }
     }

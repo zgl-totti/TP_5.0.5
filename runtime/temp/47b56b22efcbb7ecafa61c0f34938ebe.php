@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:71:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\admin\edit.html";i:1491557119;s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\left.html";i:1491531251;s:71:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\top.html";i:1491442577;s:73:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\right.html";i:1491442894;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:71:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\admin\edit.html";i:1491787399;s:72:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\left.html";i:1491642240;s:71:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\top.html";i:1491641942;s:73:"D:\phpstudy\WWW\TP_new\public/../application/admin\view\Public\right.html";i:1491442894;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,10 +100,10 @@
                 <i class="chevron ti-angle-right"></i>
             </a>
             <ul class="list-unstyled" id="permission">
-                <li><a href="widgets.html">管理组列表</a></li>
-                <li><a href="tasks.html">添加管理组</a></li>
-                <li><a href="mailbox.html">权限列表</a></li>
-                <li><a href="profile.html">添加权限</a></li>
+                <li><a href="">管理组列表</a></li>
+                <li><a href="">添加管理组</a></li>
+                <li><a href="">权限列表</a></li>
+                <li><a href="">添加权限</a></li>
             </ul>
         </li>
         <!--<li>
@@ -141,8 +141,8 @@
                 <i class="chevron ti-angle-right"></i>
             </a>
             <ul class="list-unstyled" id="mail">
-                <li><a href="basic-tables.html">信息列表</a></li>
-                <li><a href="dynamic-tables.html">发送信息</a></li>
+                <li><a href="<?php echo url('Mail/index'); ?>">信息列表</a></li>
+                <li><a href="">发送信息</a></li>
             </ul>
         </li>
         <li class="submenu">
@@ -152,8 +152,8 @@
                 <i class="chevron ti-angle-right"></i>
             </a>
             <ul class="list-unstyled" id="brand">
-                <li><a href="dropzone-file-upload.html">品牌列表</a></li>
-                <li><a href="form-validation.html">添加品牌</a></li>
+                <li><a href="">品牌列表</a></li>
+                <li><a href="">添加品牌</a></li>
             </ul>
         </li>
         <li class="submenu">
@@ -163,8 +163,8 @@
                 <i class="chevron ti-angle-right"></i>
             </a>
             <ul class="list-unstyled" id="category">
-                <li><a href="basic-tables.html">分类列表</a></li>
-                <li><a href="dynamic-tables.html">添加分类</a></li>
+                <li><a href="">分类列表</a></li>
+                <li><a href="">添加分类</a></li>
             </ul>
         </li>
         <li class="submenu">
@@ -174,8 +174,8 @@
                 <i class="chevron ti-angle-right"></i>
             </a>
             <ul class="list-unstyled" id="goods">
-                <li><a href="basic-tables.html">商品列表</a></li>
-                <li><a href="dynamic-tables.html">添加商品</a></li>
+                <li><a href="">商品列表</a></li>
+                <li><a href="">添加商品</a></li>
             </ul>
         </li>
         <li class="submenu">
@@ -185,7 +185,7 @@
                 <i class="chevron ti-angle-right"></i>
             </a>
             <ul class="list-unstyled" id="order">
-                <li><a href="basic-tables.html">订单列表</a></li>
+                <li><a href="<?php echo url('Order/index'); ?>">订单列表</a></li>
             </ul>
         </li>
         <li class="submenu">
@@ -257,13 +257,13 @@
 		<div class="menu-bar-mobile" id="open-left"><i class="ti-menu"></i>
 		</div>
 
-		<form class="navbar-left" role="search">
+		<!--<form class="navbar-left" role="search">
 			<div class="search">
 				<input type="text" class="form-control" name="keywords" placeholder="搜索...">
 			</div>
-		</form>
+		</form>-->
 		<ul class="nav navbar-nav navbar-right top-elements">
-			<li class="piluku-dropdown dropdown">
+			<!--<li class="piluku-dropdown dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="flag_img" src="__PUBLIC__/admin/images/flags/india-flag.jpg" alt=""> English<span class="drop-icon"><i class="ion ion-chevron-down"></i></span>
 				</a>
 				<ul class="dropdown-menu dropdown-piluku-menu  animated fadeInUp wow language-drop neat_drop" data-wow-duration="1500ms" role="menu">
@@ -280,47 +280,50 @@
 						<a href="#"><img class="flag_img" src="__PUBLIC__/admin/images/flags/gm.gif" alt="flags"> german</a>
 					</li>
 				</ul>
-			</li>
+			</li>-->
 			<li class="piluku-dropdown dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="ion-ios-bell-outline icon-notification"></i><span class="badge info-number message">22</span></a>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class="ion-ios-bell-outline icon-notification"></i>
+                    <span class="badge info-number message"><?php echo $orderinfo['num2']; ?></span>
+                </a>
 				<ul class="dropdown-menu dropdown-piluku-menu  animated fadeInUp wow notification-drop neat_drop dropdown-right" data-wow-duration="1500ms" role="menu">
-					<li>
+                    <li>
+                        <a href="profile.html">
+                            <div class="hexagon warning">
+                                <span><i class="ion-ios-cart-outline"></i></span>
+                            </div>
+                            <span class="text_info"> 未付款订单</span>
+                            <span class="flatOrangec counter" data-to="<?php echo $orderinfo['num1']; ?>"></span>
+                        </a>
+                    </li>
+                    <li>
 						<a href="profile.html">
 							<div class="hexagon danger">
 								<span><i class="ion-ios-alarm-outline"></i></span>
 							</div>
-							<span class="text_info"> Privacy settings have been changed</span>
-							<span class="time_info">3:30am</span>
+							<span class="text_info"> 未发货订单</span>
+							<span class="flatRedc counter" data-to="<?php echo $orderinfo['num2']; ?>"></span>
 						</a>
 					</li>
-					<li>
-						<a href="profile.html">
-							<div class="hexagon success">
-								<span><i class="ion-ios-body-outline"></i></span>
-							</div>
-							<span class="text_info"> Tim has added you as friend</span>
-							<span class="time_info">4:30am</span>
-						</a>
-					</li>
-					<li>
-						<a href="profile.html">
-							<div class="hexagon warning">
-								<span><i class="ion-ios-cart-outline"></i></span>
-							</div>
-							<span class="text_info"> New item added</span>
-							<span class="time_info">6:07am</span>
-						</a>
-					</li>
+                    <li>
+                        <a href="profile.html">
+                            <div class="hexagon success">
+                                <span><i class="ion-ios-body-outline"></i></span>
+                            </div>
+                            <span class="text_info"> 已发货订单</span>
+                            <span class="flatGreenc counter" data-to="<?php echo $orderinfo['num3']; ?>"></span>
+                        </a>
+                    </li>
 					<li>
 						<a href="profile.html">
 							<div class="hexagon info">
 								<span><i class="ion-ios-calendar-outline"></i></span>
 							</div>
-							<span class="text_info"> reminder please complete the task</span>
-							<span class="time_info">3:30pm</span>
+							<span class="text_info"> 已收货订单</span>
+							<span class="flatBluec counter" data-to="<?php echo $orderinfo['num4']; ?>"></span>
 						</a>
 					</li>
-					<li>
+					<!--<li>
 						<a href="profile.html">
 							<div class="outline-hexagon">
 								<span><i class="ion-ios-checkmark-outline"></i></span>
@@ -328,62 +331,41 @@
 							<span class="text_info"> Marked as complete</span>
 							<span class="time_info">1:30pm</span>
 						</a>
-					</li>
+					</li>-->
 					<li>
-						<a href="profile.html" class="last_info">See all notifications</a>
+						<a href="profile.html" class="last_info">查看更多</a>
 					</li>
 
 				</ul>
 			</li>
 			<li class="piluku-dropdown dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="ion-ios-box-outline icon-notification"></i><span class="badge info-number bell">22</span></a>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class="ion-ios-box-outline icon-notification"></i>
+                    <span class="badge info-number bell"><?php echo count($mailinfo); ?></span>
+                </a>
 				<ul class="dropdown-menu dropdown-piluku-menu  animated fadeInUp wow message_drop neat_drop dropdown-right" data-wow-duration="1500ms" role="menu">
-					<li>
-						<a href="mailbox.html">
-							<div class="avatar_left"><img src="__PUBLIC__/admin/images/avatar.jpeg" alt=""></div>
-							<div class="info_right">
-								<span class="text_head pull-left">Megan fox</span>
-								<span class="time_info pull-right">3:30am <i class="online ion-record"></i></span>
-								<div class="text_info"> Hi want to know about the company freelance for wizard</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="mailbox.html">
-							<div class="avatar_left"><img src="__PUBLIC__/admin/images/avatar.jpeg" alt=""></div>
-							<div class="info_right">
-								<span class="text_head pull-left">Megan fox</span>
-								<span class="time_info pull-right">3:30am <i class="online ion-record"></i></span>
-								<div class="text_info"> Hi want to know about the company freelance for wizard</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="mailbox.html">
-							<div class="avatar_left"><img src="__PUBLIC__/admin/images/avatar.jpeg" alt=""></div>
-							<div class="info_right">
-								<span class="text_head pull-left">Megan fox</span>
-								<span class="time_info pull-right">3:30am <i class="online ion-record"></i></span>
-								<div class="text_info"> Hi want to know about the company freelance for wizard</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="mailbox.html">
-							<div class="avatar_left"><img src="__PUBLIC__/admin/images/avatar.jpeg" alt=""></div>
-							<div class="info_right">
-								<span class="text_head pull-left">Megan fox</span>
-								<span class="time_info pull-right">3:30am <i class="online ion-record"></i></span>
-								<div class="text_info"> Hi want to know about the company freelance for wizard</div>
-							</div>
-						</a>
-					</li>
+					<?php if(is_array($mailinfo) || $mailinfo instanceof \think\Collection || $mailinfo instanceof \think\Paginator): $i = 0; $__LIST__ = $mailinfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+                        <li>
+                            <a href="#">
+                                <div class="avatar_left"><img src="__PUBLIC__/admin/images/avatar/<?php echo $val['avatar']; ?>" alt=""></div>
+                                <div class="info_right">
+                                    <span class="text_head pull-left"><?php echo $val['username']; ?></span>
+                                    <span class="time_info pull-right"><?php echo date('Y-m-d H:i:s',$val['time']); ?> <i class="online ion-record"></i></span>
+                                    <div class="text_info"> <?php echo $val['title']; ?></div>
+                                </div>
+                            </a>
+                        </li>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
 				</ul>
 			</li>
 			<li class="piluku-dropdown dropdown">
 				<!-- @todo Change design here, its bit of odd or not upto usable -->
 
-				<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false"><span class="avatar-holder"><img src="__PUBLIC__/admin/images/avatar.jpeg" alt=""></span><span class="avatar_info">用户名</span><span class="drop-icon"><!-- <i class="ion ion-chevron-down"></i> --></span></a>
+				<a href="#" class="dropdown-toggle avatar_width" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <span class="avatar-holder"><img src="__PUBLIC__/admin/images/avatar/<?php echo $userinfo['avatar']; ?>" alt=""></span>
+                    <span class="avatar_info"><?php echo $userinfo['username']; ?></span>
+                    <span class="drop-icon"><!-- <i class="ion ion-chevron-down"></i> --></span>
+                </a>
 				<ul class="dropdown-menu dropdown-piluku-menu  animated fadeInUp wow avatar_drop neat_drop dropdown-right" data-wow-duration="1500ms" role="menu">
 					<li>
 						<a href="profile.html"> <i class="ion-android-settings"></i>设置</a>
@@ -431,7 +413,7 @@
                         <tbody>
                             <tr>
                                 <td>用户名</td>
-                                <td><input type="text" name="username" value="<?php echo $info['username']; ?>" /></td>
+                                <td><input type="text" name="username" value="<?php echo $info['username']; ?>" disabled /></td>
                             </tr>
                             <tr>
                                 <td>密码</td>

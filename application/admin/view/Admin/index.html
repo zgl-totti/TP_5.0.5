@@ -17,6 +17,7 @@
 
     <script src='__PUBLIC__/admin/js/jquery.js'></script>
     <script src='__PUBLIC__/admin/js/app.js'></script>
+    <script src='__PUBLIC__/admin/layer/layer.js'></script>
     <script>
         jQuery(window).load(function () {
             $('.piluku-preloader').addClass('hidden');
@@ -142,7 +143,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr class="table-row">
+									<!--<tr class="table-row">
 										<td class="text-center">1</td>
                                         <td class="text-center">
                                             <img src="__PUBLIC__/admin/images/avatar.jpeg" alt="user">
@@ -159,13 +160,13 @@
                                             <a href="#" class="btn btn-green"><i class="ion ion-edit"></i></a>
                                             <a href="#" class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a>
                                         </td>
-									</tr>
+									</tr>-->
 
                                     {volist name='list' id='val' key='k'}
                                         <tr class="table-row">
                                             <td class="text-center">{$k}</td>
                                             <td class="text-center">
-                                                <img src="{$val['avatar']}" alt="user">
+                                                <img src="__PUBLIC__/admin/images/avatar/{$val['avatar']}" alt="user">
                                             </td>
                                             <td class="text-center">{$val.username}</td>
                                             <td class="text-center">{$val.phone}</td>
