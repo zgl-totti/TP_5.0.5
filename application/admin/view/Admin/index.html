@@ -1,31 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- panel -->
+            <div class="panel panel-piluku panel-users">
+                <div class="manage_buttons" style="margin: 0!important;margin-right: 0!important;">
+                    <div class="row">
+                        <div class="col-md-3 search">
+                            <form action="{:url('Admin/index')}" method="get">
+                                <input type="text" name="keywords" value="{$keywrods?$keywords:''}" id="search" class="form-control" placeholder="Search User">
+                            </form>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="buttons-list">
+                                <div class="pull-right-btn">
+                                    <a href="{:url('Admin/add')}" class="btn btn-primary">添加管理员</a>
+                                    <div class="piluku-dropdown dropdown">
+                                        <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="ion-android-more-horizontal"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-regular-menu animated fadeInUp wow language-drop neat_drop" data-wow-duration="1500ms" role="menu">
+                                            <li><a href="#">Link One</a></li>
+                                            <li><a href="#">Link One</a></li>
+                                            <li><a href="#">Link One</a></li>
+                                            <li><a href="#">Link One</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        管理员列表
+                    </h3>
+                </div>
+                <div class="panel-body nopadding">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th class="text-center">编号</th>
+                                <th class="text-center">头像</th>
+                                <th class="text-center">用户名</th>
+                                <th class="text-center">电话</th>
+                                <th class="text-center">身份</th>
+                                <th class="text-center">添加时间</th>
+                                <th class="text-center">最近登录</th>
+                                <th class="text-center">登录ip</th>
+                                <th class="text-center">账号状态</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-    <title>管理员列表</title>
+                            {volist name='list' id='val' key='k'}
+                            <tr class="table-row">
+                                <td class="text-center">{$k}</td>
+                                <td class="text-center">
+                                    <img src="__STATIC__/admin/images/avatar/{$val['avatar']}" alt="user">
+                                </td>
+                                <td class="text-center">{$val.username}</td>
+                                <td class="text-center">{$val.phone}</td>
+                                <td class="text-center">{$val['permission']==1?'超级管理员':'普通管理员'}</td>
+                                <td class="text-center">{:date('Y-m-d H:i:s',$val['addtime'])}</td>
+                                <td class="text-center">{:date('Y-m-d H:i:s',$val['lastlogin'])}</td>
+                                <td class="text-center">{$val.lastip}</td>
+                                <td class="text-center">{$val['status']==1?'激活':'停权'}</td>
+                                <td class="text-center">
+                                    <a href="#" id="{$val.id}" class="btn btn-orange"><i class="icon-bell"></i></a>
+                                    <a href="{:url('Admin/edit',['id'=>$val['id']])}" class="btn btn-green"><i class="ion ion-edit"></i></a>
+                                    <a href="#" id="{$val.id} " class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a>
+                                </td>
+                            </tr>
+                            {/volist}
 
-    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-    <!-- Bootstrap CSS -->
-
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/material.css'>
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/style.css'>
-
-    <script src='__PUBLIC__/admin/js/jquery.js'></script>
-    <script src='__PUBLIC__/admin/js/app.js'></script>
-    <script src='__PUBLIC__/admin/layer/layer.js'></script>
-    <script>
-        jQuery(window).load(function () {
-            $('.piluku-preloader').addClass('hidden');
-        });
-        $(function(){
-            $('.btn-orange').click(function(){
-                var id=$(this).attr('id');
-                $.post("{:url('Admin/changestatus')}",{id:id},function(res){
+                            </tbody>
+                        </table>
+                        <div class="col-md-12">{$pages}</div>
+                    </div>
+                </div>
+            </div>
+            <!-- /panel -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="pagination small-pagination pull-right">
+                <li><a href="#"><i class="ion ion-ios-arrow-left"></i></a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="disabled"><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#"><i class="ion ion-ios-arrow-right"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{load href="__STATIC__/layer/layer.js"}
+<script type="text/javascript">
+    $(function(){
+        $('.btn-orange').click(function(){
+            var id=$(this).attr('id');
+            $.post("{:url('Admin/changestatus')}",{id:id},function(res){
+                if(res.status==1){
+                    layer.msg(res.info,{icon:6},function(){
+                        location="{:url('Admin/index')}";
+                    });
+                }else{
+                    layer.msg(res.info,{icon:5});
+                }
+            })
+        })
+        $('.btn-red').click(function(){
+            var id=$(this).attr('id');
+            layer.confirm('确定要删除吗？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.post("{:url('Admin/del')}",{id:id},function(res){
                     if(res.status==1){
                         layer.msg(res.info,{icon:6},function(){
                             location="{:url('Admin/index')}";
@@ -34,196 +128,7 @@
                         layer.msg(res.info,{icon:5});
                     }
                 })
-            })
-            $('.btn-red').click(function(){
-                var id=$(this).attr('id');
-                layer.confirm('确定要删除吗？', {
-                    btn: ['确定','取消'] //按钮
-                }, function(){
-                    $.post("{:url('Admin/del')}",{id:id},function(res){
-                        if(res.status==1){
-                            layer.msg(res.info,{icon:6},function(){
-                                location="{:url('Admin/index')}";
-                            });
-                        }else{
-                            layer.msg(res.info,{icon:5});
-                        }
-                    })
-                });
-            })
+            });
         })
-    </script>
-</head>
-<body class="" >
-  <div class="piluku-preloader text-center">
-  <!-- <div class="progress">
-      <div class="indeterminate"></div>
-  </div> -->
-  <div class="loader">刷新中...</div>
-</div>
-<div class="wrapper ">
-
-  
-
-{include file="Public/left" /}
-<!-- left-bar -->
-
-<div class="content" id="content">
-	
-	<div class="overlay"></div>			
-	
-	{include file="Public/top" /}
-    <!-- /top-bar -->
-	
-	<!-- main content -->
-	<div class="main-content">
-		<div class="manage_buttons">
-			<div class="row">
-				<div class="col-md-3 search">
-					<form action="{:url('Admin/index')}" method="get">
-						<input type="text" name="keywords" value="{$keywrods?$keywords:''}" id="search" class="form-control" placeholder="Search User">
-					</form>
-				</div>
-				<div class="col-md-9">
-					<div class="buttons-list">
-						<div class="pull-right-btn">
-							<a href="{:url('Admin/add')}" class="btn btn-primary">添加管理员</a>
-							<div class="piluku-dropdown dropdown">
-								<button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-									<i class="ion-android-more-horizontal"></i>
-								</button>
-								<ul class="dropdown-menu dropdown-regular-menu animated fadeInUp wow language-drop neat_drop" data-wow-duration="1500ms" role="menu">
-									<li><a href="#">Link One</a></li>
-									<li><a href="#">Link One</a></li>
-									<li><a href="#">Link One</a></li>
-									<li><a href="#">Link One</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-12">
-				<!-- panel -->
-				<div class="panel panel-piluku panel-users">
-					<div class="panel-heading">
-						<h3 class="panel-title">
-							管理员列表
-							<span class="panel-options">
-								<a href="#" class="panel-refresh">
-									<i class="icon ti-reload"></i> 
-								</a>
-								<a href="#" class="panel-minimize">
-									<i class="icon ti-angle-up"></i> 
-								</a>
-								<a href="#" class="panel-close">
-									<i class="icon ti-close"></i> 
-								</a>
-							</span>
-						</h3>
-					</div>
-					<div class="panel-body nopadding">
-						<div class="table-responsive">
-							<table class="table table-hover">
-								<thead>
-									<tr>
-										<th  class="text-center">编号</th>
-                                        <th  class="text-center">头像</th>
-										<th  class="text-center">用户名</th>
-                                        <th  class="text-center">电话</th>
-                                        <th  class="text-center">身份</th>
-										<th  class="text-center">添加时间</th>
-										<th  class="text-center">最近登录</th>
-										<th  class="text-center">登录ip</th>
-										<th  class="text-center">账号状态</th>
-										<th  class="text-center">操作</th>
-									</tr>
-								</thead>
-								<tbody>
-									<!--<tr class="table-row">
-										<td class="text-center">1</td>
-                                        <td class="text-center">
-                                            <img src="__PUBLIC__/admin/images/avatar.jpeg" alt="user">
-                                        </td>
-										<td class="text-center">John</td>
-										<td class="text-center">65730011</td>
-										<td class="text-center">超级管理员</td>
-										<td class="text-center">2017-04-07 10:33:20</td>
-										<td class="text-center">2017-04-07 10:35:20</td>
-										<td class="text-center">127.0.0.1</td>
-										<td class="text-center">激活</td>
-										<td class="text-center">
-                                            <a href="#" class="btn btn-orange"><i class="icon-bell"></i></a>
-                                            <a href="#" class="btn btn-green"><i class="ion ion-edit"></i></a>
-                                            <a href="#" class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a>
-                                        </td>
-									</tr>-->
-
-                                    {volist name='list' id='val' key='k'}
-                                        <tr class="table-row">
-                                            <td class="text-center">{$k}</td>
-                                            <td class="text-center">
-                                                <img src="__PUBLIC__/admin/images/avatar/{$val['avatar']}" alt="user">
-                                            </td>
-                                            <td class="text-center">{$val.username}</td>
-                                            <td class="text-center">{$val.phone}</td>
-                                            <td class="text-center">{$val['permission']==1?'超级管理员':'普通管理员'}</td>
-                                            <td class="text-center">{:date('Y-m-d H:i:s',$val['addtime'])}</td>
-                                            <td class="text-center">{:date('Y-m-d H:i:s',$val['lastlogin'])}</td>
-                                            <td class="text-center">{$val.lastip}</td>
-                                            <td class="text-center">{$val['status']==1?'激活':'停权'}</td>
-                                            <td class="text-center">
-                                                <a href="#" id="{$val.id}" class="btn btn-orange"><i class="icon-bell"></i></a>
-                                                <a href="{:url('Admin/edit',['id'=>$val['id']])}" class="btn btn-green"><i class="ion ion-edit"></i></a>
-                                                <a href="#" id="{$val.id} " class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a>
-                                            </td>
-                                        </tr>
-                                    {/volist}
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-				<!-- /panel -->
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<ul class="pagination small-pagination pull-right">
-					<li><a href="#"><i class="ion ion-ios-arrow-left"></i></a></li>
-					<li><a href="#">1</a></li>
-					<li class="active"><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#"><i class="ion ion-ios-arrow-right"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- /main content -->		
-
-</div>  
-
-	{include file="Public/right" /}
-	<!-- /Right-bar -->
-</div>
-<!-- wrapper -->
-
-<script src='__PUBLIC__/admin/js/jquery-ui-1.10.3.custom.min.js'></script>
-<script src='__PUBLIC__/admin/js/bootstrap.min.js'></script>
-<script src='__PUBLIC__/admin/js/jquery.nicescroll.min.js'></script>
-<script src='__PUBLIC__/admin/js/wow.min.js'></script>
-<script src='__PUBLIC__/admin/js/jquery.loadmask.min.js'></script>
-<script src='__PUBLIC__/admin/js/jquery.accordion.js'></script>
-<script src='__PUBLIC__/admin/js/materialize.js'></script>
-<script src='__PUBLIC__/admin/js/bic_calendar.js'></script>
-<script src='__PUBLIC__/admin/js/core.js'></script>
-
-<script src="__PUBLIC__/admin/js/jquery.countTo.js"></script>
-</body>
-</html>
+    })
+</script>

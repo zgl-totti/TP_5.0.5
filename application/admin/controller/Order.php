@@ -3,32 +3,36 @@ namespace app\admin\controller;
 
 class Order extends Base{
     public function index(){
-        if(request()->isGet()){
-            $keywords=trim(input('get.keywords'));
-            if($keywords){
-                $where['o.orderno']=['like',"%$keywords%"];
-                $this->assign('keywords',$keywords);
-            }
-            if(input('get.time1')&& !input('get.time2')){
-                $time1=strtotime(input('get.time1'));
-                $where['o.create_time']=['gt',$time1];
-                $this->assign('time1',date('Y-m-d',$time1));
-            }elseif(input('get.time2') && !input('get.time1')){
-                $time2=strtotime(input('get.time2'));
-                $where['o.create_time']=['lt',$time2];
-                $this->assign('time2',date('Y-m-d',$time2));
-            }else if(input('get.time2') && input('get.time1')){
-                $time1=strtotime(input('get.time1'));
-                $time2=strtotime(input('get.time2'));
-                $where['o.create_time']=['between',[$time1,$time2]];
-                $this->assign('time1',date('Y-m-d',$time1));
-                $this->assign('time2',date('Y-m-d',$time2));
-            }
+        $keywords=trim(input('get.keywords'));
+        $time1=trim(input('get.time1'));
+        $time2=trim(input('get.time2'));
+        $time3=strtotime($time1);
+        $time4=strtotime($time2);
+        if($keywords){
+            $where['orderno']=['like',"%$keywords%"];
+        }else{
+            $where='';
         }
-        $where='';
-        $list=model('Order')->orderList($where,10);
+        if($time1 && $time2){
+            $condition['create_time']=['between',[$time3,$time4]];
+        }elseif($time1 && !$time2){
+            $condition['create_time']=['gt',$time3];
+        }elseif($time2 && !$time1){
+            $condition['create_time']=['lt',$time4];
+        }else{
+            $condition='';
+        }
+        $data['query']['keywords']=$keywords;
+        $list=\app\admin\model\Order::where($where)
+            ->where($condition)
+            ->with('orderStatus')
+            ->with('users')
+            ->paginate(10,false,$data);
+        $this->assign('keywords',$keywords);
+        $this->assign('time1',$time1);
+        $this->assign('time2',$time2);
         $this->assign('list',$list);
-        $this->assign('page',$list->render());
+        $this->assign('pages',$list->render());
         return $this->fetch();
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 
+use app\admin\model\Admin;
 use think\Controller;
 use think\Loader;
 use think\Session;
@@ -11,27 +12,25 @@ class Login extends Controller{
             $data['username']=trim(input('post.username'));
             $data['password']=trim(input('post.password'));
             $validate=Loader::validate('Admin');
-            if($validate->check($data)){
+            if($validate->scene('login')->check($data)){
                 $where['username']=$data['username'];
-                $info=model('Admin')->getOne($where);
+                $info=Admin::get($where);
                 if($info){
                     $admin['username']=$data['username'];
                     $admin['password']=md5(md5($data['password']).$info['token']);
-                    $result=model('Admin')->getOne($admin);
+                    $result=Admin::get($admin);
                     if($result){
-                        $aid=Session::get('aid');
-                        if(!$aid==$result['id']){
-                            Session::set('aid',$result['id']);
-                            $condition['id']=$result['id'];
-                            $update['lastlogin']=time();
-                            $update['lastip']=input('server.REMOTE_ADDR');
-                            model('Admin')->saveAdmin($condition,$update);
-                            $res['status']=1;
-                            $res['info']='登录成功！';
+                        if($result['status']==1) {
+                            Session::set('aid', $result['id']);
+                            $result->lastlogin = time();
+                            $result->lastip = input('server.REMOTE_ADDR');
+                            $result->save();
+                            $res['status'] = 1;
+                            $res['info'] = '登录成功！';
                             return $res;
-                        }else {
+                        }else{
                             $res['status']=2;
-                            $res['info']='用户已登录！';
+                            $res['info']='账号已停权！';
                             return $res;
                         }
                     }else{
@@ -59,15 +58,16 @@ class Login extends Controller{
             $data['username']=trim(input('post.username'));
             $data['password']=trim(input('post.password'));
             $validate=Loader::validate('Admin');
-            if($validate->check($data)){
+            if($validate->scene('register')->check($data)){
                 $where['username']=$data['username'];
-                $info=model('Admin')->getOne($where);
+                $info=Admin::get($where);
                 if(!$info){
                     $admin['username']=$data['username'];
                     $admin['token']=uniqid();
                     $admin['password']=md5(md5($data['password']).$admin['token']);
                     $admin['addtime']=time();
-                    $result=model('Admin')->addAdmin($admin);
+                    $arr= new Admin();
+                    $result=$arr->save($admin);
                     if($result){
                         $res['status']=1;
                         $res['info']='注册成功！';
@@ -93,7 +93,11 @@ class Login extends Controller{
     }
 
     public function logout(){
-        Session::delete('aid');
-        $this->redirect('index');
+        if(request()->isAjax()) {
+            Session::delete('aid');
+            $res['status']=1;
+            $res['info']='退出成功！';
+            return $res;
+        }
     }
 }

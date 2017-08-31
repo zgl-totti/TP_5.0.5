@@ -19,7 +19,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -136,12 +136,14 @@ return [
         'taglib_begin' => '{',
         // 标签库标签结束标记
         'taglib_end'   => '}',
+        //布局模板是否开启
+        'layout_on' => true,
+        //布局模板文件
+        'layout_name' => 'layout/index',
     ],
 
     // 视图输出字符串内容替换
-    'view_replace_str'       => [
-        '__PUBLIC__'         => '/TP_new/public/static'
-    ],
+    'view_replace_str'       => [],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
@@ -205,7 +207,7 @@ return [
         // SESSION_ID的提交变量,解决flash上传跨域
         'var_session_id' => '',
         // SESSION 前缀
-        'prefix'         => 'think_new',
+        'prefix'         => 'think',
         // 驱动方式 支持redis memcache memcached
         'type'           => '',
         // 是否自动开启 SESSION

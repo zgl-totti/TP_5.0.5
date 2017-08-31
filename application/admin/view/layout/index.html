@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+    <title>后台管理系统</title>
+
+    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+    <!-- Bootstrap CSS -->
+
+    <link rel='stylesheet' href='__STATIC__/admin/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='__STATIC__/admin/css/material.css'>
+    <link rel='stylesheet' href='__STATIC__/admin/css/style.css'>
+    <link rel='stylesheet' href='__STATIC__/admin/css/animated-masonry-gallery.css'>
+    <link rel='stylesheet' href='__STATIC__/admin/css/rotated-gallery.css'>
+    <link rel='stylesheet' href='__STATIC__/admin/css/sweet-alerts/sweetalert.css'>
+    <link rel='stylesheet' href='__STATIC__/admin/css/jtree.css'>
+    <script src='__STATIC__/admin/js/jquery.js'></script>
+    <script src='__STATIC__/admin/js/app.js'></script>
+    <script src='__STATIC__/admin/js/jquery-ui-1.10.3.custom.min.js'></script>
+    <script src='__STATIC__/admin/js/bootstrap.min.js'></script>
+    <script src='__STATIC__/admin/js/jquery.nicescroll.min.js'></script>
+    <script src='__STATIC__/admin/js/wow.min.js'></script>
+    <script src='__STATIC__/admin/js/jquery.loadmask.min.js'></script>
+    <script src='__STATIC__/admin/js/jquery.accordion.js'></script>
+    <script src='__STATIC__/admin/js/materialize.js'></script>
+    <script src='__STATIC__/admin/js/chartist.min.js'></script>
+    <script src='__STATIC__/admin/js/CustomChart.js'></script>
+    <script src='__STATIC__/admin/js/build/d3.min.js'></script>
+    <script src='__STATIC__/admin/js/nvd3/nv.d3.js'></script>
+    <script src='__STATIC__/admin/js/sparkline.js'></script>
+    <script src='__STATIC__/admin/js/bic_calendar.js'></script>
+    <script src='__STATIC__/admin/js/widgets.js'></script>
+    <script src='__STATIC__/admin/js/core.js'></script>
+    <script src="__STATIC__/admin/js/jquery.countTo.js"></script>
+    <script>
+        jQuery(window).load(function () {
+            $('.piluku-preloader').addClass('hidden');
+        });
+    </script>
+</head>
+<body>
+    <div class="piluku-preloader text-center">
+        <div class="loader">Loading...</div>
+    </div>
+    <div class="wrapper ">
+        {include file="public/left" /}
+
+        <div class="content" id="content">
+            <div class="overlay"></div>
+
+            {include file="public/top" /}
+
+            {__CONTENT__}
+
+        </div>
+    </div>
+</body>
+</html>

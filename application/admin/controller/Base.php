@@ -1,25 +1,27 @@
 <?php
 namespace app\admin\controller;
 
+use app\admin\model\Admin;
+use app\admin\model\Mails;
+use app\admin\model\Order;
 use think\Controller;
 use think\Session;
 
 class Base extends Controller{
     public function __construct(){
         parent::__construct();
-        if(!Session::get('aid')){
+        $aid=Session::get('aid');
+        if(empty($aid)){
             $this->redirect('Login/index');
         }else{
-            $aid=Session::get('aid');
-            $where['id']=$aid;
-            $condition['ma.receiveid']=$aid;
-            $condition['ma.status']=1;
-            $userinfo=model('Admin')->getOne($where);
-            $mailinfo=model('Mail')->getAll($condition);
-            $orderinfo=model('Order')->orderNum();
-            $this->assign('userinfo',$userinfo);
-            $this->assign('mailinfo',$mailinfo);
-            $this->assign('orderinfo',$orderinfo);
+            $info=Admin::get($aid);
+            $num1=Order::count();
+            $where['receiveid']=$aid;
+            $where['status']=1;
+            $num2=Mails::where($where)->count();
+            $this->assign('info',$info);
+            $this->assign('num1',$num1);
+            $this->assign('num2',$num2);
         }
     }
 }

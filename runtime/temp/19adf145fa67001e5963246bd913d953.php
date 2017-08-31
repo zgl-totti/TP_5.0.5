@@ -1,4 +1,5 @@
-{__NOLAYOUT__}
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:69:"D:\phpstudy\WWW\zzz\public/../application/admin\view\login\index.html";i:1504058479;}*/ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,16 +14,16 @@
 	<link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/style.css">
 	<link rel="stylesheet" type="text/css" href="__STATIC__/admin/css/signin2.css">
 
-	{load href="__STATIC__/admin/js/jquery.js"}
-    {load href="__STATIC__/layer/layer.js"}
+	<script type="text/javascript" src="__STATIC__/admin/js/jquery.js"></script>
+    <script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
 
     <script type="text/javascript">
         $(function(){
             $('.btn-block').click(function(){
-                $.post("{:url('Login/index')}",$('form').serialize(),function(res){
+                $.post("<?php echo url('Login/index'); ?>",$('form').serialize(),function(res){
                     if(res.status==1){
                         layer.msg(res.info,{icon:6},function(){
-                            location="{:url('Index/index')}";
+                            location="<?php echo url('Index/index'); ?>";
                         });
                     }else{
                         layer.msg(res.info,{icon:5});

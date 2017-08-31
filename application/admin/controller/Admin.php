@@ -6,24 +6,23 @@ use think\Session;
 
 class Admin extends Base{
     public function index(){
-        if(request()->isGet()){
-            $keywords=trim(input('get.keywords'));
-        }
+        $keywords=trim(input('get.keywords'));
         if($keywords){
-            $where=['username|phone'=>"%$keywords%"];
+            $where['username|phone']=['like',"$keywords%"];
         }else{
             $where='';
         }
-        $list=model('Admin')->getList($where,10);
+        $data['query']['keywords']=$keywords;
+        $list=\app\admin\model\Admin::where($where)->paginate(1,false,$data);
         $this->assign('keywords',$keywords);
         $this->assign('list',$list);
-        $this->assign('page',$list->render());
+        $this->assign('pages',$list->render());
         return $this->fetch();
     }
 
     public function add(){
         if(request()->isAjax()){
-            $aid=Session::get('aid');
+            /*$aid=Session::get('aid');
             $where['id']=$aid;
             $userinfo=model('Admin')->getOne($where);
             $data['username']=trim(input('post.username'));
@@ -73,6 +72,52 @@ class Admin extends Base{
                 $res['status']=6;
                 $res['info']=$validate->getError();
                 return $res;
+            }*/
+
+            $aid=Session::get('aid');
+            $userinfo=\app\admin\model\Admin::get($aid);
+            $data['username']=trim(input('post.username'));
+            $data['password']=trim(input('post.password'));
+            $data['pwd']=trim(input('post.pwd'));
+            $data['phone']=trim(input('post.phone'));
+            $data['permission']=trim(input('post.permission'));
+            $data['avatar']=trim(input('post.avatar'));
+            $validate=Loader::validate('Admin');
+            if($validate->scene('add')->check($data)){
+                if($userinfo['permission']==1) {
+                    $admin['username'] = $data['username'];
+                    $admin['phone'] = $data['phone'];
+                    $admin['permission'] = $data['permission'];
+                    $admin['avatar'] = $data['avatar'];
+                    $admin['token'] = uniqid();
+                    $admin['password'] = md5(md5($data['password']) . $data['token']);
+                    $admin['addtime'] = time();
+                    if($aid==1 || $admin['permission']!=1) {
+                        $arr= new \app\admin\model\Admin();
+                        $row=$arr->save($admin);
+                        if ($row) {
+                            $res['status'] = 1;
+                            $res['info'] = '添加成功！';
+                            return $res;
+                        } else {
+                            $res['status'] = 2;
+                            $res['info'] = '添加失败！';
+                            return $res;
+                        }
+                    }else{
+                        $res['status'] = 3;
+                        $res['info'] = '你没有权限！';
+                        return $res;
+                    }
+                }else{
+                    $res['status'] = 4;
+                    $res['info'] = '你没有权限！';
+                    return $res;
+                }
+            }else{
+                $res['status']=6;
+                $res['info']=$validate->getError();
+                return $res;
             }
         }else{
             return $this->fetch();
@@ -83,22 +128,20 @@ class Admin extends Base{
     public function edit(){
         if(request()->isAjax()){
             $aid=Session::get('aid');
-            $think['id']=$aid;
-            $userinfo=model('Admin')->getOne($think);
+            $userinfo=\app\admin\model\Admin::get($aid);
             if($userinfo['permission']==1) {
                 $id = input('post.id');
-                $where['id'] = $id;
                 $data['username'] = trim(input('post.username'));
                 $data['password'] = trim(input('post.password'));
                 $data['phone'] = trim(input('post.phone'));
                 $data['permission'] = trim(input('post.permission'));
                 $data['avatar'] = trim(input('post.avatar'));
                 $validate = Loader::validate('Admin');
-                if ($validate->check($data)) {
+                if ($validate->scene('edit')->check($data)) {
                     $condition['username'] = $data['username'];
-                    $info = model('Admin')->getOne($condition);
+                    $info=\app\admin\model\Admin::get($condition);
                     if (!$info) {
-                        $editinfo=model('Admin')->getOne($where);
+                        $editinfo=\app\admin\model\Admin::get($id);
                         if($aid==1 || $editinfo['permission']!=1){
                             $admin['username'] = $data['username'];
                             $admin['phone'] = $data['phone'];
@@ -107,7 +150,8 @@ class Admin extends Base{
                             $admin['token'] = uniqid();
                             $admin['password'] = md5(md5($data['password']) . $data['token']);
                             $admin['addtime'] = time();
-                            $row = model('Admin')->saveAdmin($where, $admin);
+                            $arr= new \app\admin\model\Admin();
+                            $row=$arr->save($admin);
                             if ($row) {
                                 $res['status'] = 1;
                                 $res['info'] = '编辑成功！';
@@ -139,8 +183,7 @@ class Admin extends Base{
             }
         }else{
             $id=input('param.id');
-            $where['id']=$id;
-            $info=model('Admin')->getOne($where);
+            $info=\app\admin\model\Admin::get($id);
             $this->assign('info',$info);
             return $this->fetch();
         }
@@ -150,33 +193,25 @@ class Admin extends Base{
     public function changestatus(){
         if(request()->isAjax()){
             $aid=Session::get('aid');
-            $condition['id']=$aid;
-            $admin=model('Admin')->getOne($condition);
+            $admin=\app\admin\model\Admin::get($aid);
             if($admin['permission']==1) {
                 $id = input('post.id');
-                $where['id'] = $id;
-                $info = model('Admin')->getOne($where);
-                if ($info) {
-                    if(!$info['permission']==1) {
-                        $status['status'] = ($info['status'] == 1) ? 2 : 1;
-                        $row = model('Admin')->saveAdmin($where, $status);
-                        if ($row) {
-                            $res['status'] = 1;
-                            $res['info'] = '状态更改成功！';
-                            return $res;
-                        } else {
-                            $res['status'] = 2;
-                            $res['info'] = '状态更改失败！';
-                            return $res;
-                        }
-                    }else{
-                        $res['status'] = 3;
-                        $res['info'] = '无权限更改超级管理员状态！';
+                $info=\app\admin\model\Admin::get($id);
+                if($info['permission']!=1) {
+                    $info->status = ($info['status'] == 1) ? 2 : 1;
+                    $row=$info->save();
+                    if ($row) {
+                        $res['status'] = 1;
+                        $res['info'] = '状态更改成功！';
+                        return $res;
+                    } else {
+                        $res['status'] = 2;
+                        $res['info'] = '状态更改失败！';
                         return $res;
                     }
-                } else {
-                    $res['status'] = 4;
-                    $res['info'] = '管理员不存在！';
+                }else{
+                    $res['status'] = 3;
+                    $res['info'] = '无权限更改超级管理员状态！';
                     return $res;
                 }
             }else{
@@ -191,33 +226,24 @@ class Admin extends Base{
     public function del(){
         if(request()->isAjax()){
             $aid=Session::get('aid');
-            $condition['id']=$aid;
-            $admin=model('Admin')->getOne($condition);
+            $admin=\app\admin\model\Admin::get($aid);
             if($admin['permission']==1) {
                 $id = input('post.id');
-                $where['id'] = $id;
-                $info = model('Admin')->getOne($where);
-                if ($info) {
-
-                    if(!$info['permission']==1) {
-                        $row = model('Admin')->del($where);
-                        if ($row) {
-                            $res['status'] = 1;
-                            $res['info'] = '删除成功！';
-                            return $res;
-                        } else {
-                            $res['status'] = 2;
-                            $res['info'] = '删除失败！';
-                            return $res;
-                        }
-                    }else{
-                        $res['status'] = 3;
-                        $res['info'] = '无权限删除超级管理员！';
+                $info=\app\admin\model\Admin::get($id);
+                if($info['permission']!=1) {
+                    $row = $info->delete();
+                    if ($row) {
+                        $res['status'] = 1;
+                        $res['info'] = '删除成功！';
+                        return $res;
+                    } else {
+                        $res['status'] = 2;
+                        $res['info'] = '删除失败！';
                         return $res;
                     }
-                } else {
-                    $res['status'] = 4;
-                    $res['info'] = '管理员不存在！';
+                }else{
+                    $res['status'] = 3;
+                    $res['info'] = '无权限删除超级管理员！';
                     return $res;
                 }
             }else{
@@ -232,39 +258,29 @@ class Admin extends Base{
     public function changeinfo(){
         if(request()->isAjax()){
             $id=input('post.id');
-            $where['id']=$id;
             $password=trim(input('post.password'));
             $data['phone']=trim(input('post.phone'));
             $data['avatar']=trim(input('post.avatar'));
+            $admin=\app\admin\model\Admin::get($id);
             if($password){
-                $data['token']=uniqid();
-                $data['password']=md5(md5($password).$data['token']);
-                $row=model('Admin')->saveAdmin($where,$data);
-                if($row){
-                    $res['status'] = 1;
-                    $res['info'] = '修改成功！';
-                    return $res;
-                }else{
-                    $res['status'] = 2;
-                    $res['info'] = '修改失败！';
-                    return $res;
-                }
+                $admin->token=uniqid();
+                $admin->password=md5(md5($password).$data['token']);
+            }
+            $admin->phone=$data['phone'];
+            $admin->avatar=$data['avatar'];
+            $row=$admin->save();
+            if($row){
+                $res['status'] = 1;
+                $res['info'] = '修改成功！';
+                return $res;
             }else{
-                $row=model('Admin')->saveAdmin($where,$data);
-                if($row){
-                    $res['status'] = 1;
-                    $res['info'] = '修改成功！';
-                    return $res;
-                }else{
-                    $res['status'] = 2;
-                    $res['info'] = '修改失败！';
-                    return $res;
-                }
+                $res['status'] = 2;
+                $res['info'] = '修改失败！';
+                return $res;
             }
         }else{
             $aid=Session::get('aid');
-            $where['id']=$aid;
-            $info=model('Admin')->getOne($where);
+            $info=\app\admin\model\Admin::get($aid);
             $this->assign('info',$info);
             return $this->fetch();
         }
