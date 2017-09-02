@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:67:"D:\phpstudy\WWW\zzz\public/../application/admin\view\admin\add.html";i:1504058872;s:70:"D:\phpstudy\WWW\zzz\public/../application/admin\view\layout\index.html";i:1504059164;s:69:"D:\phpstudy\WWW\zzz\public/../application/admin\view\public\left.html";i:1503996526;s:68:"D:\phpstudy\WWW\zzz\public/../application/admin\view\public\top.html";i:1504058961;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\admin\index.html";i:1504315535;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -376,248 +376,112 @@
 </div>
 
             <div class="main-content">
-    <!-- panel -->
-    <div class="panel panel-piluku">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                添加管理员
-					<!--<span class="panel-options">
-						<a href="#" class="panel-refresh">
-                            <i class="icon ti-reload"></i>
-                        </a>
-						<a href="#" class="panel-minimize">
-                            <i class="icon ti-angle-up"></i>
-                        </a>
-						<a href="#" class="panel-close">
-                            <i class="icon ti-close"></i>
-                        </a>
-					</span>-->
-            </h3>
-        </div>
-        <div class="panel-body">
-            <form id="form-a" role="form" class="form form-horizontal">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="inline-suggestions">Inline suggestions:</label>
-                    <div class="col-sm-8">
-                        <input name="inline suggestions" type="text" id="inline-suggestions" class="form-control" data-suggestions="Monkey, Horse, Hound, Fox, Tiger, Elephant, Alligator, Ant, Bat, Banana, Cat, Cell Phone, Dog, Deer, Goat, George, India,Ireland, Jug, Jackle, Kite, King, Leapord, Lion, Moon,Mentor, Night, Notes, Oxford, Parrot, Queen, Rat, Square, Tiger, Umbrella, Van, Watch, Xenon, Zebra" />
+    <div class="row">
+        <div class="col-md-12">
+            <!-- panel -->
+            <div class="panel panel-piluku panel-users">
+                <div class="manage_buttons" style="margin: 0!important;margin-right: 0!important;">
+                    <div class="row">
+                        <div class="col-md-3 search">
+                            <form action="<?php echo url('Admin/index'); ?>" method="get">
+                                <input type="text" name="keywords" value="<?php echo !empty($keywrods)?$keywords:''; ?>" id="search" class="form-control" placeholder="Search User">
+                            </form>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="buttons-list">
+                                <div class="pull-right-btn">
+                                    <a href="<?php echo url('Admin/add'); ?>" class="btn btn-primary">添加管理员</a>
+                                    <div class="piluku-dropdown dropdown">
+                                        <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="ion-android-more-horizontal"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-regular-menu animated fadeInUp wow language-drop neat_drop" data-wow-duration="1500ms" role="menu">
+                                            <li><a href="#">Link One</a></li>
+                                            <li><a href="#">Link One</a></li>
+                                            <li><a href="#">Link One</a></li>
+                                            <li><a href="#">Link One</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        管理员列表
+                    </h3>
+                </div>
+                <div class="panel-body nopadding">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th class="text-center">编号</th>
+                                <th class="text-center">头像</th>
+                                <th class="text-center">用户名</th>
+                                <th class="text-center">电话</th>
+                                <th class="text-center">身份</th>
+                                <th class="text-center">添加时间</th>
+                                <th class="text-center">最近登录</th>
+                                <th class="text-center">登录ip</th>
+                                <th class="text-center">账号状态</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="country-suggestions">Country suggestions:</label>
-                    <div class="col-sm-8">
-                        <input name="country suggestions" data-validation="country" type="text" id="country-suggestions" class="form-control" />
-                    </div>
-                </div>
+                            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($k % 2 );++$k;?>
+                            <tr class="table-row">
+                                <td class="text-center"><?php echo $k; ?></td>
+                                <td class="text-center">
+                                    <img src="__STATIC__/admin/images/avatar/<?php echo $val['avatar']; ?>" alt="user">
+                                </td>
+                                <td class="text-center"><?php echo $val['username']; ?></td>
+                                <td class="text-center"><?php echo $val['phone']; ?></td>
+                                <td class="text-center"><?php echo !empty($val['permission']) && $val['permission']==1?'超级管理员':'普通管理员'; ?></td>
+                                <td class="text-center"><?php echo date('Y-m-d H:i:s',$val['addtime']); ?></td>
+                                <td class="text-center"><?php echo date('Y-m-d H:i:s',$val['lastlogin']); ?></td>
+                                <td class="text-center"><?php echo $val['lastip']; ?></td>
+                                <td class="text-center"><?php echo !empty($val['status']) && $val['status']==1?'激活':'停权'; ?></td>
+                                <td class="text-center">
+                                    <a href="#" id="<?php echo $val['id']; ?>" class="btn btn-orange"><i class="icon-bell"></i></a>
+                                    <a href="<?php echo url('Admin/edit',['id'=>$val['id']]); ?>" class="btn btn-green"><i class="ion ion-edit"></i></a>
+                                    <a href="#" id="<?php echo $val['id']; ?> " class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a>
+                                </td>
+                            </tr>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
 
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="country-suggestions">Swedish county suggestions:</label>
-                    <div class="col-sm-8">
-                        <input name="Swedish county suggestion" data-validation="swecounty" type="text" id="swedish-county-suggestions" class="form-control" />
+                            </tbody>
+                        </table>
+                        <div class="col-md-12"><?php echo $pages; ?></div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Year:</label>
-                    <div class="col-sm-8">
-                        <input name="birth" class="form-control" data-validation="date"	data-validation-format="yyyy/mm/dd"	data-suggestions="2014/01/15,2014/01/16,2014/01/17" />
-                    </div>
-                    <span class="help-block">yyyy/mm/dd</span>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Datepicker:</label>
-                    <div class="col-sm-8">
-                        <input name="birth2" class="form-control"
-                               data-validation="date"
-                               data-validation-format="mm/dd/yyyy"
-                               id="datepicker" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Number 0-10 :</label>
-                    <div class="col-sm-8">
-                        <input name="floats" class="form-control"
-                               data-validation="number"
-                               data-validation-allowing="range[0;10], float"
-                               data-validation-decimal-separator=","
-                                />
-                    </div>
-                    <span class="help-block">(accepting floats with comma)</span>
-                </div>
-
-                <div class="form-group password-strength">
-                    <label class="col-sm-2 control-label" for="password">Password Strength:</label>
-                    <div class="col-sm-8">
-                        <input name="password" type="password" id="password" class="form-control" data-validation="strength" data-validation-strength="3" />
-                    </div>
-                    <span class="help-block">(only strong)</span>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Alphanumeric and -_ and spaces</label>
-                    <div class="col-sm-8">
-                        <input name="alphanumeric with spaces" class="form-control" data-validation="alphanumeric" data-validation-allowing="-_ " />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Alphanumeric only</label>
-                    <div class="col-sm-8">
-                        <input name="aplhanumeric only" class="form-control" data-validation="alphanumeric" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-8">
-                        <input name="checkbox" id="c4" class="form-control" type="checkbox" data-validation="required" />
-                        <label for="c4"><span></span>Must be checked</label>
-                    </div>
-                </div>
-
-                <div class="form-group check-radio">
-                    <label class="col-sm-2 control-label">Must choose one:</label>
-                    <div class="col-sm-8">
-                        <ul class="list-inline checkboxes-radio">
-                            <li class="ms-hover">
-                                <input name="radio" type="radio" data-validation="required" value="1" id="c5" />
-                                <label for="c5"><span></span>Success</label>
-                            </li>
-                            <li class="ms-hover">
-                                <input name="radio" type="radio" value="1" id="c7" />
-                                <label for="c7"><span></span>Danger</label>
-                            </li>
-                            <li>
-                                <input name="radio" type="radio" value="1" id="c8"/>
-                                <label for="c8"><span></span>Warning</label>
-                            </li>
-                            <li>
-                                <input name="radio" type="radio" value="1" id="c9"/>
-                                <label for="c9"><span></span>Info</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Even numbers only</label>
-                    <div class="col-sm-8">
-                        <input name="even numbers" class="form-control" data-validation="even_number" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Make a choice:</label>
-                    <div class="col-sm-8">
-                        <select class="name_search form-control" name="choice" data-validation="required" data-validation-error-msg="Please make a choice">
-                            <option value=""> - - Choose - - </option>
-                            <option> option 1 </option>
-                            <option> option 2 </option>
-                            <option> option 3 </option>
-                            <option> option 4 </option>
-                            <option> option 5 </option>
-                            <option> option 6 </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Text :</label>
-                    <div class="col-sm-8">
-                        <textarea id="text-area" name="some-text" class="form-control text-area" cols="30" rows="10" placeholder="Address Form"></textarea>
-                    </div>
-                    <span class="help-block">(<span id="max-len">20</span> chars left)</span>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Server validation:</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" name="code" value="secret"
-                               data-validation-helssp="The word is &quot;secret&quot;"
-                               data-validation="server"
-                               data-validation-url="http://formvalidator.net/validate-email.php" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">File Validation:</label>
-                    <div class="col-sm-8">
-                        <input type="file" class="filestyle" data-icon="false" name="some-file1" data-validation="size mime required"
-                               data-validation-error-msg-size="The file cant be larger than 400kb"
-                               data-validation-error-msg="You must upload an image file (max 400 kb)"
-                               data-validation-allowing="jpg, png, ico"
-                               data-validation-max-size="400kb" >
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">File Name:</label>
-                    <div class="col-sm-8">
-                        <input type="text" name="some-file2" class="form-control"
-                               data-validation="extension required"
-                               data-validation-error-msg="You must write a file name with extension jpg|png|ico"
-                               data-validation-allowing="jpg, png, ico"
-                                />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">
-                        Callback validation, set this value to &quot;1&quot; and
-                        validation will fail
-                    </label>
-                    <div class="col-sm-8">
-                        <input id="callback" class="form-control" />
-                    </div>
-                </div>
-
-                <div class="form-group check-boxes">
-                    <label class="col-sm-2 control-label">Check Group:</label>
-                    <div class="col-sm-8">
-                        <ul class="list-inline checkboxes-radio">
-                            <li>
-                                <input type="checkbox" id="c11"  name="box" value="1"
-                                       data-validation="checkbox_group"
-                                       data-validation-qty="1-2" />
-                                <label for="c11"><span></span>1</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="c12"  name="box" value="2" />
-                                <label for="c12"><span></span>2</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="c13"  name="box" value="3" />
-                                <label for="c13"><span></span>3</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="c14"  name="box" value="4" />
-                                <label for="c14"><span></span>4</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="c15"  name="box" value="5" />
-                                <label for="c15"><span></span>5</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <input type="submit" class="btn btn-success pull-right">
-                    </div>
-                    <div class="col-md-3">
-                        <input type="reset" class="btn btn-danger">
-                    </div>
-                </div>
-            </form>
+            </div>
+            <!-- /panel -->
         </div>
     </div>
-    <!-- /panel -->
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="pagination small-pagination pull-right">
+                <li><a href="#"><i class="ion ion-ios-arrow-left"></i></a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li class="disabled"><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#"><i class="ion ion-ios-arrow-right"></i></a></li>
+            </ul>
+        </div>
+    </div>
 </div>
+<script type="text/javascript" src="__STATIC__/layer/layer.js"></script>
 <script type="text/javascript">
     $(function(){
-        $('.btn-primary').click(function(){
-            $.post("<?php echo url('Admin/add'); ?>",$('#form').serialize(),function(res){
+        $('.btn-orange').click(function(){
+            var id=$(this).attr('id');
+            $.post("<?php echo url('Admin/changestatus'); ?>",{id:id},function(res){
                 if(res.status==1){
                     layer.msg(res.info,{icon:6},function(){
                         location="<?php echo url('Admin/index'); ?>";
@@ -625,8 +489,24 @@
                 }else{
                     layer.msg(res.info,{icon:5});
                 }
-            },'json')
-        });
+            })
+        })
+        $('.btn-red').click(function(){
+            var id=$(this).attr('id');
+            layer.confirm('确定要删除吗？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.post("<?php echo url('Admin/del'); ?>",{id:id},function(res){
+                    if(res.status==1){
+                        layer.msg(res.info,{icon:6},function(){
+                            location="<?php echo url('Admin/index'); ?>";
+                        });
+                    }else{
+                        layer.msg(res.info,{icon:5});
+                    }
+                })
+            });
+        })
     })
 </script>
 
