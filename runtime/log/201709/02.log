@@ -1,0 +1,28 @@
+[ 2017-09-02T09:25:58+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/
+[ log ] 127.0.0.1/TP_5.0.5_new/public/ [运行时间：0.100005s][吞吐率：10.00req/s] [内存消耗：855.43kb] [文件加载：31]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/TP_5.0.5_new/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\phpStudy\WWW\TP_5.0.5_new\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
