@@ -1615,3 +1615,31 @@
 [ info ] [ LOG ] INIT File
 
 ---------------------------------------------------------------
+[ 2017-09-02T15:11:12+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/index.php
+[ log ] 127.0.0.1/TP_5.0.5_new/public/index.php [运行时间：0.049602s][吞吐率：20.16req/s] [内存消耗：855.92kb] [文件加载：31]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; advanced-backend=ki2o9amkcmjcfgma89bfn9o9o7; _csrf-backend=a35b39b642519f1721eb997035ac82f2b13b636094844bbcc6d6e52e30ac2b40a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22U3MNKC2tghTU-v255_fwERhYjIxrpMeQ%22%3B%7D; PHPSESSID=q88kprgceaf951eujdo6sbf7s1',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\phpStudy\WWW\TP_5.0.5_new\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
