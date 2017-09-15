@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link href="__STATIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.1.8.2.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/select-ui.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/layer/layer.js"></script>
+
+    <style type="text/css">
+
+        input{
+            margin-bottom: 6px;
+        }
+        lable.error{
+            font-size: 14px;
+            font-weight: bold;
+            color: #FF0000;
+        }
+        lable.ok{
+            font-size: 14px;
+            font-weight: bold;
+            color: #38D63B;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $(".select1").uedSelect({
+                width : 345
+            });
+            $(".select2").uedSelect({
+                width : 167
+            });
+            $(".select3").uedSelect({
+                width : 100
+            });
+        });
+    </script>
+    <script>
+        $(function() {
+            $('.btn').click(function () {
+                $.post("{:url('Nav/add')}", $('#form').serialize(), function (res) {
+                    if(res.status==1){
+                        layer.msg('添加导航成功',{time:3000,icon:6},function(){
+                            location="{:url('Nav/add')}";
+                        })
+                    }else{
+                        layer.msg(res.info,{time:3000,icon:5});
+                    }
+                },'json')
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">导航管理</a></li>
+        <li><a href="#">添加导航</a></li>
+    </ul>
+</div>
+
+<div class="formbody">
+    <div id="usual1" class="usual">
+        <div id="tab1" class="tabson">
+
+
+            <form method="post" id="form">
+                <ul class="forminfo">
+                    <li><label>导航名称<b>*</b></label><input name="navname" type="text" class="dfinput" placeholder="请填写导航名称" /></li>
+                    <li><label>规则<b>*</b></label><input name="navurl" type="text" class="dfinput" placeholder="请填写导航规则" /></li>
+                    <li><label>优先度<b>*</b></label><input name="priority" type="text" class="dfinput" placeholder="请填写导航优先度" /></li>
+
+                    <li><label>&nbsp;</label><input name="" type="button" class="btn" value="确定"/></li>
+                </ul>
+            </form>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+</body>
+
+</html>

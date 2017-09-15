@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后台首页</title>
+    <link href="__STATIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.1.8.2.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.tablelist tbody tr:even').addClass('odd');
+        })
+    </script>
+</head>
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">首页</a></li>
+    </ul>
+</div>
+
+<div class="mainindex">
+
+        <div class="welinfo">
+            <span><img src="__STATIC__/admin/images/sun.png" alt="天气" /></span>
+            <b>{$info.username}  早上好，欢迎使用后台管理系统</b>
+        </div>
+
+        <div class="welinfo">
+            <span><img src="__STATIC__/admin/images/time.png" alt="时间" /></span>
+            <i>您上次登录的时间：{:date('Y-m-d H:i:s',$info['lastlogin'])}</i> <i>您上次登录IP：{$info.lastip}</i> 如非本人操作，请及时更改密码
+        </div>
+
+
+    <div class="xline"></div>
+
+    <div class="box"></div>
+
+    <div class="welinfo">
+        <span><img src="__STATIC__/admin/images/dp.png" alt="提醒" /></span>
+        <b>服务器信息</b>
+    </div>
+
+    <ul class="infolist">
+    <li><span>服务器软件：</span></li>
+    <li><span>开发语言：</span></li>
+    <li><span>数据库:</span></li>
+    </ul>
+
+    <div class="xline"></div>
+
+    <div class="uimakerinfo"><b>版权所有：易购网</b>(<a href="http://www.egoods.com" target="_blank">www.egoods.com</a>)</div>
+
+
+</div>
+</body>
+</html>

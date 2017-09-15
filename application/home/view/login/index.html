@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>后台管理系统-登录</title>
+    <link rel="stylesheet" href="__STATIC__/admin/new/css/style.css">
+	<link rel="stylesheet" href="__STATIC__/admin/new/css/normalize.css"/>
+	<link rel="stylesheet" href="__STATIC__/admin/new/css/demo.css"/>
+	<link rel="stylesheet" href="__STATIC__/admin/new/css/component.css"/>
+</head>
+<body>
+	<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="logo_box">
+						<h3>欢迎你使用最厉害的后台管理系统</h3>
+						<form action="#" name="f" method="post" id="form1">
+							<div class="input_outer">
+								<span class="u_user"></span>
+								<input name="username" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+							</div>
+							<div class="input_outer">
+								<span class="us_uer"></span>
+								<input name="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+							</div>
+							<div class="mb2"><a class="act-but submit" href="#" style="color: #FFFFFF">登录</a></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>	
+	<script src="__STATIC__/admin/new/js/TweenLite.min.js"></script>
+	<script src="__STATIC__/admin/new/js/EasePack.min.js"></script>
+	<script src="__STATIC__/admin/new/js/rAF.js"></script>
+	<script src="__STATIC__/admin/new/js/demo-1.js"></script>
+    <script src="__STATIC__/admin/js/jquery.min.1.8.2.js"></script>
+    <script src="__STATIC__/admin/js/layer/layer.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.submit').click(function(){
+                $.post("{:url('Login/index')}",$('#form1').serialize(),function(res){
+                    if(res.status==1){
+                        layer.msg(res.info,{icon:6},function(){
+                            location="{:url('Index/index')}";
+                        })
+                    }else{
+                        layer.msg(res.info,{icon:5});
+                    }
+                },'json')
+            })
+        })
+    </script>
+</body>
+</html>
