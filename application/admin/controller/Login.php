@@ -11,6 +11,7 @@ class Login extends Controller{
         if(request()->isAjax()){
             $data['username']=trim(input('post.username'));
             $data['password']=trim(input('post.password'));
+            $data['captcha']=trim(input('post.captcha'));
             $validate=Loader::validate('Admin');
             if($validate->scene('login')->check($data)){
                 $where['username']=$data['username'];

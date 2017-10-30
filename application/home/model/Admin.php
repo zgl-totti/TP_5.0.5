@@ -5,9 +5,7 @@ use think\Db;
 use think\Model;
 
 class Admin extends Model{
-    public static function tableName(){
-        return "{{%admin}}";
-    }
+    protected $table='admin';
 
     /*public function getOne($where){
         $info=Db::table('new_admin')->where($where)->find();

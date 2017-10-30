@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\login\index.html";i:1504315535;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\login\index.html";i:1509330406;}*/ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +43,8 @@
                         <h1 class="heading">登录</h1>
                         <input name="username" class="form-control" type="text" placeholder="请输入用户名">
                         <input name="password" type="password" class="form-control" placeholder="请输入密码">
+                        <input name="captcha" type="text" style="width:335px;display: inline-block;" class="form-control" placeholder="验证码" onclick="JavaScript:this.value=''"/>
+                        <cite><img src="<?php echo captcha_src(); ?>" width="118" height="50" style="cursor:pointer;" onclick="this.src='<?php echo captcha_src(); ?>'"/></cite>
                         <div class="bottom_info">
                             <a href="#" class="pull-right" data-toggle="modal" data-target="#forgot">忘记密码？</a>
                             <a href="#" class="pull-left"> 注册</a>
