@@ -2,7 +2,7 @@
 namespace app\admin\controller;
 
 use app\admin\model\Admin;
-use app\admin\model\Mails;
+use app\admin\model\MailAdmin;
 use app\admin\model\Order;
 use think\Controller;
 use think\Session;
@@ -18,7 +18,7 @@ class Base extends Controller{
             $num1=Order::count();
             $where['receiveid']=$aid;
             $where['status']=1;
-            $num2=Mails::where($where)->count();
+            $num2=MailAdmin::where($where)->count();
             $this->assign('info',$info);
             $this->assign('num1',$num1);
             $this->assign('num2',$num2);

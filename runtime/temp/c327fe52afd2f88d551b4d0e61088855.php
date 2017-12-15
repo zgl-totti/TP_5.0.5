@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\admin\index.html";i:1504315535;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\admin\index.html";i:1513317501;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -433,7 +433,7 @@
 
                             <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($k % 2 );++$k;?>
                             <tr class="table-row">
-                                <td class="text-center"><?php echo $k; ?></td>
+                                <td class="text-center"><?php echo $k+$firstRow; ?></td>
                                 <td class="text-center">
                                     <img src="__STATIC__/admin/images/avatar/<?php echo $val['avatar']; ?>" alt="user">
                                 </td>
@@ -459,20 +459,6 @@
                 </div>
             </div>
             <!-- /panel -->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <ul class="pagination small-pagination pull-right">
-                <li><a href="#"><i class="ion ion-ios-arrow-left"></i></a></li>
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li class="disabled"><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#"><i class="ion ion-ios-arrow-right"></i></a></li>
-            </ul>
         </div>
     </div>
 </div>

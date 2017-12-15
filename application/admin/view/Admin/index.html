@@ -56,7 +56,7 @@
 
                             {volist name='list' id='val' key='k'}
                             <tr class="table-row">
-                                <td class="text-center">{$k}</td>
+                                <td class="text-center">{$k+$firstRow}</td>
                                 <td class="text-center">
                                     <img src="__STATIC__/admin/images/avatar/{$val['avatar']}" alt="user">
                                 </td>
@@ -82,20 +82,6 @@
                 </div>
             </div>
             <!-- /panel -->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <ul class="pagination small-pagination pull-right">
-                <li><a href="#"><i class="ion ion-ios-arrow-left"></i></a></li>
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li class="disabled"><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#"><i class="ion ion-ios-arrow-right"></i></a></li>
-            </ul>
         </div>
     </div>
 </div>

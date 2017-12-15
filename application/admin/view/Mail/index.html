@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
-    
-    <title>信息列表</title>
-    
-    <!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-    <!-- Bootstrap CSS -->
-    
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/material.css'>
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/style.css'>
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/animated-masonry-gallery.css'>
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/rotated-gallery.css'>
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/sweet-alerts/sweetalert.css'>
-    <link rel='stylesheet' href='__PUBLIC__/admin/css/jtree.css'>
-    <script src='__PUBLIC__/admin/js/jquery.js'></script>
-    <script src='__PUBLIC__/admin/js/app.js'></script>
-    <script>
-        jQuery(window).load(function () {
-            $('.piluku-preloader').addClass('hidden');
-        });
-    </script>
-</head>
-<body>
-  <div class="piluku-preloader text-center">
-  <!-- <div class="progress">
-      <div class="indeterminate"></div>
-  </div> -->
-  <div class="loader">Loading...</div>
-</div>
-<div class="wrapper">
 
-  
-{include file="Public/left" /}
-<!-- left-bar -->
-
-<div class="content" id="content">
-	
-	<div class="overlay"></div>			
-	
-    {include file="Public/top" /}
-    <!-- /top-bar -->
-	
 	<div class="main-content">
 		<div class="mail_holder">
 			<!-- col-md-2 -->
@@ -63,7 +17,7 @@
 									<div class="message_list_block">
 										<div class="left">
 											<div class="avatar_holder">
-												<img src="__PUBLIC__/admin/images/avatar/two.png" alt="">
+												<img src="__STATIC__/admin/images/avatar/two.png" alt="">
 											</div>
 										</div>
 										<div class="right">
@@ -85,19 +39,19 @@
                                         <div class="message_list_block">
                                             <div class="left">
                                                 <div class="avatar_holder">
-                                                    <img src="{$val.avatar}" alt="">
+                                                    <img src="" alt="">
                                                 </div>
                                             </div>
                                             <div class="right">
-                                                <span class="name">{$val.username}</span>
+                                                <span class="name">{$val->user->username}</span>
                                                 <div class="pull-right right_details">
                                                     <ul class="list-unstyled list-inline">
-                                                        <li>{:date('Y-m-d H:i:s',$val['time'])}</li>
+                                                        <li>{:date('Y-m-d H:i:s',$val['mailContent']['time'])}</li>
                                                         <li><i class="ion ion-record flatRedc status"></i></li>
                                                         <li><i class="ion-android-attach"></i></li>
                                                     </ul>
                                                 </div>
-                                                <h4>{$val.title}</h4>
+                                                <h4>{$val['mailContent']['title']}</h4>
                                             </div>
                                             <!-- right -->
                                         </div>
@@ -123,7 +77,7 @@
 					</div>
 					<!-- heading_block -->
 					<div class="mail_brief_body">
-						<img src="__PUBLIC__/admin/images/sample.jpg" alt="">
+						<img src="__STATIC__/admin/images/sample.jpg" alt="">
 						<h4>lets do it today!</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus maxime odio facilis, corporis eum impedit ea,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis est, mollitia in! Reprehenderit voluptatem, porro distinctio iste in eos quam dicta sunt at fuga! Facilis inventore laboriosam perferendis placeat, delectus!</p>
 						<ul class="list-group attachment">
@@ -147,24 +101,3 @@
 		</div>
 		<!-- mail-holder -->				
 	</div>
-
-</div>  
-
-	{include file="Public/right" /}
-	<!-- /Right-bar -->
-</div>
-<!-- wrapper -->
-<script src='__PUBLIC__/admin/js/jquery-ui-1.10.3.custom.min.js'></script>
-<script src='__PUBLIC__/admin/js/bootstrap.min.js'></script>
-<script src='__PUBLIC__/admin/js/jquery.nicescroll.min.js'></script>
-<script src='__PUBLIC__/admin/js/wow.min.js'></script>
-<script src='__PUBLIC__/admin/js/jquery.loadmask.min.js'></script>
-<script src='__PUBLIC__/admin/js/jquery.accordion.js'></script>
-<script src='__PUBLIC__/admin/js/materialize.js'></script>
-<script src='__PUBLIC__/admin/js/bic_calendar.js'></script>
-<script src='__PUBLIC__/admin/js/widgets.js'></script>
-<script src='__PUBLIC__/admin/js/core.js'></script>
-
-<script src="__PUBLIC__/admin/js/jquery.countTo.js"></script>
-</body>
-</html>

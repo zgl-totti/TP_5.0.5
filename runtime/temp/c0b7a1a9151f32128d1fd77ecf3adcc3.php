@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\admin\add.html";i:1513305617;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:83:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\admin\changeinfo.html";i:1513305617;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -383,37 +383,25 @@
 		<div class="panel panel-piluku">
 			<div class="panel-heading">
 				<h3 class="panel-title">
-					添加管理员
+                    修改个人信息
 				</h3>
 			</div>
 			<div class="panel-body">
                 <form action="#" id="form">
+                    <input type="hidden" name="id" value="<?php echo $info['id']; ?>" />
                     <table id="user" class="table table-bordered table-striped table-hover" style="margin-top:30px;">
                         <tbody>
                             <tr>
                                 <td>用户名</td>
-                                <td><input type="text" name="username" /></td>
+                                <td><input type="text" name="username" value="<?php echo $info['username']; ?>" disabled /></td>
                             </tr>
                             <tr>
                                 <td>密码</td>
-                                <td><input type="password" name="password" /></td>
-                            </tr>
-                            <tr>
-                                <td>确认密码</td>
-                                <td><input type="password" name="pwd" /></td>
+                                <td><input type="text" name="password" /></td>
                             </tr>
                             <tr>
                                 <td>电话</td>
-                                <td><input type="text" name="phone" /></td>
-                            </tr>
-                            <tr>
-                                <td>身份</td>
-                                <td>
-                                    <select name="permission" style="width: 160px;height: 40px;">
-                                        <option value="2">普通管理员</option>
-                                        <option value="1">超级管理员</option>
-                                    </select>
-                                </td>
+                                <td><input type="text" name="phone" value="<?php echo $info['phone']; ?>" /></td>
                             </tr>
                             <tr>
                                 <td>头像</td>

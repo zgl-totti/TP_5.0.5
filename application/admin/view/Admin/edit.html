@@ -1,254 +1,85 @@
-<div class="main-content">
-    <!-- panel -->
-    <div class="panel panel-piluku">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                管理员编辑
-					<!--<span class="panel-options">
-						<a href="#" class="panel-refresh">
-                            <i class="icon ti-reload"></i>
-                        </a>
-						<a href="#" class="panel-minimize">
-                            <i class="icon ti-angle-up"></i>
-                        </a>
-						<a href="#" class="panel-close">
-                            <i class="icon ti-close"></i>
-                        </a>
-					</span>-->
-            </h3>
-        </div>
-        <div class="panel-body">
-            <form id="form-a" role="form" class="form form-horizontal">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="inline-suggestions">Inline suggestions:</label>
-                    <div class="col-sm-8">
-                        <input name="inline suggestions" type="text" id="inline-suggestions" class="form-control" data-suggestions="Monkey, Horse, Hound, Fox, Tiger, Elephant, Alligator, Ant, Bat, Banana, Cat, Cell Phone, Dog, Deer, Goat, George, India,Ireland, Jug, Jackle, Kite, King, Leapord, Lion, Moon,Mentor, Night, Notes, Oxford, Parrot, Queen, Rat, Square, Tiger, Umbrella, Van, Watch, Xenon, Zebra" />
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="country-suggestions">Country suggestions:</label>
-                    <div class="col-sm-8">
-                        <input name="country suggestions" data-validation="country" type="text" id="country-suggestions" class="form-control" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="country-suggestions">Swedish county suggestions:</label>
-                    <div class="col-sm-8">
-                        <input name="Swedish county suggestion" data-validation="swecounty" type="text" id="swedish-county-suggestions" class="form-control" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Year:</label>
-                    <div class="col-sm-8">
-                        <input name="birth" class="form-control" data-validation="date"	data-validation-format="yyyy/mm/dd"	data-suggestions="2014/01/15,2014/01/16,2014/01/17" />
-                    </div>
-                    <span class="help-block">yyyy/mm/dd</span>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Datepicker:</label>
-                    <div class="col-sm-8">
-                        <input name="birth2" class="form-control"
-                               data-validation="date"
-                               data-validation-format="mm/dd/yyyy"
-                               id="datepicker" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Number 0-10 :</label>
-                    <div class="col-sm-8">
-                        <input name="floats" class="form-control"
-                               data-validation="number"
-                               data-validation-allowing="range[0;10], float"
-                               data-validation-decimal-separator=","
-                                />
-                    </div>
-                    <span class="help-block">(accepting floats with comma)</span>
-                </div>
-
-                <div class="form-group password-strength">
-                    <label class="col-sm-2 control-label" for="password">Password Strength:</label>
-                    <div class="col-sm-8">
-                        <input name="password" type="password" id="password" class="form-control" data-validation="strength" data-validation-strength="3" />
-                    </div>
-                    <span class="help-block">(only strong)</span>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Alphanumeric and -_ and spaces</label>
-                    <div class="col-sm-8">
-                        <input name="alphanumeric with spaces" class="form-control" data-validation="alphanumeric" data-validation-allowing="-_ " />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Alphanumeric only</label>
-                    <div class="col-sm-8">
-                        <input name="aplhanumeric only" class="form-control" data-validation="alphanumeric" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-8">
-                        <input name="checkbox" id="c4" class="form-control" type="checkbox" data-validation="required" />
-                        <label for="c4"><span></span>Must be checked</label>
-                    </div>
-                </div>
-
-                <div class="form-group check-radio">
-                    <label class="col-sm-2 control-label">Must choose one:</label>
-                    <div class="col-sm-8">
-                        <ul class="list-inline checkboxes-radio">
-                            <li class="ms-hover">
-                                <input name="radio" type="radio" data-validation="required" value="1" id="c5" />
-                                <label for="c5"><span></span>Success</label>
-                            </li>
-                            <li class="ms-hover">
-                                <input name="radio" type="radio" value="1" id="c7" />
-                                <label for="c7"><span></span>Danger</label>
-                            </li>
-                            <li>
-                                <input name="radio" type="radio" value="1" id="c8"/>
-                                <label for="c8"><span></span>Warning</label>
-                            </li>
-                            <li>
-                                <input name="radio" type="radio" value="1" id="c9"/>
-                                <label for="c9"><span></span>Info</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Even numbers only</label>
-                    <div class="col-sm-8">
-                        <input name="even numbers" class="form-control" data-validation="even_number" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Make a choice:</label>
-                    <div class="col-sm-8">
-                        <select class="name_search form-control" name="choice" data-validation="required" data-validation-error-msg="Please make a choice">
-                            <option value=""> - - Choose - - </option>
-                            <option> option 1 </option>
-                            <option> option 2 </option>
-                            <option> option 3 </option>
-                            <option> option 4 </option>
-                            <option> option 5 </option>
-                            <option> option 6 </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Text :</label>
-                    <div class="col-sm-8">
-                        <textarea id="text-area" name="some-text" class="form-control text-area" cols="30" rows="10" placeholder="Address Form"></textarea>
-                    </div>
-                    <span class="help-block">(<span id="max-len">20</span> chars left)</span>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Server validation:</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" name="code" value="secret"
-                               data-validation-helssp="The word is &quot;secret&quot;"
-                               data-validation="server"
-                               data-validation-url="http://formvalidator.net/validate-email.php" />
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">File Validation:</label>
-                    <div class="col-sm-8">
-                        <input type="file" class="filestyle" data-icon="false" name="some-file1" data-validation="size mime required"
-                               data-validation-error-msg-size="The file cant be larger than 400kb"
-                               data-validation-error-msg="You must upload an image file (max 400 kb)"
-                               data-validation-allowing="jpg, png, ico"
-                               data-validation-max-size="400kb" >
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">File Name:</label>
-                    <div class="col-sm-8">
-                        <input type="text" name="some-file2" class="form-control"
-                               data-validation="extension required"
-                               data-validation-error-msg="You must write a file name with extension jpg|png|ico"
-                               data-validation-allowing="jpg, png, ico"
-                                />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">
-                        Callback validation, set this value to &quot;1&quot; and
-                        validation will fail
-                    </label>
-                    <div class="col-sm-8">
-                        <input id="callback" class="form-control" />
-                    </div>
-                </div>
-
-                <div class="form-group check-boxes">
-                    <label class="col-sm-2 control-label">Check Group:</label>
-                    <div class="col-sm-8">
-                        <ul class="list-inline checkboxes-radio">
-                            <li>
-                                <input type="checkbox" id="c11"  name="box" value="1"
-                                       data-validation="checkbox_group"
-                                       data-validation-qty="1-2" />
-                                <label for="c11"><span></span>1</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="c12"  name="box" value="2" />
-                                <label for="c12"><span></span>2</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="c13"  name="box" value="3" />
-                                <label for="c13"><span></span>3</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="c14"  name="box" value="4" />
-                                <label for="c14"><span></span>4</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="c15"  name="box" value="5" />
-                                <label for="c15"><span></span>5</label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-3">
-                        <input type="submit" class="btn btn-success pull-right">
-                    </div>
-                    <div class="col-md-3">
-                        <input type="reset" class="btn btn-danger">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- /panel -->
-</div>
-<script type="text/javascript">
-    $(function(){
-        $('.btn-primary').click(function(){
-            $.post("{:url('Admin/add')}",$('#form').serialize(),function(res){
-                if(res.status==1){
-                    layer.msg(res.info,{icon:6},function(){
-                        location="{:url('Admin/index')}";
-                    });
-                }else{
-                    layer.msg(res.info,{icon:5});
-                }
-            },'json')
-        });
-    })
-</script>
+	<!-- main content -->
+	<div class="main-content">
+		<!-- *** Editable Tables *** -->
+		<!-- panel -->
+		<div class="panel panel-piluku">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					管理员编辑
+				</h3>
+			</div>
+			<div class="panel-body">
+                <form action="#" id="form">
+                    <table id="user" class="table table-bordered table-striped table-hover" style="margin-top:30px;">
+                        <tbody>
+                            <tr>
+                                <td>用户名</td>
+                                <td><input type="text" name="username" value="{$info->username}" disabled /></td>
+                            </tr>
+                            <tr>
+                                <td>密码</td>
+                                <td><input type="password" name="password" /></td>
+                            </tr>
+                            <tr>
+                                <td>电话</td>
+                                <td><input type="text" name="phone" value="{$info->phone}" /></td>
+                            </tr>
+                            <tr>
+                                <td>身份</td>
+                                <td>
+                                    <select name="permission" style="width: 160px;height: 40px;">
+                                        <option value="2" {$info['permission']==2?'selected':''}>普通管理员</option>
+                                        <option value="1" {$info['permission']==1?'selected':''}>超级管理员</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>头像</td>
+                                <td>
+                                    <select name="avatar" style="width: 160px;height: 40px;">
+                                        <option value="__STATIC__/admin/images/avatar/1.jpeg">1</option>
+                                        <option value="__STATIC__/admin/images/avatar/2.png">2</option>
+                                        <option value="__STATIC__/admin/images/avatar/3.png">3</option>
+                                        <option value="__STATIC__/admin/images/avatar/4.png">4</option>
+                                        <option value="__STATIC__/admin/images/avatar/5.png">5</option>
+                                        <option value="__STATIC__/admin/images/avatar/6.png">6</option>
+                                        <option value="__STATIC__/admin/images/avatar/7.png">7</option>
+                                        <option value="__STATIC__/admin/images/avatar/8.png">8</option>
+                                        <option value="__STATIC__/admin/images/avatar/9.png">9</option>
+                                        <option value="__STATIC__/admin/images/avatar/10.png">10</option>
+                                        <option value="__STATIC__/admin/images/avatar/11.png">11</option>
+                                    </select>
+                                    <img src="__STATIC__/admin/images/avatar/1.jpeg" id="avatar" style="width: 40px;border-radius: 50%">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" style="font-weight:bold;margin: 50px auto">确定</button>
+                </form>
+            </div>
+		</div>
+		<!-- /panel -->
+	</div>
+    <script type="text/javascript">
+        $(function(){
+            $("select").click(function(){
+                var flag = this.value;
+                $("#avatar").attr("src",flag);
+            });
+            $('.btn-primary').click(function(){
+                $('#form').submit();
+            });
+            $('#form').submit(function(){
+                $.post("{:url('Admin/edit')}",$('#form').serialize(),function(res){
+                    if(res.status==1){
+                        layer.msg(res.info,{icon:6},function(){
+                            location="{:url('Admin/index')}";
+                        });
+                    }else{
+                        layer.msg(res.info,{icon:5});
+                    }
+                },'json')
+            })
+        })
+    </script>

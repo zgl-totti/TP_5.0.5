@@ -1,14 +1,14 @@
 <?php
 namespace app\admin\controller;
 
-use app\admin\model\Mails;
+use app\admin\model\MailAdmin;
 use think\Session;
 
 class Mail extends Base{
     public function index(){
         $aid=Session::get('aid');
         $where['receiveid']=$aid;
-        $list=Mails::where($where)
+        $list=MailAdmin::where($where)
             ->with('mailContent')
             ->with('user')
             ->paginate(10);

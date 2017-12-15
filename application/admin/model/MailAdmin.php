@@ -4,7 +4,7 @@ namespace app\admin\model;
 use think\Db;
 use think\Model;
 
-class Mails extends Model{
+class MailAdmin extends Model{
     protected $table = 'new_mail_admin';
 
     public function mailContent(){

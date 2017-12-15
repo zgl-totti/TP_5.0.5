@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 
+
 class Order extends Base{
     public function index(){
         $keywords=trim(input('get.keywords'));
@@ -28,11 +29,13 @@ class Order extends Base{
             ->with('orderStatus')
             ->with('users')
             ->paginate(10,false,$data);
+        $firstRow=($list->currentPage()-1)*$list->listRows();
         $this->assign('keywords',$keywords);
         $this->assign('time1',$time1);
         $this->assign('time2',$time2);
         $this->assign('list',$list);
         $this->assign('pages',$list->render());
+        $this->assign(compact('firstRow'));
         return $this->fetch();
     }
 }

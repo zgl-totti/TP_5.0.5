@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\admin\add.html";i:1513305617;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\mail\index.html";i:1513309032;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -376,94 +376,108 @@
 </div>
 
             
-	<!-- main content -->
 	<div class="main-content">
-		<!-- *** Editable Tables *** -->
-		<!-- panel -->
-		<div class="panel panel-piluku">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					添加管理员
-				</h3>
+		<div class="mail_holder">
+			<!-- col-md-2 -->
+			<div class="mail_body">								
+				<div class="mail_list_block col-md-4 col-sm-6 no_padding col-xs-12 col-lg-4">
+					<div class="mail_list">
+						<div class="search_bar_block">													    
+							<div class="search_icon_block">
+								<input type="text" class="form-control" id="inputSuccess3" placeholder="search for mails">
+								<span class="ion-search form-control-feedback" aria-hidden="true"></span>		
+							</div>
+						</div>
+						<ul class="list-unstyled mails_holder">
+							<li>
+								<a href="#">
+									<div class="message_list_block">
+										<div class="left">
+											<div class="avatar_holder">
+												<img src="__STATIC__/admin/images/avatar/two.png" alt="">
+											</div>
+										</div>
+										<div class="right">
+											<span class="name">Praveen kaligatla</span>
+											<div class="pull-right right_details">
+												<ul class="list-unstyled list-inline">
+													<li>12:30</li>
+													<li><i class="ion ion-record flatRedc status"></i></li>
+													<li><i class="ion-android-attach"></i></li>
+												</ul>
+											</div>
+											<h4>Research have been going on the project will report the results asap in a few days.</h4>
+										</div>
+										<!-- right -->													
+									</div>
+								</a>
+                                <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?>
+                                    <a href="#">
+                                        <div class="message_list_block">
+                                            <div class="left">
+                                                <div class="avatar_holder">
+                                                    <img src="" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <span class="name"><?php echo $val->user->username; ?></span>
+                                                <div class="pull-right right_details">
+                                                    <ul class="list-unstyled list-inline">
+                                                        <li><?php echo date('Y-m-d H:i:s',$val['mailContent']['time']); ?></li>
+                                                        <li><i class="ion ion-record flatRedc status"></i></li>
+                                                        <li><i class="ion-android-attach"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <h4><?php echo $val['mailContent']['title']; ?></h4>
+                                            </div>
+                                            <!-- right -->
+                                        </div>
+                                    </a>
+                                <?php endforeach; endif; else: echo "" ;endif; ?>
+							</li>												
+						</ul>
+					</div>
+					<!-- mail-list -->
+				</div>
+				<!-- col-md-4 -->
+				<!-- mail_list_block -->									
+				<div class="col-md-4 col-lg-6 col-sm-12 col-xs-12 no_padding mail_brief_holder">
+					<div class="heading_block">
+						<h1>Project discus <span>today 12.30am</span></h1>
+						<div class="btn-group pull-right action_buttons" role="group" aria-label="...">
+							<button type="button" class="btn btn-default"><i class="ion-reply"></i></button>
+							<button type="button" class="btn btn-default"><i class="ion-reply-all"></i></button>
+							<button type="button" class="btn btn-default"><i class="ion-android-arrow-forward"></i></button>
+							<button type="button" class="btn btn-default"><i class="ion-android-attach"></i></button>
+							<button type="button" class="btn btn-default"><i class="ion-ios-trash"></i></button>
+						</div>
+					</div>
+					<!-- heading_block -->
+					<div class="mail_brief_body">
+						<img src="__STATIC__/admin/images/sample.jpg" alt="">
+						<h4>lets do it today!</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus maxime odio facilis, corporis eum impedit ea,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis est, mollitia in! Reprehenderit voluptatem, porro distinctio iste in eos quam dicta sunt at fuga! Facilis inventore laboriosam perferendis placeat, delectus!</p>
+						<ul class="list-group attachment">
+							<li class="list-group-item">									    
+								<a href="#"><i class="ti-microsoft-alt flatBluec"></i> Windows.exe <span><i class="ti-download"></i></span></a>
+							</li>									  
+							<li class="list-group-item">									    
+								<a href="#"><i class="ti-android flatGreenc"></i> andriod.apk <span><i class="ti-download"></i></span></a>
+							</li>
+							<li class="list-group-item">									    
+								<a href="#"><i class="ti-cloud-down"></i> download all<span><i class="ti-download"></i></span></a>
+							</li>
+						</ul>
+						<textarea class="form-control" rows="4" placeholder="enter message here.."></textarea>
+						<a href="#" class="btn btn-primary reply">Reply message</a>
+					</div>
+					<!-- mail_brief_body -->
+				</div>
 			</div>
-			<div class="panel-body">
-                <form action="#" id="form">
-                    <table id="user" class="table table-bordered table-striped table-hover" style="margin-top:30px;">
-                        <tbody>
-                            <tr>
-                                <td>用户名</td>
-                                <td><input type="text" name="username" /></td>
-                            </tr>
-                            <tr>
-                                <td>密码</td>
-                                <td><input type="password" name="password" /></td>
-                            </tr>
-                            <tr>
-                                <td>确认密码</td>
-                                <td><input type="password" name="pwd" /></td>
-                            </tr>
-                            <tr>
-                                <td>电话</td>
-                                <td><input type="text" name="phone" /></td>
-                            </tr>
-                            <tr>
-                                <td>身份</td>
-                                <td>
-                                    <select name="permission" style="width: 160px;height: 40px;">
-                                        <option value="2">普通管理员</option>
-                                        <option value="1">超级管理员</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>头像</td>
-                                <td>
-                                    <select name="avatar" style="width: 160px;height: 40px;">
-                                        <option value="__STATIC__/admin/images/avatar/1.jpeg">1</option>
-                                        <option value="__STATIC__/admin/images/avatar/2.png">2</option>
-                                        <option value="__STATIC__/admin/images/avatar/3.png">3</option>
-                                        <option value="__STATIC__/admin/images/avatar/4.png">4</option>
-                                        <option value="__STATIC__/admin/images/avatar/5.png">5</option>
-                                        <option value="__STATIC__/admin/images/avatar/6.png">6</option>
-                                        <option value="__STATIC__/admin/images/avatar/7.png">7</option>
-                                        <option value="__STATIC__/admin/images/avatar/8.png">8</option>
-                                        <option value="__STATIC__/admin/images/avatar/9.png">9</option>
-                                        <option value="__STATIC__/admin/images/avatar/10.png">10</option>
-                                        <option value="__STATIC__/admin/images/avatar/11.png">11</option>
-                                    </select>
-                                    <img src="__STATIC__/admin/images/avatar/1.jpeg" id="avatar" style="width: 40px;border-radius: 50%">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="btn btn-primary" style="font-weight:bold;margin: 50px auto">确定</button>
-                </form>
-            </div>
+			<!-- mail-body -->											
 		</div>
-		<!-- /panel -->
+		<!-- mail-holder -->				
 	</div>
-    <script type="text/javascript">
-        $(function(){
-            $("select").click(function(){
-                var flag = this.value;
-                $("#avatar").attr("src",flag);
-            });
-            $('.btn-primary').click(function(){
-                $('#form').submit();
-            });
-            $('#form').submit(function(){
-                $.post("<?php echo url('Admin/add'); ?>",$('#form').serialize(),function(res){
-                    if(res.status==1){
-                        layer.msg(res.info,{icon:6},function(){
-                            location="<?php echo url('Admin/index'); ?>";
-                        });
-                    }else{
-                        layer.msg(res.info,{icon:5});
-                    }
-                },'json')
-            })
-        })
-    </script>
 
 
         </div>

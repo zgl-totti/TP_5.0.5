@@ -13,10 +13,12 @@ class Admin extends Base{
             $where='';
         }
         $data['query']['keywords']=$keywords;
-        $list=\app\admin\model\Admin::where($where)->paginate(1,false,$data);
+        $list=\app\admin\model\Admin::where($where)->paginate(10,false,$data);
+        $firstRow=($list->currentPage()-1)*$list->listRows();
         $this->assign('keywords',$keywords);
         $this->assign('list',$list);
         $this->assign('pages',$list->render());
+        $this->assign(compact('firstRow'));
         return $this->fetch();
     }
 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:76:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\admin\add.html";i:1513305617;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\order\index.html";i:1513317992;s:79:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\layout\index.html";i:1504315535;s:78:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\left.html";i:1504315535;s:77:"F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\public\top.html";i:1504315535;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -378,93 +378,96 @@
             
 	<!-- main content -->
 	<div class="main-content">
-		<!-- *** Editable Tables *** -->
-		<!-- panel -->
-		<div class="panel panel-piluku">
-			<div class="panel-heading">
-				<h3 class="panel-title">
-					添加管理员
-				</h3>
+		<div class="row">
+			<div class="col-md-12">
+				<!-- panel -->
+				<div class="panel panel-piluku panel-users">
+                    <div class="manage_buttons" style="margin: 0!important;margin-right: 0!important;">
+                        <div class="row">
+                            <div class="col-md-3 search">
+                                <form action="<?php echo url('Order/index'); ?>" method="get">
+                                    <input type="text" name="keywords" value="<?php echo !empty($keywrods)?$keywords:''; ?>" id="search" class="form-control" placeholder="Search User">
+                                </form>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="buttons-list">
+                                    <div class="pull-right-btn">
+                                        <a href="#" class="btn btn-primary">EXECL导出</a>
+                                        <div class="piluku-dropdown dropdown">
+                                            <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                <i class="ion-android-more-horizontal"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-regular-menu animated fadeInUp wow language-drop neat_drop" data-wow-duration="1500ms" role="menu">
+                                                <li><a href="#">Link One</a></li>
+                                                <li><a href="#">Link One</a></li>
+                                                <li><a href="#">Link One</a></li>
+                                                <li><a href="#">Link One</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							订单列表
+							<span class="panel-options">
+								<a href="#" class="panel-refresh">
+									<i class="icon ti-reload"></i> 
+								</a>
+								<a href="#" class="panel-minimize">
+									<i class="icon ti-angle-up"></i> 
+								</a>
+								<a href="#" class="panel-close">
+									<i class="icon ti-close"></i> 
+								</a>
+							</span>
+						</h3>
+					</div>
+					<div class="panel-body nopadding">
+						<div class="table-responsive">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th  class="text-center">编号</th>
+										<th  class="text-center">订单号</th>
+										<th  class="text-center">用户名</th>
+                                        <th  class="text-center">价格</th>
+                                        <th  class="text-center">生成时间</th>
+                                        <th  class="text-center">订单状态</th>
+                                        <th  class="text-center">订单详情</th>
+										<th  class="text-center">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+                                    <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($k % 2 );++$k;?>
+                                        <tr class="table-row">
+                                            <td class="text-center"><?php echo $k+$firstRow; ?></td>
+											<td class="text-center"><?php echo $val['orderno']; ?></td>
+											<td class="text-center"><?php echo $val['users']['username']; ?></td>
+                                            <td class="text-center"><?php echo $val['price']; ?></td>
+                                            <td class="text-center"><?php echo date('Y-m-d H:i:s',$val['createtime']); ?></td>
+                                            <td class="text-center"><?php echo $val['orderStatus']['statusname']; ?></td>
+                                            <td class="text-center"><a href="<?php echo url('Order/detail',['id'=>$val['id']]); ?>">查看详情</a></td>
+                                            <td class="text-center">
+                                                <a href="#" id="<?php echo $val['id']; ?>" class="btn btn-orange"><i class="icon-bell"></i></a>
+                                                <a href="<?php echo url('Order/edit',['id'=>$val['id']]); ?>" class="btn btn-green"><i class="ion ion-edit"></i></a>
+                                                <a href="#" id="<?php echo $val['id']; ?> " class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
+								</tbody>
+							</table>
+                            <?php echo $pages; ?>
+						</div>
+					</div>
+				</div>
+				<!-- /panel -->
 			</div>
-			<div class="panel-body">
-                <form action="#" id="form">
-                    <table id="user" class="table table-bordered table-striped table-hover" style="margin-top:30px;">
-                        <tbody>
-                            <tr>
-                                <td>用户名</td>
-                                <td><input type="text" name="username" /></td>
-                            </tr>
-                            <tr>
-                                <td>密码</td>
-                                <td><input type="password" name="password" /></td>
-                            </tr>
-                            <tr>
-                                <td>确认密码</td>
-                                <td><input type="password" name="pwd" /></td>
-                            </tr>
-                            <tr>
-                                <td>电话</td>
-                                <td><input type="text" name="phone" /></td>
-                            </tr>
-                            <tr>
-                                <td>身份</td>
-                                <td>
-                                    <select name="permission" style="width: 160px;height: 40px;">
-                                        <option value="2">普通管理员</option>
-                                        <option value="1">超级管理员</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>头像</td>
-                                <td>
-                                    <select name="avatar" style="width: 160px;height: 40px;">
-                                        <option value="__STATIC__/admin/images/avatar/1.jpeg">1</option>
-                                        <option value="__STATIC__/admin/images/avatar/2.png">2</option>
-                                        <option value="__STATIC__/admin/images/avatar/3.png">3</option>
-                                        <option value="__STATIC__/admin/images/avatar/4.png">4</option>
-                                        <option value="__STATIC__/admin/images/avatar/5.png">5</option>
-                                        <option value="__STATIC__/admin/images/avatar/6.png">6</option>
-                                        <option value="__STATIC__/admin/images/avatar/7.png">7</option>
-                                        <option value="__STATIC__/admin/images/avatar/8.png">8</option>
-                                        <option value="__STATIC__/admin/images/avatar/9.png">9</option>
-                                        <option value="__STATIC__/admin/images/avatar/10.png">10</option>
-                                        <option value="__STATIC__/admin/images/avatar/11.png">11</option>
-                                    </select>
-                                    <img src="__STATIC__/admin/images/avatar/1.jpeg" id="avatar" style="width: 40px;border-radius: 50%">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <button class="btn btn-primary" style="font-weight:bold;margin: 50px auto">确定</button>
-                </form>
-            </div>
 		</div>
-		<!-- /panel -->
 	</div>
-    <script type="text/javascript">
-        $(function(){
-            $("select").click(function(){
-                var flag = this.value;
-                $("#avatar").attr("src",flag);
-            });
-            $('.btn-primary').click(function(){
-                $('#form').submit();
-            });
-            $('#form').submit(function(){
-                $.post("<?php echo url('Admin/add'); ?>",$('#form').serialize(),function(res){
-                    if(res.status==1){
-                        layer.msg(res.info,{icon:6},function(){
-                            location="<?php echo url('Admin/index'); ?>";
-                        });
-                    }else{
-                        layer.msg(res.info,{icon:5});
-                    }
-                },'json')
-            })
-        })
-    </script>
-
+	<!-- /main content -->
 
         </div>
     </div>
