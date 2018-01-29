@@ -2,6 +2,7 @@
 namespace app\index\controller;
 
 use app\admin\model\Admin;
+use app\admin\model\User;
 use think\Db;
 
 class Index
