@@ -22,6 +22,24 @@ class Admin extends Base{
         return $this->fetch();
     }
 
+    //测试复杂sql语句
+    public function test(){
+        $where['username']=input('post.username');
+        $keywords=input('post.keywords');
+        $field="date_format('create_time', '%y-%m-%d') as 'data',
+        sum('binary total') as 'total',
+        sum(IF(is_register= 0,1,0)) as 't1',
+        sum(IF(is_register= 1,1,0)) as 't2' ";
+        $list=\app\admin\model\Admin::where($where)
+            ->field($field)
+            ->where(function ($query) use ($keywords){
+                $keywords && $query->where('username','like',$keywords);
+            })
+            ->group('day')
+            ->select();
+        return $list;
+    }
+
     public function add(){
         if(request()->isAjax()){
             /*$aid=Session::get('aid');
