@@ -1,0 +1,247 @@
+[ 2018-03-24T11:44:37+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/
+[ log ] 127.0.0.1/TP_5.0.5_new/public/ [运行时间：0.451026s][吞吐率：2.22req/s] [内存消耗：1,226.07kb] [文件加载：43]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/TP_5.0.5_new/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ F:\phpStudy\WWW\TP_5.0.5_new\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-24T11:44:57+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/index.php/home
+[ log ] 127.0.0.1/TP_5.0.5_new/public/index.php/home [运行时间：0.108204s][吞吐率：9.24req/s] [内存消耗：1,276.27kb] [文件加载：49]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-24T11:45:03+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/index.php/admin
+[ log ] 127.0.0.1/TP_5.0.5_new/public/index.php/admin [运行时间：0.103605s][吞吐率：9.65req/s] [内存消耗：1,417.55kb] [文件加载：50]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 1800,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-24T11:45:03+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/index.php/admin/login/index.html
+[ log ] 127.0.0.1/TP_5.0.5_new/public/index.php/admin/login/index.html [运行时间：0.104006s][吞吐率：9.61req/s] [内存消耗：1,593.48kb] [文件加载：53]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=ifg3l7r2edngp7usjat18ds6k0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ F:\phpStudy\WWW\TP_5.0.5_new\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] F:\phpStudy\WWW\TP_5.0.5_new\public/../application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-24T11:45:04+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/index.php/captcha.html
+[ log ] 127.0.0.1/TP_5.0.5_new/public/index.php/captcha.html [运行时间：0.090005s][吞吐率：11.11req/s] [内存消耗：1,218.55kb] [文件加载：41]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=ifg3l7r2edngp7usjat18ds6k0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://127.0.0.1/TP_5.0.5_new/public/index.php/admin/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ F:\phpStudy\WWW\TP_5.0.5_new\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'expire' => 1800,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-24T11:45:29+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/index.php/home/login/index.html
+[ log ] 127.0.0.1/TP_5.0.5_new/public/index.php/home/login/index.html [运行时间：0.058202s][吞吐率：17.18req/s] [内存消耗：1,278.69kb] [文件加载：48]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=ifg3l7r2edngp7usjat18ds6k0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-03-24T11:47:13+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/index.php/home/login/index.html
+[ log ] 127.0.0.1/TP_5.0.5_new/public/index.php/home/login/index.html [运行时间：0.080005s][吞吐率：12.50req/s] [内存消耗：1,444.16kb] [文件加载：52]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=ifg3l7r2edngp7usjat18ds6k0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->index[ F:\phpStudy\WWW\TP_5.0.5_new\application\home\controller\Login.php ]
+[ info ] [ VIEW ] F:\phpStudy\WWW\TP_5.0.5_new\public/../application/home\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]模板文件不存在:F:\phpStudy\WWW\TP_5.0.5_new\public/../application/home\view\layout\index.html[F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\library\think\Template.php:1086]
+
+---------------------------------------------------------------
+[ 2018-03-24T11:47:36+08:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5_new/public/index.php/home/login/index.html
+[ log ] 127.0.0.1/TP_5.0.5_new/public/index.php/home/login/index.html [运行时间：0.036002s][吞吐率：27.78req/s] [内存消耗：1,428.99kb] [文件加载：49]
+[ info ] [ LANG ] F:\phpStudy\WWW\TP_5.0.5_new\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'home',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=ifg3l7r2edngp7usjat18ds6k0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => '127.0.0.1',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\home\controller\Login->index[ F:\phpStudy\WWW\TP_5.0.5_new\application\home\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

@@ -15,7 +15,7 @@
                             <div class="col-md-9">
                                 <div class="buttons-list">
                                     <div class="pull-right-btn">
-                                        <a href="#" class="btn btn-primary">EXECL导出</a>
+                                        <a href="#" id="export" class="btn btn-primary">EXECL导出</a>
                                         <div class="piluku-dropdown dropdown">
                                             <button type="button" class="btn btn-more dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                 <i class="ion-android-more-horizontal"></i>
@@ -91,3 +91,11 @@
 		</div>
 	</div>
 	<!-- /main content -->
+    <script type="text/javascript">
+        $(function () {
+            $('#export').click(function () {
+                var a=$('#search').val();
+                location="{:url('Order/export')}?search="+a;
+            })
+        })
+    </script>
