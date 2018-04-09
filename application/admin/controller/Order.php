@@ -115,13 +115,14 @@ class Order extends Base{
         */
 
 
-        $objWriter=\PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
-
         //发送标题强制用户下载文件
         ob_end_clean();
         header('Content-Type: application/vnd.ms-excel;charset=UTF-8');
         header('Content-Disposition: attachment;filename="订单列表_'.date('Y/m/d').'.xls"');
         header('Cache-Control: max-age=0');
+
+
+        $objWriter=\PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
         $objWriter->save('php://output');
     }
 }
