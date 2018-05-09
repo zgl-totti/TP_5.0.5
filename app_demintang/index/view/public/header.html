@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--{if condition="$title"}
+        <title>{$system}_{$title}</title>
+    {else /}
+        <title>{$system}</title>
+    {/if}-->
+    {if condition="$description"}
+        <title>{$description}_{$title}_{$system}</title>
+    {elseif condition="$title"/}
+        <title>{$system}_{$title}</title>
+    {else /}
+        <title>{$system}</title>
+    {/if}
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="description" content="德欣堂中医馆,郑州德欣堂中医其前身为德欣堂医馆，始建于公元1918年（民国7年），由清末太医院河南籍太医史平道创办。"/>
+    <meta name="keywords" content="德欣堂中医馆 郑州德欣堂中医门诊 郑州市德欣堂中医馆 河南郑州德欣堂"/>
+    <link rel="icon" href="__STATIC__/index/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/index/css/main.css" />
+    <link rel="stylesheet" href="__STATIC__/index/css/bootstrap.min.css" />
+    <script src="__STATIC__/index/js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<div class="top">
+    <div class="topcenter">
+        <div class="logo">
+            <img src="__STATIC__/index/img/logo.png" alt="德欣堂中医馆" />
+        </div>
+        <div class="topright">
+            <div class="tel">
+                <img src="__STATIC__/index/img/tel.png" />
+            </div>
+            <p class="hotline">
+                健康热线
+            </p>
+            <p class="telnum">
+                0371-63295120
+            </p>
+        </div>
+    </div>
+</div>
+<div class="nav">
+    <ul>
+        {volist name="nav" id="v"}
+            <li id="{$v.id}">
+                <a href="{:url($v['navurl'])}" name="{$v.id}">{$v['navname']}</a>
+            </li>
+        {/volist}
+    </ul>
+</div>
+<!-- <script type="text/javascript">
+	var urlstr = location.href;
+	var urlstatus=false;
+	$(".nav a").each(function () {
+	    var id=$(this).attr('name');
+	    if ((urlstr + '/').indexOf($(this).attr('href')) > -1&&$(this).attr('href')!='') {
+	        $('#'+id+'').addClass('on');
+	        urlstatus = true;
+	    } else {
+	        $(this).removeClass('on');
+	    }
+	});
+	if (!urlstatus) {
+	    $(".nav li").eq(0).addClass('on');
+	}
+</script> -->
+<div class="lunbo">
+    <div id="lunboqi" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <ol class="carousel-indicators">
+            <li data-target="#lunboqi" data-slide-to="0" class="active">
+            </li>
+            <li data-target="#lunboqi" data-slide-to="1">
+            </li>
+            <li data-target="#lunboqi" data-slide-to="2">
+            </li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="__STATIC__/index/img/banner.png" alt="德欣堂中医馆" />
+            </div>
+            <div class="item">
+                <img src="__STATIC__/index/img/banner1.png" alt="德欣堂中医馆" />
+            </div>
+            <div class="item">
+                <img src="__STATIC__/index/img/banner2.png" alt="德欣堂中医馆" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nav2">
+    <div class="nav2-content">
+        <div class="warp-div">
+            <div class="word-lie">
+                常见症状
+            </div>
+        </div>
+        <ul class="deseases">
+            <li>
+                <a href="">
+                    <img src="__STATIC__/index/img/xiaochuan.png"  alt="哮喘" />
+                    哮喘
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="__STATIC__/index/img/jingzhuibing.png" alt="颈椎病" />
+                    颈椎病
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="__STATIC__/index/img/yaozhuijianpantuchu.png" alt="腰椎间盘突出" />
+                    腰椎间盘突出
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="__STATIC__/index/img/guxingguanjieyan.png" alt="骨性关节炎" />
+                    骨性关节炎
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="__STATIC__/index/img/gugutouhuaisi.png" alt="股骨头坏死" />
+                    股骨头坏死
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="__STATIC__/index/img/leifengshi.png"  alt="类风湿" />
+                    类风湿
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="__STATIC__/index/img/guzhizengsheng.png" alt="骨质增生" />
+                    骨质增生
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+

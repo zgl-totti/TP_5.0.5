@@ -1,0 +1,85 @@
+<!--底部-->
+<div class="clear"></div>
+<div class="foot">
+    <div class="footnav nav">
+        <ul class="container">
+            {volist name="nav" id="v"}
+                <li id="{$v.id}">
+                    <a href="{:url($v['navurl'])}" name="{$v.id}">{$v['navname']}</a>
+                </li>
+            {/volist}
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="foot-bottom">
+            <div class="footlogo">
+                <img src="__STATIC__/index/img/logo.png" />
+            </div>
+            <div class="footline">
+                <img src="__STATIC__/index/img/footline.png" />
+            </div>
+            <p class="footp">
+                德欣堂健康热线：0371-63295120
+                <br/>
+                医馆地址：郑州市高新区莲花街雪松路交叉口向南50米
+                <br/>
+                德欣堂中医馆备案：豫ICP备16031****号-1
+                <br/>
+                注：本网站信息仅供参考，不能作为诊疗及医疗依据，未经授权请勿转载
+            </p>
+        </div>
+    </div>
+</div>
+<script src="__STATIC__/index/js/jquery.min.js">
+</script>
+<script src="__STATIC__/index/js/bootstrap.min.js">
+</script>
+<script src="__STATIC__/index/js/height.js">
+</script>
+<script>
+    $(function(){
+        $(".listleft").height($(".listright").height());
+        $(".listright").resize(function(){
+            $(".listleft").height($(".listright").height());
+        })
+    })
+</script>
+<script>
+    $(function() {
+        $('#lunboqi').carousel({
+            interval: 4000
+        });
+        $("carousel-control").css("line-height", $("carousel-inner img").height() + "px");
+        $(window).resize(function() {
+            var $height = $('.carousel-inner img').eq(0).height() || $('.carousel-inner img').eq(1).height() || $('.carousel-inner img').eq(2).height();
+            $("carousel-control").css("line-height", $height + "px")
+        });
+
+        var urlstr = location.href;
+        var urlstatus=false;
+        $(".container a").each(function () {
+            var id=$(this).attr('name');
+            if ((urlstr + '/').indexOf($(this).attr('href')) > -1&&$(this).attr('href')!='') {
+                $('#'+id+'').addClass('on');
+                urlstatus = true;
+            } else {
+                $(this).removeClass('on');
+            }
+        });
+        /*$(".nav a").each(function () {
+            var id=$(this).attr('name');
+            if ((urlstr + '/').indexOf($(this).attr('href')) > -1&&$(this).attr('href')!='') {
+                $('#'+id+'').addClass('on');
+                urlstatus = true;
+            } else {
+                $(this).removeClass('on');
+            }
+        });*/
+        if (!urlstatus) {
+            $(".nav li").eq(0).addClass('on');
+            $(".container li").eq(0).addClass('on');
+        }        
+    })
+</script>
+</body>
+</html>

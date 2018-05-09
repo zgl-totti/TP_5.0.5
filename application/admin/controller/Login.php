@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 
-use app\admin\model\Admin;
+use app\common\model\Admin;
 use think\Controller;
 use think\Loader;
 use think\Session;

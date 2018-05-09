@@ -13,7 +13,7 @@ class Admin extends Base{
             $where='';
         }
         $data['query']['keywords']=$keywords;
-        $list=\app\admin\model\Admin::where($where)->paginate(10,false,$data);
+        $list=\app\common\model\Admin::where($where)->paginate(10,false,$data);
         $firstRow=($list->currentPage()-1)*$list->listRows();
         $this->assign('keywords',$keywords);
         $this->assign('list',$list);
@@ -30,7 +30,7 @@ class Admin extends Base{
         sum('binary total') as 'total',
         sum(IF(is_register= 0,1,0)) as 't1',
         sum(IF(is_register= 1,1,0)) as 't2' ";
-        $list=\app\admin\model\Admin::where($where)
+        $list=\app\common\model\Admin::where($where)
             ->field($field)
             ->where(function ($query) use ($keywords){
                 $keywords && $query->where('username','like',$keywords);
@@ -95,7 +95,7 @@ class Admin extends Base{
             }*/
 
             $aid=Session::get('aid');
-            $userinfo=\app\admin\model\Admin::get($aid);
+            $userinfo=\app\common\model\Admin::get($aid);
             $data['username']=trim(input('post.username'));
             $data['password']=trim(input('post.password'));
             $data['pwd']=trim(input('post.pwd'));
@@ -113,7 +113,7 @@ class Admin extends Base{
                     $admin['password'] = md5(md5($data['password']) . $data['token']);
                     $admin['addtime'] = time();
                     if($aid==1 || $admin['permission']!=1) {
-                        $arr= new \app\admin\model\Admin();
+                        $arr= new \app\common\model\Admin();
                         $row=$arr->save($admin);
                         if ($row) {
                             $res['status'] = 1;
@@ -148,7 +148,7 @@ class Admin extends Base{
     public function edit(){
         if(request()->isAjax()){
             $aid=Session::get('aid');
-            $userinfo=\app\admin\model\Admin::get($aid);
+            $userinfo=\app\common\model\Admin::get($aid);
             if($userinfo['permission']==1) {
                 $id = input('post.id');
                 $data['username'] = trim(input('post.username'));
@@ -159,9 +159,9 @@ class Admin extends Base{
                 $validate = Loader::validate('Admin');
                 if ($validate->scene('edit')->check($data)) {
                     $condition['username'] = $data['username'];
-                    $info=\app\admin\model\Admin::get($condition);
+                    $info=\app\common\model\Admin::get($condition);
                     if (!$info) {
-                        $editinfo=\app\admin\model\Admin::get($id);
+                        $editinfo=\app\common\model\Admin::get($id);
                         if($aid==1 || $editinfo['permission']!=1){
                             $admin['username'] = $data['username'];
                             $admin['phone'] = $data['phone'];
@@ -170,7 +170,7 @@ class Admin extends Base{
                             $admin['token'] = uniqid();
                             $admin['password'] = md5(md5($data['password']) . $data['token']);
                             $admin['addtime'] = time();
-                            $arr= new \app\admin\model\Admin();
+                            $arr= new \app\common\model\Admin();
                             $row=$arr->save($admin);
                             if ($row) {
                                 $res['status'] = 1;
@@ -203,7 +203,7 @@ class Admin extends Base{
             }
         }else{
             $id=input('param.id');
-            $info=\app\admin\model\Admin::get($id);
+            $info=\app\common\model\Admin::get($id);
             $this->assign('info',$info);
             return $this->fetch();
         }
@@ -213,10 +213,10 @@ class Admin extends Base{
     public function changestatus(){
         if(request()->isAjax()){
             $aid=Session::get('aid');
-            $admin=\app\admin\model\Admin::get($aid);
+            $admin=\app\common\model\Admin::get($aid);
             if($admin['permission']==1) {
                 $id = input('post.id');
-                $info=\app\admin\model\Admin::get($id);
+                $info=\app\common\model\Admin::get($id);
                 if($info['permission']!=1) {
                     $info->status = ($info['status'] == 1) ? 2 : 1;
                     $row=$info->save();
@@ -246,10 +246,10 @@ class Admin extends Base{
     public function del(){
         if(request()->isAjax()){
             $aid=Session::get('aid');
-            $admin=\app\admin\model\Admin::get($aid);
+            $admin=\app\common\model\Admin::get($aid);
             if($admin['permission']==1) {
                 $id = input('post.id');
-                $info=\app\admin\model\Admin::get($id);
+                $info=\app\common\model\Admin::get($id);
                 if($info['permission']!=1) {
                     $row = $info->delete();
                     if ($row) {
@@ -281,7 +281,7 @@ class Admin extends Base{
             $password=trim(input('post.password'));
             $data['phone']=trim(input('post.phone'));
             $data['avatar']=trim(input('post.avatar'));
-            $admin=\app\admin\model\Admin::get($id);
+            $admin=\app\common\model\Admin::get($id);
             if($password){
                 $admin->token=uniqid();
                 $admin->password=md5(md5($password).$data['token']);
@@ -300,7 +300,7 @@ class Admin extends Base{
             }
         }else{
             $aid=Session::get('aid');
-            $info=\app\admin\model\Admin::get($aid);
+            $info=\app\common\model\Admin::get($aid);
             $this->assign('info',$info);
             return $this->fetch();
         }

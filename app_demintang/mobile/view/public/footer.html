@@ -1,0 +1,54 @@
+<!--底部-->
+<footer id="footer" class="navbar-fixed-bottom">
+    <div class="copyright">
+        CopyRight © 2017 德欣堂
+    </div>
+</footer>
+<!--script-->
+<script src="__STATIC__/mobile/js/jquery.min.js"></script>
+<script src="__STATIC__/mobile/js/bootstrap.min.js"></script>
+<!--列表页翻页-->
+<script>
+    $(".navigate .pagination li").click(function(){$(".navigate li").removeClass("active");$(this).addClass("active")})
+</script>
+
+<script>
+    $(function(){
+        $('#myCarousel').carousel({
+            interval: 3000
+        });
+    });
+</script>
+<script src="https://cdn.bootcss.com/Swiper/4.1.6/js/swiper.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.1.6/js/swiper.min.js"></script>
+<!--swiper-->
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal',
+        loop: true,
+//	    autoplay:true,
+        speed:500,
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: false,
+        },
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        //  如果需要前进后退按钮
+//	    navigation: {
+//	      nextEl: '.swiper-button-next',
+//	      prevEl: '.swiper-button-prev',
+//	    },
+
+        // 如果需要滚动条
+//	    scrollbar: {
+//	      el: '.swiper-scrollbar',
+//	    },
+    })
+</script>
+</body>
+</html>

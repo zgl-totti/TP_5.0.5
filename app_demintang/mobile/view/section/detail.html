@@ -1,0 +1,33 @@
+﻿{include file="public/header" /}
+
+<div class="clear"></div>
+<!--路径导航-->
+<section class="currentPath">
+	<ol class="breadcrumb">
+		<li><a href="{:url('Index/index')}">首页</a></li>
+		<li><a href="{:url('Section/index')}">科室列表</a></li>
+		<li class="active">科室详情</li>
+	</ol>
+</section>
+<!--文章列表-->
+<div class="articleList">
+	{volist name="list" id="val"}
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<img src="__STATIC__/mobile/images/ks_1.png" alt="通用的占位符缩略图">
+				<div class="caption">
+					<h3>{$val.cname}</h3>
+					<p>{:mb_substr($val.intro,0,100)}...</p>
+				</div>
+			</div>
+		</div>
+	{/volist}
+</div>
+<!--翻页-->
+<div class="navigate" style="text-align: center;">
+	<ul class="pagination pagination-lg">
+		{$list->render()}
+	</ul>
+</div>
+
+{include file="public/footer" /}

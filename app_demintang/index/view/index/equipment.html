@@ -1,0 +1,58 @@
+{include file="public/header" /}
+<!--列表页-->
+<div class="listhbg hbg">
+    <div class="list-content">
+        <div class="listleft">
+            <div class="prodet">
+                {$title}
+            </div>
+            <ul class="nav-tabs proul">
+                {volist name="list" id="v" key="k"}
+                    <li>
+                        <a href="#pro{$k}" data-toggle="tab">{$v.cname}</a>
+                    </li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="listright">
+            <div class="local">
+                <p class="local1">
+                    当前位置：<a href="{:url('Index/index')}">网站首页</a>--<span>{$title}</span>
+                </p>
+            </div>
+            <div class="proline">
+                <img src="__STATIC__/index/img/proline.png"/>
+            </div>
+            <div class="pro-content">
+                <div class="tab-content protab">
+                    {volist name="list" id="v" key="k"}
+                        <div class="tab-pane fade in" id="pro{$k}">
+                            {volist name="$v['getEquipment']" id="val"}
+                            <div class="media">
+	                            <div class="media-left media-middle">
+	                                <img src="/uploads/equipment/{$val.pic}" class="media-object" alt="" style="max-width:150px" />
+	                            </div>
+                                <div class="media-body promedia">
+                                    <p>患者名字：{$val.username}<br>
+                                    治疗周期：{$val.cycle}个周期<br>
+                                    治疗疗效：{:mb_substr($val.content,0,50,'utf-8')}......
+                                    <a href="{:url('Index/equipmentDetail',['id'=>$val['id']])}">[点击详情]</a></p>
+                                </div>
+                            </div>
+                            {/volist}
+                        </div>
+                    {/volist}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('.proul li').first().addClass('active');
+        $('#pro1').addClass('active');
+    })
+</script>
+
+{include file="public/footer" /}
+

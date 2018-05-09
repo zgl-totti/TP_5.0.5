@@ -1,0 +1,764 @@
+{include file="public/header" /}
+<div class="wbg">
+    <div class="wbg-wrap">
+        <div class="wrap-left">
+            <div class="left-top w100">
+                <img src="__STATIC__/index/img/mingyi.png" alt="名医推荐" />
+                <div class="more">
+                    <a href="">
+                        点击更多
+                    </a>
+                </div>
+            </div>
+            <div class="left-center mt18">
+                <img src="__STATIC__/index/img/wanliangyin.png" class="img1" alt="医馆环境" />
+                
+            </div>
+            <p class="text redline">
+                    1975年毕业于河南中医学院；1983年创办哮喘专科;1993年创办哮喘病研究所；2001年成立河南万仁药业有限公司......
+                    <a href="">
+                        [详情]
+                    </a>
+                </p>
+            <!-- <h2>
+                <a href="">
+                    荣誉证书等
+                </a>
+            </h2> -->
+        </div>
+        <div class="wrap-center">
+            <div class="center-top w100">
+                <img src="__STATIC__/index/img/news.png" alt="新闻动态" />
+                <div class="more">
+                    <a href="{:url('newes/index')}">
+                        点击更多
+                    </a>
+                </div>
+            </div>
+            <div class="center-center mt18">
+                <h2>
+                    百年德欣堂义诊活动开始了！
+                </h2>
+                <p class="text2 redline">
+                    百年德欣堂义诊活动开始了百年德欣堂义诊活动开始了百年德欣堂义诊活动开始了百年德欣堂义诊活......
+                    <a href="">
+                        [阅读全文]
+                    </a>
+                </p>
+                <div class="center-img">
+                    <img src="__STATIC__/index/img/dmt.png" alt="德欣堂环境" />
+                </div>
+                <ul class="news">
+                    {volist name="news" id="val"}
+                        <li>
+                            <a href="{:url('Newes/detail',['id'=>$val.id])}">
+                                <span>{:mb_substr($val.title,0,20)}</span>
+                                <sup><img src="__STATIC__/index/img/hot.png" /></sup>
+                                <span style="float: right;">{:date('Y-m-d',$val.addtime)}</span>
+                            </a>
+                        </li>
+                    {/volist}
+                    <!--<li>
+                        <a href="">
+                                    <span>
+                                        颈椎病自我治疗颈椎病颈椎病自我治疗
+                                    </span>
+                            <img src="__STATIC__/index/img/hot.png" />
+                                    <span style="float: right;">
+                                        2017.6.10
+                                    </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                                    <span>
+                                        颈椎病自我治疗颈椎病颈椎病自我治疗
+                                    </span>
+                            <sup>
+                                <img src="__STATIC__/index/img/hot.png" />
+                            </sup>
+                                    <span style="float: right;">
+                                        2017.6.10
+                                    </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                                    <span>
+                                        颈椎病自我治疗颈椎病颈椎病自我治疗
+                                    </span>
+                            <img src="__STATIC__/index/img/hot.png" />
+                                    <span style="float: right;">
+                                        2017.6.10
+                                    </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                                    <span>
+                                        颈椎病自我治疗颈椎病颈椎病自我治疗
+                                    </span>
+                            <img src="__STATIC__/index/img/hot.png" />
+                                    <span style="float: right;">
+                                        2017.6.10
+                                    </span>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="wrap-right">
+            <div class="right-top w100">
+                <img src="__STATIC__/index/img/wenhua.png" alt="品牌文化" />
+            </div>
+            <div class="right-center mt18">
+                <p class="text3 redline">
+                    {:mb_substr($brand.digest,0,42,'utf-8')}......
+                    <!-- 郑州德欣堂中医其前身为德欣堂医馆，始建于公元1918年（民国7年），由清末太医院河南籍太医史...... -->
+                    <a href="{:url('Index/brand')}">
+                        [详情]
+                    </a>
+                </p>
+                <div class="right-img">
+                    <img src="__STATIC__/index/img/yiguan.png" alt="医馆环境" />
+                </div>
+                <ul class="brand">
+                    <li>
+                        <a href="{:url('Index/brand')}">
+                            <img src="__STATIC__/index/img/gk.png" />
+                            德欣堂概况
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('Index/contact')}">
+                            <img src="__STATIC__/index/img/ww.png" />
+                            问问医师
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('Index/contact')}">
+                            <img src="__STATIC__/index/img/yy.png" />
+                            预约挂号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('Index/contact')}">
+                            <img src="__STATIC__/index/img/dz.png" />
+                            来院地址
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hbg">
+    <div class="navbar">
+        <img src="__STATIC__/index/img/chuangshi.png" alt="中医馆创始" />
+    </div>
+    <div class="hbg-top">
+        <div class="hbg-left">
+            <img src="__STATIC__/index/img/shiping.png" alt="中医馆创始" />
+        </div>
+        <div class="line">
+            <img src="__STATIC__/index/img/line.png" />
+        </div>
+        <div class="txt">
+            <h1>
+                太医--史平道
+            </h1>
+            <p>
+                郑州德欣堂中医其前身为德欣堂医馆，始建于公元1918年（民国7年），由清末太医院河南籍太医史平道创办。民国初期军阀混战，硝烟四起，原本告老还乡颐养天年的史平道看到家乡民众被瘟疫肆虐，便倾尽家财为灾民医病送药，时任河南省长赵倜为其题字“德行天下，欣愿安康”，并取其“德欣”二字成立了当时河南省最大医疗机构——德欣堂医馆。省长的支持加上史平道本人的人品与威望，德欣堂医馆吸引了诸多名医的到来，短短数年德欣堂医馆在中原地区几乎人尽皆知，不仅为百姓造福，也积累了诸多救世良方。
+            </p>
+        </div>
+        <div class="pic">
+            <img src="__STATIC__/index/img/img1.png" alt="中医馆创始" />
+            <img src="__STATIC__/index/img/img2.png" alt="中医馆创始" />
+            <img src="__STATIC__/index/img/img3.png" alt="中医馆创始" />
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="hbg-down">
+        <div class="hbg-right">
+            <img src="__STATIC__/index/img/wan.png" style="float: right;" />
+        </div>
+        <div class="line2">
+            <img src="__STATIC__/index/img/line2.png" />
+        </div>
+        <div class="txt2">
+            <h1>
+                教授--万泓晟
+            </h1>
+            <p>
+                遗憾的是刚刚成立20年的德欣堂医馆，由于中日战争的爆发及花园口事件在1938年被毁。医馆被毁使得史平道先生郁郁而终，临终前他嘱托众弟子，一定要保存好20年来众多名医留下的验方，待时机成熟时重开医馆。
+                </p>
+                <p>弹指一挥间80年过去了，那些往事早已经被世人所遗忘，但是年近九旬的万泓晟教授，从未忘记过从小跟虽父亲行医时就给他讲起的关于史从道与德欣堂医馆的故事，自己也依稀记得一些史师爷的音容笑貌。
+            </p>
+        </div>
+        <div class="pic">
+            <img src="__STATIC__/index/img/img4.png" alt="医馆环境" />
+            <img src="__STATIC__/index/img/img5.png" alt="医馆环境" />
+            <img src="__STATIC__/index/img/img6.png" alt="医馆环境" />
+        </div>
+    </div>
+    <div class="hbg-foot">
+        <img src="__STATIC__/index/img/adline.png" />
+    </div>
+</div>
+<div class="bbg">
+    <div class="navbar">
+        <img src="__STATIC__/index/img/daohang.png" />
+    </div>
+    <div class="circle-wrap">
+        {volist name="section" id="val" key="k"}
+            <div class="circle">
+                <div class="circle-top">
+                    <a href="{:url('Section/index')}">
+                        {$val.cname}
+                    </a>
+                </div>
+                <div class="pic3">
+                    <img src="__STATIC__/index/img/ks_{$k}.png" alt="科室导航" />
+                    <!-- <img src="__STATIC__/index/img/img7.png" /> -->
+                </div>
+                <div class="txt3">
+                    <p style="font-size: 18px;">
+                        {:mb_substr($val.intro,0,55,'utf-8')}......
+                    </p>
+                </div>
+                <div class="circle-foot">
+                    <a href="{:url('Section/detail',['id'=>$val.id])}">
+                        点击查询
+                    </a>
+                </div>
+            </div>
+        {/volist}
+    </div>
+    <div class="bbg-foot">
+        <img src="__STATIC__/index/img/adline2.png" />
+    </div>
+</div>
+<div class="hbg2 hbg">
+    <div class="navbar">
+        <img src="__STATIC__/index/img/yangsheng.png" style="margin: 0 auto;" />
+    </div>
+    <div class="nav3">
+        <ul class="nav-tabs nav3-ul">
+            <li class="active">
+                <a href="#daxue" data-toggle="tab">
+                    中医保健
+                </a>
+            </li>
+            <li>
+                <a href="#gaozhong" data-toggle="tab">
+                    疾病预防
+                </a>
+            </li>
+            <li>
+                <a href="#chuzhong" data-toggle="tab">
+                    养生食疗
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="line3">
+        <img src="__STATIC__/index/img/line3.png" />
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane active in fade" id="daxue">
+            <div class="content">
+                <div class="content-left">
+                    <div class="lunbo">
+                        <div id="lunboqi" class="carousel slide" data-ride="carousel" data-interval="2000">
+                            <!-- <ol class="carousel-indicators secondcarousel">
+                                <li data-target="#lunboqi" data-slide-to="0" class="active">
+                                </li>
+                                <li data-target="#lunboqi" data-slide-to="1">
+                                </li>
+                                <li data-target="#lunboqi" data-slide-to="2">
+                                </li>
+                            </ol> -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="__STATIC__/index/img/img10.png" alt="" />
+                                </div>
+                                <!-- <div class="item">
+                                    <img src="__STATIC__/index/img/zybj2.png" alt="" />
+                                </div> -->
+                                <div class="item">
+                                    <img src="__STATIC__/index/img/zybj3.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <!--<div class="title">
+                        <p>
+                            颈椎病吃什么有助于康复111
+                        </p>
+                    </div>-->
+                    <ul class="content-ul">
+                        {volist name="feature['list1']" id="val"}
+                        <li>
+                            <img src="__STATIC__/index/img/lihead.png" style="display: inline-block;width: auto;margin-right: 1%;"
+                                    />
+                            <a href="{:url('Feature/detail',['id'=>$val.id])}">
+                                {$val.title}
+                                <span style="float: right;">
+                                    {:date('Y-m-d',$val.addtime)}
+                                </span>
+                            </a>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="gaozhong">
+            <div class="content">
+                <div class="content-left">
+                    <div class="lunbo">
+                        <div id="lunboqi" class="carousel slide" data-ride="carousel" data-interval="2000">
+                            <!-- <ol class="carousel-indicators secondcarousel">
+                                <li data-target="#lunboqi" data-slide-to="0" class="active">
+                                </li>
+                                <li data-target="#lunboqi" data-slide-to="1">
+                                </li>
+                                <li data-target="#lunboqi" data-slide-to="2">
+                                </li>
+                            </ol> -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="__STATIC__/index/img/zybj2.png" alt="" />
+                                </div>
+                                <!-- <div class="item">
+                                    <img src="__STATIC__/index/img/jbyf2.jpg" alt="" />
+                                </div> -->
+                                <div class="item">
+                                    <img src="__STATIC__/index/img/img10.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <!--<div class="title">
+                        <p>
+                            颈椎病吃什么有助于康复222
+                        </p>
+                    </div>-->
+                    <ul class="content-ul">
+                        {volist name="feature['list2']" id="val"}
+                        <li>
+                            <img src="__STATIC__/index/img/lihead.png" style="display: inline-block;width: auto;margin-right: 1%;"
+                                    />
+                            <a href="{:url('Feature/detail',['id'=>$val.id])}">
+                                {$val.title}
+                                <span style="float: right;">
+                                    {:date('Y-m-d',$val.addtime)}
+                                </span>
+                            </a>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="chuzhong">
+            <div class="content">
+                <div class="content-left">
+                    <div class="lunbo">
+                        <div id="lunboqi" class="carousel slide" data-ride="carousel" data-interval="2000">
+                            <!-- <ol class="carousel-indicators secondcarousel">
+                                <li data-target="#lunboqi" data-slide-to="0" class="active">
+                                </li>
+                                <li data-target="#lunboqi" data-slide-to="1">
+                                </li>
+                                <li data-target="#lunboqi" data-slide-to="2">
+                                </li>
+                            </ol> -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="__STATIC__/index/img/slys1.png" alt="" />
+                                </div>
+                                <div class="item">
+                                    <img src="__STATIC__/index/img/slys2.png" alt="" />
+                                </div>
+                                <div class="item">
+                                    <img src="__STATIC__/index/img/slys3.png" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <!--<div class="title">
+                        <p>
+                            颈椎病吃什么有助于康复333
+                        </p>
+                    </div>-->
+                    <ul class="content-ul">
+                        {volist name="feature['list3']" id="val"}
+                        <li>
+                            <img src="__STATIC__/index/img/lihead.png" style="display: inline-block;width: auto;margin-right: 1%;"
+                                    />
+                            <a href="{:url('Feature/detail',['id'=>$val.id])}">
+                                {$val.title}
+                                <span style="float: right;">
+                                    {:date('Y-m-d',$val.addtime)}
+                                </span>
+                            </a>
+                        </li>
+                        {/volist}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hbg-foot">
+        <img src="__STATIC__/index/img/adline3.png" />
+    </div>
+</div>
+<div class="bbg2 bbg">
+    <div class="navbar">
+        <img src="__STATIC__/index/img/liaofa.png" style="margin: 0 auto;" />
+    </div>
+    <div class="bbg2-content">
+        <div class="bbg2-left">
+            <div class="lunbo">
+                <div id="lunboqi" class="carousel slide" data-ride="carousel" data-interval="2000">
+                    <!-- <ol class="carousel-indicators secondcarousel">
+                        <li data-target="#lunboqi" data-slide-to="0" class="active">
+                        </li>
+                        <li data-target="#lunboqi" data-slide-to="1">
+                        </li>
+                        <li data-target="#lunboqi" data-slide-to="2">
+                        </li>
+                    </ol> -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="__STATIC__/index/img/jbyf2.jpg" alt="" />
+                        </div>
+                        <div class="item">
+                            <img src="__STATIC__/index/img/jbyf3.jpg" alt="" />
+                        </div>
+                        <!-- <div class="item">
+                            <img src="__STATIC__/index/img/img101.png" alt="" />
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bbg2-right">
+            <div class="bbg2-right-top">
+                <img src="__STATIC__/index/img/fankui.png" />
+            </div>
+            <div class="bbg2-right-down">
+                {volist name="equipment" id="val" key="k"}
+                <div class="media">
+                    <div class="media-left media-middle fankui">
+                        <!-- <img src="__STATIC__/index/img/huanzhe{$k}.png" class="media-object" alt="" /> -->
+                        <img src="/uploads/equipment/{$val['pic']}" class="media-object" alt="" />
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            病种类型：{$val['getSection']['cname']}
+                        </h4>
+                        <p>
+                            {:mb_substr($val['content'],0,70,'utf-8')}......
+                        </p>
+                    </div>
+                </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+    <div class="bbg-foot">
+        <img src="__STATIC__/index/img/adline4.png" />
+    </div>
+</div>
+<div class="hbg3 hbg">
+    <div class="navbar">
+        <img src="__STATIC__/index/img/xinsheng.png" />
+    </div>
+    <div class="hbg3-content">
+        <div class="xsbg">
+            <ul>
+                <li>
+                    <ul class="first nav-tabs">
+                        {volist name="section" id="val" key="k"}
+                        <li>
+                            <a href="#bing{$k}" data-toggle="tab">
+                                {$val.cname}
+                            </a>
+                        </li>
+                        {/volist}
+                        <!-- <li class="active" style="margin-top:0">
+                            <a href="#bing1" data-toggle="tab">
+                                肠胃病
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bing2" data-toggle="tab">
+                                骨病
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#bing3" data-toggle="tab">
+                                咳喘
+                            </a>
+                        </li> -->
+                    </ul>
+                </li>
+                <div class="tab666">
+                    <div class="tab-content">              
+                        {volist name="section" id="val" key="k"}
+                        <div class="tab-pane in fade" id="bing{$k}">
+                            {volist name="$val['getEquipment']" id="v" key="k1"}
+                            <li>
+                                <div class="second">
+                                    <!-- <img src="__STATIC__/index/img/hzxs{$k}_{$k1}.png" /> -->
+                                    <img src="/uploads/equipment/{$v['pic']}" alt="患者心声" />
+                                    <p>
+                                        患者姓名：{$v.username}
+                                        <br/>
+                                        病种类型：{$val.cname}
+                                        <br/>
+                                        治疗时间：{$v.cycle}周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="{:url('index/equipmentDetail',['id'=>$v['id']])}">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            {/volist}
+                        </div>
+                        {/volist}
+
+                        <!--<div class="tab-pane active in fade" id="bing1">
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="tab-pane active in fade" id="bing2">
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="tab-pane active in fade" id="bing3">
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="second">
+                                    <img src="__STATIC__/index/img/huanzhe.png" />
+                                    <p>
+                                        患者姓名：徐**
+                                        <br/>
+                                        病种类型：肠胃病
+                                        <br/>
+                                        治疗时间：1周期
+                                    </p>
+                                    <div class="xiangqing">
+                                        <a href="">
+                                            点击详情
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>-->
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="other bbg">
+    <div class="other-content">
+        <div class="leftimg">
+            <ul class="leftul nav-tabs">
+                <li class="active" style="margin-top:0">
+                    <a href="#gongyi" data-toggle="tab">
+                        公益活动
+                    </a>
+                </li>
+                <li>
+                    <a href="#shebei" data-toggle="tab">
+                        尖端设备
+                    </a>
+                </li>
+                <li>
+                    <a href="#huanjing" data-toggle="tab">
+                        医馆环境
+                    </a>
+                </li>
+                <li>
+                    <a href="#rongyu" data-toggle="tab">
+                        资质荣誉
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content right2">
+            <div class="tab-pane active in fade" id="gongyi">
+                <div class="rightimg">
+                    <img src="__STATIC__/index/img/rightimg1.png" alt="公益活动" />
+                </div>
+            </div>
+            <div class="tab-pane fade" id="shebei">
+                <div class="rightimg">
+                    <img src="__STATIC__/index/img/rightimg2.png" alt="尖端设备" />
+                </div>
+            </div>
+            <div class="tab-pane fade" id="huanjing">
+                <div class="rightimg">
+                    <img src="__STATIC__/index/img/rightimg3.jpg" alt="医馆环境" />
+                </div>
+            </div>
+            <div class="tab-pane fade" id="rongyu">
+                <div class="rightimg">
+                    <img src="__STATIC__/index/img/rightimg4.png" alt="资质荣誉" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+        $('.first li').first().addClass('active');
+        $('#bing1').addClass('active');
+    })
+</script>
+{include file="public/footer" /}
+

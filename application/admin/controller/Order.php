@@ -24,7 +24,7 @@ class Order extends Base{
             $condition='';
         }
         $data['query']['keywords']=$keywords;
-        $list=\app\admin\model\Order::where($where)
+        $list=\app\common\model\Order::where($where)
             ->where($condition)
             ->with('orderStatus')
             ->with('users')
@@ -52,7 +52,7 @@ class Order extends Base{
         }else{
             $where='';
         }
-        $list=\app\admin\model\Order::with('orderStatus')
+        $list=\app\common\model\Order::with('orderStatus')
             ->where($where)
             ->select();
         $objPHPExcel= new \PHPExcel();

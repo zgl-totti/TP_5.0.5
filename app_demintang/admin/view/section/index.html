@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>列表页</title>
+    <link href="__STATIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.1.8.2.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/select-ui.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/editor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/time/abc/timer/WdatePicker.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/layer/layer.js"></script>
+    <script type="text/javascript">
+        KE.show({
+            id : 'content7',
+            cssPath : './index.css'
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $(".select1").uedSelect({
+                width : 345
+            });
+            $(".select2").uedSelect({
+                width : 167
+            });
+            $(".select3").uedSelect({
+                width : 100
+            });
+        });
+    </script>
+    <style type="text/css">
+        .pagination {
+            margin-top: 50px;
+            text-align:center;
+        }
+        .pagination li{
+            display: inline-block;
+            margin:0 3px;
+        }
+        .pagination span,.pagination a{
+            border-radius:3px;
+            border: 1px solid #67cdf8;
+            padding:5px 12px;
+            color: green;
+        }
+        .pagination a:hover{
+            background:#09F;
+            color:#FFF;
+            border-color:#09F;
+        }
+        .active{
+            color: #ff4500;
+            background: #ffd8a6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">系统设置</a></li>
+    </ul>
+</div>
+<div class="formbody">
+    <div id="usual1" class="usual">
+        <div id="tab2" class="tabson">
+
+            <form action="{:url('Section/index')}" method="get">
+                <ul class="seachform">
+                    <li><label>按名称查询</label><input name="keywords" type="text" value="{$keywords}" class="scinput" /></li>
+                    <li><label>&nbsp;</label><input type="submit" class="scbtn" value="查询"/></li>
+                </ul>
+            </form>
+
+            <table class="tablelist">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>分类名称</th>
+                    <th>分类Id</th>
+                    <th>分类父Id</th>
+                    <th>上级分类</th>
+                    <th>添加时间</th>
+                    <th>是否展示</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="list" id="val" key="k"}
+                <tr>
+                    <td>{$k+$firstRow}</td>
+                    <td>{$val.cname}</td>
+                    <td>{$val.id}</td>
+                    <td>{$val.pid}</td>
+                    <td>{$val.path}</td>
+                    <td>{$val.addtime|date='Y-m-d',###}</td>
+                    <td class="zhuangtai">{$val['show']?'展示':'下架'}</td>
+                    <td class="par">
+                        <a href="javascript:;" pid="{$val['pid']}" id="{$val['id']}" class="tablelink click">{$val['show']?'下架':'展示'}</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{:url('Section/edit',['id'=>$val['id']])}" class="tablelink">编辑</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#" id="{$val['id']}" class="tablelink del">删除</a>
+                    </td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+        </div>
+        {$list->render()}
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    $("#usual1 ul").idTabs();
+</script>
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $('.click').click(function(){
+            var id=$(this).attr('id');
+            var pid=$(this).attr('pid');
+            layer.confirm('确定要更改分类状态吗？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.post("{:url('Section/updateshow')}",{id:id,pid:pid},function(res){
+                    if(res.status==1){
+                        layer.msg(res.info,{icon:6},function(){
+                            location="{:url('Section/index')}";
+                        });
+                    }else{
+                        layer.msg(res.info,{icon:5});
+                    }
+                },'json');
+            });
+        })
+        $('.del').click(function(){
+            var id=$(this).attr('id');
+            $.post("{:url('Section/del')}",{id:id},function(res){
+                if(res.status==1){
+                    layer.msg(res.info,{icon:6},function(){
+                        location="{:url('Section/index')}";
+                    });
+                }else{
+                    layer.msg(res.info,{icon:5});
+                }
+            },'json');
+        });
+    })
+</script>

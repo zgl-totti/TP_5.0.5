@@ -1,0 +1,23 @@
+﻿{include file="public/header" /}
+
+<div class="clear"></div>
+<!--路径导航-->
+<section class="currentPath">
+	<ol class="breadcrumb">
+		<li><a href="{:url('Index/index')}">首页</a></li>
+	    <li><a href="{:url('Newses/index')}">产品列表</a></li>
+	    <li class="active">产品详情</li>
+	</ol>
+</section>
+<!--文章-->
+<article class="article-page">
+	<h3 style="text-align: center;">{$info.goodsname}</h3>
+	<h5 style="text-align: center;color: #777;">上架时间：{:date('Y-m-d',$info['addtime'])}</h5>
+	<div class="article-content">
+		<p>
+			{:htmlspecialchars_decode($info['content'])}
+		</p>
+	</div>
+</article>
+
+{include file="public/footer" /}

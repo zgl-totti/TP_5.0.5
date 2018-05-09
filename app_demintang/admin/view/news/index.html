@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>列表页</title>
+    <link href="__STATIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/select-ui.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/editor/kindeditor.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.1.8.2.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/layer/layer.js"></script>
+    <script src="__STATIC__/admin/js/layer/layer.js"></script>
+
+    <script type="text/javascript">
+        KE.show({
+            id : 'content7',
+            cssPath : './index.css'
+        });
+    </script>
+
+    <!--<script type="text/javascript">
+    $(document).ready(function(e) {
+        $(".select1").uedSelect({
+            width : 345
+        });
+        $(".select2").uedSelect({
+            width : 167
+        });
+        $(".select3").uedSelect({
+            width : 100
+        });
+    });
+    </script>-->
+    <style>
+        #page a,#page span{
+            display: inline-block;
+            width:18px;
+            height:18px ;
+            padding: 5px;
+            margin: 2px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 18px;
+            background: #f0ead8;
+            color:#000000;
+            border: 1px solid #c2d2d7;
+        }
+        #page a:hover{
+            background:#F27602;
+            color:#FF0000;
+        }
+        #page span{
+            background:#F27602;
+            color:#FF0000;
+            font-weight: bold;
+        }
+        #page{
+            float: right;
+        }
+        .tablelink{
+            cursor: pointer;
+        }
+        .message,.blue{
+            font-size: 15px
+        }
+    </style>
+
+    <script>
+
+        $(function(){
+            $('.status').click(function(){
+                var id=$(this).attr('id');
+                $.post("{:url('News/operate')}", {id: id}, function (res) {
+                    if (res.status == 1) {
+                        layer.msg('文章状态操作成功',{icon:6,time:2000},function(){
+                            location="{:url('News/index')}";
+                        });
+                    } else {
+                        layer.msg('文章状态操作失败',{icon:5,time:2000});
+                    }
+                }, 'json')
+            })
+            $('.del').click(function(){
+                var id=$(this).attr('name');
+                $.post("{:url('News/del')}", {id: id}, function (res) {
+                    if (res.status == 1) {
+                        layer.msg('删除成功',{icon:6,time:2000},function(){
+                            location="{:url('News/index')}";
+                        });
+                    } else {
+                        layer.msg('删除失败',{icon:5,time:2000});
+                    }
+                }, 'json')
+            })
+        })
+
+        /*function change(obj) {
+         var id = obj.id;
+         }*/
+
+    </script>
+
+</head>
+
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">新闻管理</a></li>
+        <li><a href="#">新闻列表</a></li>
+
+    </ul>
+</div>
+
+<div class="formbody">
+
+
+    <div id="usual1" class="usual">
+
+
+
+        <div id="tab2" class="tabson">
+
+            <form action="{:url('News/index')}" method="get">
+                <ul class="seachform">
+
+                    <li><label>新闻查询</label><input name="keywords" value="{$keywords}" type="text" class="scinput" /></li>
+                    <li><label>&nbsp;</label><input type="submit" class="scbtn" value="查询"/></li>
+
+                </ul>
+            </form>
+
+
+            <table class="tablelist">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>标题</th>
+                    <th>摘要</th>
+                    <th>内容</th>
+                    <th>添加时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {volist name="list" id="val" key="k"}
+                    <tr>
+                        <td>{$k+$firstRow}</td>
+                        <td>{$val['title']}</td>
+                        <td>{:mb_substr($val['digest'],0,30,'utf-8')}</td>
+                        <td>{:mb_substr($val['content'],0,30,'utf-8')}</td>
+                        <td>{:date('Y-m-d H:i:s',$val['addtime'])}</td>
+                        <td>{$val['status']==2?'下架':'上架'}</td>
+                        <td>
+                            <a href="#" id="{$val.id}" class="tablelink status">{$val['status']==2?'上架':'下架'}</a>&nbsp;&nbsp;
+                            <a href="{:url('edit',['id'=>$val['id']])}" class="tablelink">编辑</a>&nbsp;&nbsp;
+                            <a href="#" name="{$val.id}" class="tablelink del">删除</a>&nbsp;&nbsp;
+                        </td>
+
+
+                        <!--<td><a href="#" id="{$k+$firstRow}" class="tablelink" onclick="change(this)" >{$val['status']==0?'激活':'停权'}</a></td>-->
+                        <!--<td><a href="{:url('Admin/operate',array('id'=>$val['id']))}" class="tablelink">{$val['status']==0?'激活':'停权'}</a></td>-->
+
+
+
+                    </tr>
+                {/volist}
+
+
+                </tbody>
+            </table>
+
+            <div class="pagin">
+                <div id="page">{$page}</div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $("#usual1 ul").idTabs();
+</script>
+
+<script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+</script>
+
+</body>
+</html>

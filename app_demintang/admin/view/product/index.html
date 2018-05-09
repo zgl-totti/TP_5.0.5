@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>列表页</title>
+    <link href="__STATIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.1.8.2.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/select-ui.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/kindeditor/kindeditor-all.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/time/abc/timer/WdatePicker.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/layer/layer.js"></script>
+    <style type="text/css">
+        .pagination {
+            margin-top: 50px;
+            text-align:center;
+        }
+        .pagination li{
+            display: inline-block;
+            margin:0 3px;
+        }
+        .pagination span,.pagination a{
+            border-radius:3px;
+            border: 1px solid #67cdf8;
+            padding:5px 12px;
+            color: green;
+        }
+        .pagination a:hover{
+            background:#09F;
+            color:#FFF;
+            border-color:#09F;
+        }
+        .active{
+            color: #ff4500;
+            background: #ffd8a6;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $(".select1").uedSelect({
+                width : 345
+            });
+            $(".select2").uedSelect({
+                width : 167
+            });
+            $(".select3").uedSelect({
+                width : 100
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">产品管理</a></li>
+        <li><a href="#">产品列表</a></li>
+    </ul>
+</div>
+<div class="formbody">
+    <div id="usual1" class="usual">
+        <div id="tab2" class="tabson">
+            <form action="{:url('Product/index')}" method="get" id="form1">
+                <ul class="seachform">
+                    <li><label>名称</label><input name="keywords" type="text" class="scinput" value="{$keywords}" style="width: 160px;height: 25px;"/></li>
+                    <li><label>分类</label><input name="cname" type="text" class="scinput" value="{$cname}" style="width: 160px;height: 25px;"/></li>
+                    <!--<li><label>销售价格</label><input name="saleprice1" type="text" class="scinput" value="{$saleprice1?$saleprice1:''}" style="width: 60px;height: 25px;"/><span style="display: inline-block;">~</span>
+                        <input name="saleprice2" value="{$saleprice2?$saleprice2:''}" type="text" class="scinput" style="width: 60px;height: 25px;"/></li>
+                    <li>
+                        <label>发布时间：</label>
+                        <input id="d11" type="text" onClick="WdatePicker()" style="width: 80px;height:25px;border: 1px solid #cccccc;" name="time1" value="{$time1?$time1:''}"/>
+                        <span style="display: inline-block;">-</span>
+                        <input name="time2" class="Wdate" type="text" id="d15" onFocus="WdatePicker({isShowClear:false,readOnly:true})" style="width: 80px;height: 25px;border: 1px solid #cccccc;" value="{$time2?$time2:''}"/>
+                    </li>-->
+                    <li><label>&nbsp;</label><input name="" type="submit" class="scbtn" value="查询" style="width: 60px;height: 25px;"/></li>
+                </ul>
+            </form>
+            <table class="tablelist">
+                <thead>
+                <tr>
+                    <th style="font-size: 10px;">编号<i class="sort"><img src="__STATIC__/admin/images/px.gif" /></i></th>
+                    <th style="font-size: 10px;">名称</th>
+                    <th style="font-size: 10px;">分类</th>
+                    <th style="font-size: 10px;">图片</th>
+                    <th style="font-size: 10px;">价格</th>
+                    <th style="font-size: 10px;">摘要</th>
+                    <th style="font-size: 10px;">描述</th>
+                    <th style="font-size: 10px;">发布时间</th>
+                    <th style="font-size: 10px;">是否展示</th>
+                    <th style="font-size: 10px;">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="list" id="val" key="k"}
+                <tr>
+                    <td style="font-size: 10px;">{$k+$firstRow}</td>
+                    <td style="font-size: 10px;">{:mb_substr($val['goodsname'],0,10,'utf-8')}</td>
+                    <td style="font-size: 10px;">{$val['getSection']['cname']}</td>
+                    <td style="font-size: 10px;"><img src="/uploads/product/{$val.pic}" alt="" style="max-width:50px" /></td>
+                    <td style="font-size: 10px;">{$val.price}元</td>
+                    <td style="font-size: 10px;">{:mb_substr($val.digest,0,15,'utf-8')}</td>
+                    <td style="font-size: 10px;">{:mb_substr($val.content,0,20,'utf-8')}</td>
+                    <td style="font-size: 10px;">{:date('Y-m-d H:i:s',$val['addtime'])}</td>
+                    <td style="font-size: 10px;" class="zhuangtai">{$val['status']==1?'展示':'下架'}</td>
+                    <td style="font-size: 10px;" class="par">
+                        <a href="{:url('Product/edit',['id'=>$val['id']])}" class="tablelink">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a gid="{$val['id']}" id="{$val['status']}" class="tablelink updashow" style="cursor: pointer;">{$val['status']==1?'下架':'展示'}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a id="{$val['id']}" class="tablelink del" style="cursor: pointer;">删除</a></td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+            <div class="pagin">
+                <div class="paginList">
+                    {$list->render()}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+        $(function(){
+            $('.updashow').click(function(){
+                var gid=$(this).attr('gid');
+                var id=$(this).attr('id');
+                layer.confirm("确定该商品要"+(id==1?'下架':'展示')+"吗？", {
+                    btn: ['确定','取消'] //按钮
+                }, function(){
+                    $.post("{:url('Product/updateshow')}",{gid:gid},function(res){
+                        if(res.status==1){
+                            layer.msg(res.info,{icon:6},function(){
+                                location="{:url('Product/index')}";
+                            })
+                        }else{
+                            layer.msg(res.info,{icon:5});
+                        }
+                    },'json')
+                });
+            })
+
+            $('.del').click(function(){
+                var id=$(this).attr('id');
+                $.post("{:url('Product/del')}",{id:id},function(res){
+                    if(res.status==1){
+                        layer.msg(res.info,{icon:6},function(){
+                            location="{:url('Product/index')}";
+                        })
+                    }else{
+                        layer.msg(res.info,{icon:5});
+                    }
+                },'json')
+            })
+        })
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link href="__STATIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <script language="JavaScript" src="__STATIC__/admin/js/jquery.js"></script>
+    <script src="__STATIC__/admin/js/jquery.min.1.8.2.js"></script>
+    <script src="__STATIC__/admin/js/layer/layer.js"></script>
+    <style type="text/css">
+    	*{margin: 0;padding: 0;}
+        #loginout{
+            cursor: pointer;
+        }
+        #timeunit{
+            /*width: 230px;*/
+            float: left;
+        }
+        #time{
+            font-size: 14px;
+            font-style: normal;
+            color: #FFF;
+        }
+        .time {
+        	display: inline-block;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            //顶部导航切换
+            $(".nav li a").click(function(){
+                $(".nav li a.selected").removeClass("selected");
+                $(this).addClass("selected");
+            })
+            $('#loginout').click(function(){
+                $.post("{:url('Login/logout')}",'',function(res){
+                    if(res.status==1){
+                        layer.msg('退出成功',{icon:1,time:1000},function(){
+                            parent.location.href="{:url('Login/index')}";
+                        })
+                    }else{
+                        layer.msg('退出失败');
+                    }
+                })
+            })
+
+            //时间设置;
+            function currentTime(){
+                var dt=new Date(),
+                str='';
+                str+=dt.getFullYear()+'年';
+                str+=dt.getMonth() + 1+'月';
+                str+=dt.getDate()+'日';
+                if(dt.getHours()<10){
+                    str+="0"+dt.getHours()+'时';
+                }else{
+                    str+=dt.getHours()+'时';
+                }
+                if(dt.getMinutes()<10){
+                    str+="0"+dt.getMinutes()+'分';
+                }else{
+                    str+=dt.getMinutes()+'分';
+                }
+                if(dt.getSeconds()<10){
+                    str+="0"+dt.getSeconds()+'秒';
+                }else{
+                    str+=dt.getSeconds()+'秒';
+                }
+                return str;
+            }
+            setInterval(function(){
+                $('#time').html(currentTime)
+            },1000);
+        })
+    </script>
+</head>
+<!--<body style="background:url(__STATIC__/admin/images/topbg.jpg) repeat-x;">
+    <div class="topleft">
+        <a href="{:url('/index/index')}" target="_top"><img src="__STATIC__/admin/images/logo.png" title="系统首页" /></a>
+    </div>
+    <div class="topright">
+        <ul>
+            <li><span><img src="__STATIC__/admin/images/help.png" title="帮助"  class="helpimg"/></span><a href="#">帮助</a></li>
+            <li><a href="#">关于</a></li>
+            
+        </ul>
+        
+        <div id="timeunit">
+            
+        </div>
+       <div class="user">
+        	<p class="time"><em id="time"></em></p>
+            <span>{$info.username}</span>
+            <p style="display: inline-block;"><a target="_parent" id="loginout" ><img src="__STATIC__/admin/images/out.png" alt="" style="margin-right: 10px;margin-top: 2px;"/>退出</a></p>
+            <i>消息</i>
+            <b>0</b>
+       </div>
+    </div>
+</body>-->
+<body style="background:url(__STATIC__/admin/images/topbg.jpg) repeat-x;">
+    <div class="topleft">
+        <!--<a href="#" target="_top">--><img src="__STATIC__/admin/images/logo.png" title="系统首页" style="float: left;" /><!--</a>-->
+        <h1 style="display: inline-block;margin-top: 1.1em;margin-left: 1.5em;font-size: 20px;color: #FFF;">后台管理系统</h1>
+    </div>
+    
+    
+    <div class="topright">
+       <div class="user">
+        	<p class="time"><em id="time"></em></p>
+            <span>{$info.username}</span>
+            <p style="display: inline-block;"><a target="_parent" id="loginout" ><img src="__STATIC__/admin/images/out.png" alt="" style="margin-right: 10px;margin-top: 2px;"/>退出</a></p>
+       </div>
+    </div>
+</body>
+</html>

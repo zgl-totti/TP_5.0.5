@@ -1,7 +1,7 @@
 <?php
 namespace app\admin\controller;
 
-use app\admin\model\MailAdmin;
+use app\common\model\MailAdmin;
 use think\Session;
 
 class Mail extends Base{

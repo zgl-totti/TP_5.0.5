@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>会员列表页</title>
+    <link href="__PUBLIC__/Admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/Admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/select-ui.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Admin/editor/kindeditor.js"></script>
+
+    <style type="text/css">
+        .pagination {
+            margin-top: 50px;
+            text-align:center;
+        }
+        .pagination li{
+            display: inline-block;
+            margin:0 3px;
+        }
+        .pagination span,.pagination a{
+            border-radius:3px;
+            border: 1px solid #67cdf8;
+            padding:5px 12px;
+        }
+        .pagination a:hover{
+            background:#09F;
+            color:#FFF;
+            border-color:#09F;
+        }
+        .active{
+            color: #ff4500;
+            background: #ffd8a6;
+            font-weight: bold;
+        }
+    </style>
+
+    <script type="text/javascript">
+        KE.show({
+            id : 'content7',
+            cssPath : './index.css'
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $(".select1").uedSelect({
+                width : 345
+            });
+            $(".select2").uedSelect({
+                width : 167
+            });
+            $(".select3").uedSelect({
+                width : 100
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">系统设置</a></li>
+    </ul>
+</div>
+
+<div class="formbody">
+
+
+    <div id="usual1" class="usual">
+
+
+
+        <div id="tab2" class="tabson">
+
+            <form action="{:url('User/Userlist')}" method="get" class="form">
+                <ul class="seachform">
+                    <li><label>综合查询</label><input name="chaXun" type="text" class="scinput" placeholder="请输入用户名" /></li>
+                    <li><label>&nbsp;</label><input name="" type="submit" class="scbtn" value="查询"/></li>
+                </ul>
+            </form>
+            <!-- <script type="text/javascript">
+                 $(function(){
+                     $('.scbtn').click(function(){
+                         var text=$('.scinput').val();
+                         $.get("{:url('Brand/index')}",'text='+text)
+
+                     })
+
+                 })
+
+
+             </script>
+             -->
+            <table class="tablelist">
+                <thead>
+                <tr>
+<!--
+                    <th><input name="" type="checkbox" value="" checked="checked"/></th>
+-->
+                    <th>编号<i class="sort"><img src="__PUBLIC__/Admin/images/px.gif" /></i></th>
+                    <th>会员名称</th>
+                    <th>注册时间</th>
+                    <th>会员等级</th>
+                    <th>消费金额</th>
+                    <th>email</th>
+                    <th>当前积分</th>
+                    <th>最后登录时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="UserInfo" id="val" key="k"}
+                    <tr>
+                        <td>{$k+$firstRow}</td>
+                        <td>{$val.username}</td>
+                        <td>{$val.regtime|date='Y-m-d H:i',###}</td>
+                        <td>
+                            {if condition="$val.memberorder eq 1"} 普通会员
+                            {elseif condition="$val.memberorder eq 2"/} 高级会员
+                                {else /} 黄金会员
+                            {/if}
+                        </td>
+                        <td>{$val.monetary}</td>
+                        <td>{$val.email}</td>
+                        <td>{$val.score}</td>
+                        <td>{$val.lastlogin|date='Y-m-d H:i',###}</td>
+                    </tr>
+                {/volist}
+                </tbody>
+            </table>
+            {$page}
+            <!--<div class="pagin">
+                <div id="page">{page}</div>
+            </div>-->
+
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $("#usual1 ul").idTabs();
+    </script>
+
+    <script type="text/javascript">
+        $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+
+
+
+
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+﻿{include file="public/header" /}
+<div class="clear"></div>
+<!--路径导航-->
+<section class="currentPath">
+	<ol class="breadcrumb">
+		<li><a href="{:url('Index/index')}">首页</a></li>
+		<li class="active">新闻列表页</li>
+	</ol>
+</section>
+<!--文章列表-->
+<div class="articleList">
+	{volist name="list" id="val"}
+		<div class="media">
+			<a href="{:url('newes/detail',['id'=>$val['id']])}">
+				<div class="media-left" href="#">
+					<img class="media-object" src="__STATIC__/mobile/images/list-img.png"
+						 alt="文章图片">
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading articleTitle">{$val.title}</h4>
+					{:mb_substr($val.digest,0,60,'utf-8')}
+				</div>
+			</a>
+		</div>
+	{/volist}
+</div>
+<!--翻页-->
+<div class="navigate" style="text-align: center;">
+	<ul class="pagination pagination-lg">
+		{$list->render()}
+	</ul>
+</div>
+
+{include file="public/footer" /}

@@ -1,0 +1,270 @@
+{include file="public/header" /}
+<!--列表页-->
+<div class="listhbg hbg">
+    <div class="list-content">
+        <div class="listleft">
+            <div class="prodet">
+                {$title}
+            </div>
+            <ul class="nav-tabs proul">
+                {volist name="list" id="v" key="k"}
+                    <li>
+                        <a href="#pro{$k}" data-toggle="tab">{$v.name}</a>
+                    </li>
+                {/volist}
+            </ul>
+        </div>
+        <div class="listright">
+            <div class="local">
+                <p class="local1">
+                    当前位置：<a href="{:url('Index/index')}">网站首页</a>--<span>{$title}</span>
+                </p>
+            </div>
+            <div class="proline">
+                <img src="__STATIC__/index/img/proline.png"/>
+            </div>
+            <div class="pro-content">
+                <div class="tab-content protab">
+                    {volist name="list" id="v" key="k"}
+                        <div class="tab-pane fade in active" id="pro{$k}">
+                            <div class="media">
+                                <div class="media-left media-middle">
+                                    <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                                </div>
+                                <div class="media-body promedia">
+                                    <h4 class="media-heading">{$v.name}介绍</h4>
+                                    <p>{$v.intro}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {/volist}
+                    <!--<div class="tab-pane fade in active" id="pro1">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pro2">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pro3">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pro4">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">
+                                    御灵菲宝主要中药成分
+                                </h4>
+                                <p>
+                                    御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要中药成分御灵菲宝主要......<a href="">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+                <!--<div class="page">
+                    <div class="pagebutton">
+                        <a href=""><button>首页</button></a>
+                        <a href=""><button>下一页</button></a>
+                        <a href=""><button>尾页</button></a>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+

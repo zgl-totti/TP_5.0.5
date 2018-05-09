@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>产品发布</title>
+    <link href="__STATIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.min.1.8.2.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/select-ui.min.js"></script>
+    <link href="__STATIC__/admin/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="__STATIC__/admin/umeditor/third-party/jquery.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/umeditor/third-party/template.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/umeditor/umeditor.config.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__STATIC__/admin/umeditor/umeditor.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="__STATIC__/admin/umeditor/lang/zh-cn/zh-cn.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/layer/layer.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.form.js"></script>
+    <script type="text/javascript">
+        $(function() {           
+            /*添加分类三级联动*/
+            var getCate=function(pid,name){
+                $.post('{:url("Product/getCateByPid")}',{pid:pid},function(res){
+                    if(res.status){
+                        var str='<option value="0" selected>请选择</option>';
+                        for(var i in res.info){
+                            str+='<option value="'+res.info[i].id +'">' + res.info[i].cname+ '</option>';
+                        }
+                        $('select[name="'+name+'"]').html(str);
+                        $('select[name="'+name+'"]').parent().find(".uew-select-text").text($('select[name="'+name+'"]').find(':selected').text());
+                    }
+                })
+            };
+            getCate(0,'firstCate');
+
+            $('select[name="firstCate"]').change(function(){
+                getCate($(this).find(':selected').val(),'secondCate');
+                $(this).parents('.vocation').next('.vocation').show();
+                //$('select[name="thirdCate"]').empty().parents('.vocation').hide();
+            });
+
+            //提交商品发布表单
+            $('.btn').click(function(){
+                $('#add').ajaxSubmit(function(res){
+                    if(res.status==1){
+                        layer.msg(res.info,{icon:6},function(){
+                            location="{:url('Product/index')}";
+                        });
+                    }else{
+                        layer.msg(res.info,{icon:5});
+                    }
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">产品管理</a></li>
+        <li><a href="#">产品发布</a></li>
+    </ul>
+</div>
+
+<div class="formbody">
+    <div id="usual1" class="usual">
+        <div id="tab1" class="tabson">
+            <form action="{:url('Product/edit')}" id="add" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{$info.id}" />
+                    <ul class="forminfo">
+                        <li><label>商品名称<b>*</b></label><input name="goodsname" type="text" class="dfinput" value="{$info.goodsname}"  style="width:300px;"/></li>
+                        <!-- <li><label>商品分类<b>*</b></label>
+                            <div class="vocation">
+                                <select class="select2" name="firstCate" style="width: 167px;height: 35px;border: 1px solid #a7b5bc;opacity: 1;">
+                                </select>
+                            </div>
+                            <div class="vocation" style="display:none">
+                                <select class="select2" name="secondCate" style="width: 167px;height: 35px;border: 1px solid #a7b5bc;opacity: 1;">
+                                </select>
+                            </div>
+                        </li> -->
+                        <li><label>商品分类<b>*</b></label>
+                            <div class="vocation">
+                                <select class="select2" name="sid" style="width: 345px;height: 35px;border: 1px solid #a7b5bc;opacity: 1;">
+                                    <option value="0">请选择</option>
+                                    {volist name="list" id="val"}
+                                        <option value="{$val.id}" {$info['sid']==$val['id']?'selected':''}>{$val.cname}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                        </li>
+                        <li><label>商品价格<b>*</b></label><input name="price" type="text" class="dfinput" value="{$info.price}" style="width:167px;margin-top: 10px;"/> 元</li>
+                        <li><label>商品摘要<b>*</b></label>
+	                        <textarea name="digest" rows="10" cols="55" style="border: 1px solid #a7b5bc;margin-top:30px;">{$info.digest}</textarea>
+	                    </li>
+	                    
+                        <li style="margin-top: 80px;margin-bottom: 500px">
+	                        <label>商品图片<b>*</b></label>
+	                        <div class="usercity" style="border:3px dashed #e6e6e6;width:500px;height:300px;position: relative">
+	                            <p id="preview1" ><img id="imghead1"  border=0 src="/uploads/product/{$info.pic}" style="max-width:200px;"></p><span></span>
+	                            <input type="file" id="image1" name="pic" onchange="previewImage(this,'preview1','imghead1')" style="display:none;" >
+	                            <label for="image1"  style="margin:130px 180px;color:#fff;text-align:center;border-radius:4px;width:130px;height:26px;line-height:26px;font-size:18px;background:#00b7ee;padding:8px 16px;cursor:pointer;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);">点击选择图片</label>
+	                        </div>
+	                    </li>
+	                    <li><label>商品详情<b>*</b></label></li>
+	                    <li><script type="text/plain" id="myEditor" style="width:1000px;height:600px;">{:htmlspecialchars_decode($info.content)}</script></li>
+                        <li style="margin-top:25px"><label>&nbsp;</label><input name="" type="button" class="btn" value="马上发布"/></li>
+                    </ul>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    //图片上传预览    IE是用了滤镜。
+    function previewImage(file,pre,imag)
+    {
+        var MAXWIDTH  = 300;
+        var MAXHEIGHT = 300;
+        var div = document.getElementById(pre);
+        if( !file.value.match( /.jpg|.gif|.png|.bmp/i ) ){
+            //$(this).prev('span').text('图片格式无效！');
+            $('#'+pre).next('span').css({"color":"red","font-weight":"bold"}).text('图片类型无效！');
+            return false;
+        }else{
+            $('#'+pre).next('span').css({"color":"green","font-weight":"bold"}).text('');
+        }
+        if (file.files && file.files[0])
+        {
+            div.innerHTML ='<img id='+imag+'>';
+            var img = document.getElementById(imag);
+            img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+            }
+            var reader = new FileReader();
+            reader.onload = function(evt){img.src = evt.target.result;}
+            reader.readAsDataURL(file.files[0]);
+        }
+        else //兼容IE
+        {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            file.blur();
+            var src = document.selection.createRange().text;
+            div.innerHTML ='<img id='+imag+'>';
+            var img = document.getElementById(imag);
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+        }
+
+        $(file).next('label').css({margin:0,top:0,position:'absolute',background:'rgba(0,0,0,0.4)',color:'#fff',fontSize:'14px',width:'80px',padding:'3px'}).html('重新选择');
+    }
+    function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+        var param = {top:0, left:0, width:width, height:height};
+        if( width>maxWidth || height>maxHeight )
+        {
+            rateWidth = width / maxWidth;
+            rateHeight = height / maxHeight;
+
+            if( rateWidth > rateHeight )
+            {
+                param.width =  maxWidth;
+                param.height = Math.round(height / rateWidth);
+            }else
+            {
+                param.width = Math.round(width / rateHeight);
+                param.height = maxHeight;
+            }
+        }
+
+        param.left = Math.round((maxWidth - param.width) / 2);
+        param.top = Math.round((maxHeight - param.height) / 2);
+        return param;
+    }
+</script>
+<script type="text/javascript">
+    //实例化编辑器
+    var um = UM.getEditor('myEditor');
+    um.addListener('blur',function(){
+        $('#focush2').html('编辑器失去焦点了')
+    });
+    um.addListener('focus',function(){
+        $('#focush2').html('')
+    });
+    //按钮的操作
+    function insertHtml() {
+        var value = prompt('插入html代码', '');
+        um.execCommand('insertHtml', value)
+    }
+    function isFocus(){
+        alert(um.isFocus())
+    }
+    function doBlur(){
+        um.blur()
+    }
+    function createEditor() {
+        enableBtn();
+        um = UM.getEditor('myEditor');
+    }
+    function getAllHtml() {
+        alert(UM.getEditor('myEditor').getAllHtml())
+    }
+    function getContent() {
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push(UM.getEditor('myEditor').getContent());
+        alert(arr.join("\n"));
+    }
+    function getPlainTxt() {
+        var arr = [];
+        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+        arr.push("内容为：");
+        arr.push(UM.getEditor('myEditor').getPlainTxt());
+        alert(arr.join('\n'))
+    }
+    function setContent(isAppendTo) {
+        var arr = [];
+        arr.push("使用editor.setContent('欢迎使用umeditor')方法可以设置编辑器的内容");
+        UM.getEditor('myEditor').setContent('欢迎使用umeditor', isAppendTo);
+        alert(arr.join("\n"));
+    }
+    function setDisabled() {
+        UM.getEditor('myEditor').setDisabled('fullscreen');
+        disableBtn("enable");
+    }
+
+    function setEnabled() {
+        UM.getEditor('myEditor').setEnabled();
+        enableBtn();
+    }
+
+    function getText() {
+        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+        var range = UM.getEditor('myEditor').selection.getRange();
+        range.select();
+        var txt = UM.getEditor('myEditor').selection.getText();
+        alert(txt)
+    }
+
+    function getContentTxt() {
+        var arr = [];
+        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");
+        arr.push(UM.getEditor('myEditor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+    function hasContent() {
+        var arr = [];
+        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+        arr.push("判断结果为：");
+        arr.push(UM.getEditor('myEditor').hasContents());
+        alert(arr.join("\n"));
+    }
+    function setFocus() {
+        UM.getEditor('myEditor').focus();
+    }
+    function deleteEditor() {
+        disableBtn();
+        UM.getEditor('myEditor').destroy();
+    }
+    function disableBtn(str) {
+        var div = document.getElementById('btns');
+        var btns = domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            if (btn.id == str) {
+                domUtils.removeAttributes(btn, ["disabled"]);
+            } else {
+                btn.setAttribute("disabled", "true");
+            }
+        }
+    }
+    function enableBtn() {
+        var div = document.getElementById('btns');
+        var btns = domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            domUtils.removeAttributes(btn, ["disabled"]);
+        }
+    }
+</script>
+</html>
+

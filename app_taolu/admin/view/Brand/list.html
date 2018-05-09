@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>品牌列表</title>
+<link href="__PUBLIC__/Admin/css/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Admin/css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/select-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/editor/kindeditor.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.min.1.8.2.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/layer/layer.js"></script>
+
+    <style type="text/css">
+        .pagination {
+            margin-top: 50px;
+            text-align:center;
+        }
+        .pagination li{
+            display: inline-block;
+            margin:0 3px;
+        }
+        .pagination span,.pagination a{
+            border-radius:3px;
+            border: 1px solid #67cdf8;
+            padding:5px 12px;
+        }
+        .pagination a:hover{
+            background:#09F;
+            color:#FFF;
+            border-color:#09F;
+        }
+        .active{
+            color: #ff4500;
+            background: #ffd8a6;
+            font-weight: bold;
+        }
+    </style>
+
+<script type="text/javascript">
+    KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+  </script>
+</head>
+
+<body>
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">系统设置</a></li>
+    </ul>
+    </div>
+    <div class="formbody">
+    <div id="usual1" class="usual">
+  	<div id="tab2" class="tabson">
+    <form action="{:url('Brand/index')}" method="get" class="form">
+    <ul class="seachform">
+    <li><label>综合查询</label><input name="chaXun" type="text" class="scinput" placeholder="请输入品牌关键字" /></li>
+    <li><label>&nbsp;</label><input name="" type="submit" class="scbtn" value="查询"/></li>
+    </ul>
+    </form>
+    <table class="tablelist">
+    	<thead>
+            <tr>
+
+            <th>编号<i class="sort"><img src="__PUBLIC__/Admin/images/px.gif" /></i></th>
+            <th>品牌名称</th>
+            <th>品牌LOGO</th>
+            <th>发布时间</th>
+                <th>品牌类型</th>
+                <th>品牌展示状态</th>
+            <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {volist name="list" id="val" key="k"}
+            <tr>
+                <td>{$k}</td>
+                <td>{$val.bname}</td>
+                <td><img src="__UPLOADS__/brand/{$val.blogopath}{$val.blogoname}" alt="{$val.bname}" width="75"/></td>
+                <td>{$val.addtime}</td>
+                <td>
+                    {if condition="$val.brandtype eq 1"}国际大牌
+                        {elseif condition="$val.brandtype eq 2" /} 推荐品牌
+                        {elseif condition="$val.brandtype eq 3" /} 国货精品
+                    {/if}
+                </td>
+                <td>{$val['status']==1?'展示':'下架'}</td>
+                <td><a href="#"  onclick="return false" class="tablelink" id="{$val.id}" >{$val['status']==1?'下架':'展示'}</a>
+
+            </tr>
+        {/volist}
+        </tbody>
+    </table>
+    <div class="pagin">
+        <div id="page">{$page}</div>
+    </div>
+    </div>
+	</div> 
+
+       <script>
+           $(function() {
+               $('.tablelink').click(function () {
+                   var id = $(this).attr('id');
+                   $.post("{:url('Brand/upData')}",{id:id}, function (res) {
+                       if (res.status == 1) {
+                           layer.msg('品牌状态更改成功', {icon: 6, time: 1000}, function () {
+                               location = "{:url('Brand/index')}";
+                           });
+                       } else {
+                           layer.msg('品牌状态更改失败', {icon: 5, time: 1000}, function () {
+                               location = "{:url('Brand/index')}"
+                           });
+                       }
+                   }, 'json')
+               });
+           })
+       </script>
+        <script type="text/javascript">
+            $('.tablelist tbody tr:odd').addClass('odd');
+        </script>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+{include file="public/header" /}
+<!--列表页-->
+<div class="listhbg hbg">
+    <div class="list-content">
+        <div class="listleft">
+            <div class="prodet">{$title}</div>
+            <!--<ul class="nav-tabs proul">
+                <li class="active">
+                    <a href="#pro1" data-toggle="tab">
+                        御灵菲宝
+                    </a>
+                </li>
+                <li>
+                    <a href="#pro2" data-toggle="tab">
+                        御灵菲宝
+                    </a>
+                </li>
+                <li>
+                    <a href="#pro3" data-toggle="tab">
+                        御灵菲宝
+                    </a>
+                </li>
+                <li>
+                    <a href="#pro4" data-toggle="tab">
+                        御灵菲宝
+                    </a>
+                </li>
+            </ul>-->
+        </div>
+        <div class="listright">
+            <div class="local">
+                <p class="local1">
+                    当前位置：<a href="{:url('Index/index')}">网站首页</a>--<span>{$title}</span>
+                </p>
+            </div>
+            <div class="proline">
+                <img src="__STATIC__/index/img/proline.png"/>
+            </div>
+            <div class="pro-content">
+                <div class="tab-content protab">
+                    <div class="tab-pane fade in active" id="pro1">
+                        {volist name="list" id="val"}
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <img src="__STATIC__/index/img/proimg1.png" class="media-object" alt="" />
+                            </div>
+                            <div class="media-body promedia">
+                                <h4 class="media-heading">{$val.title}</h4>
+                                <p>
+                                    {:mb_substr(htmlspecialchars_decode($val['content']),0,120,'utf-8')}<a href="{:url($url,['id'=>$val['id']])}">[点击详情]</a>
+                                </p>
+                            </div>
+                        </div>
+                        {/volist}
+                    </div>
+                </div>
+                <div class="page">
+                    <div class="pagebutton">
+                        {$list->render()}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="public/footer" /}
+

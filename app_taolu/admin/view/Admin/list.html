@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表页</title>
+<link href="__PUBLIC__/Admin/css/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Admin/css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/select-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/editor/kindeditor.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.min.1.8.2.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/layer/layer.js"></script>
+    <script src="__PUBLIC__/Admin/js/layer/layer.js"></script>
+
+    <script type="text/javascript">
+    KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+  </script>
+  
+<!--<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".select1").uedSelect({
+		width : 345			  
+	});
+	$(".select2").uedSelect({
+		width : 167  
+	});
+	$(".select3").uedSelect({
+		width : 100
+	});
+});
+</script>-->
+    <style>
+        .pagination {
+            margin-top: 50px;
+            text-align:center;
+        }
+        .pagination li{
+            display: inline-block;
+            margin:0 3px;
+        }
+        .pagination span,.pagination a{
+            border-radius:3px;
+            border: 1px solid #67cdf8;
+            padding:5px 12px;
+        }
+        .pagination a:hover{
+            background:#09F;
+            color:#FFF;
+            border-color:#09F;
+        }
+        .active{
+            color: #ff4500;
+            background: #ffd8a6;
+            font-weight: bold;
+        }
+        .tablelink{
+            cursor: pointer;
+        }
+        .message,.blue{
+            font-size: 15px
+        }
+    </style>
+
+    <script>
+
+        $(function(){
+            $('.status').click(function(){
+                var id=$(this).attr('id');
+                $.post("{:url('Admin/operate')}", {id: id}, function (res) {
+                    if (res.status == 1) {
+                       layer.msg('管理员状态操作成功',{icon:6,time:2000},function(){
+                           location="{:url('Admin/index')}";
+                        });
+                    } else {
+                        layer.msg('管理员状态操作失败',{icon:5,time:2000},function(){
+                           location="{:url('Admin/index')}"
+                       });
+                        }
+                }, 'json')
+            })
+            $('.online').click(function(){
+                var id=$(this).attr('id');
+                $.post("{:url('Admin/kick')}", {id: id}, function (res) {
+                    if (res.status == 1) {
+                        layer.msg('管理员登录状态操作成功',{icon:6,time:2000},function(){
+                            location="{:url('Admin/index')}";
+                        });
+                    } else {
+                        layer.msg('管理员登录状态操作失败',{icon:5,time:2000},function(){
+                            location="{:url('Admin/index')}"
+                        });
+                    }
+                }, 'json')
+            })
+        })
+
+        /*function change(obj) {
+            var id = obj.id;
+        }*/
+
+    </script>
+
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">系统管理</a></li>
+    <li><a href="#">管理员列表</a></li>
+
+    </ul>
+    </div>
+    
+    <div class="formbody">
+    
+    
+    <div id="usual1" class="usual"> 
+    
+  
+     
+  	<div id="tab2" class="tabson">
+    
+    <form action="{:url('Admin/index')}" method="get">
+    <ul class="seachform">
+
+    <li><label>管理员查询</label><input name="keywords" value="{$keywords?$keywords:''}" type="text" class="scinput" /></li>
+    <li><label>&nbsp;</label><input type="submit" class="scbtn" value="查询"/></li>
+    
+    </ul>
+    </form>
+    
+    
+    <table class="tablelist">
+    	<thead>
+    	<tr>
+        <th>编号</th>
+        <th>管理员</th>
+        <th>添加时间</th>
+        <th>编辑时间</th>
+        <th>最近登录</th>
+        <th>身份</th>
+        <th>所属组</th>
+        <th>登录状态</th>
+        <th>账号状态</th>
+        <th>操作</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {volist name="adminList" id="val" key="k"}
+        <tr>
+        <td>{$k+$firstRow}</td>
+        <td>{$val.username}</td>
+        <td>{:date('Y-m-d H:i:s',$val['addtime'])}</td>
+            <td>{:date('Y-m-d H:i:s',$val['edittime'])}</td>
+            <td>{:date('Y-m-d H:i:s',$val['lastlogin'])}</td>
+            {if condition="$val.permissions eq 1"}
+                <td>超级管理员</td>
+                {else /}
+                <td>普通管理员</td>
+            {/if}
+            <td>{$val.group}</td>
+            <td>{$val['online']==1?'在线':'未登录'}</td>
+            <td>{$val['status']==1?'激活':'禁用'}</td>
+
+
+        <td>
+            <a href="#" id="{$val.id}" class="tablelink status">{$val['status']==1?'禁用':'激活'}</a>&nbsp;&nbsp;
+            <a href="{:url('edit',['id'=>$val['id']])}" class="tablelink">编辑</a>&nbsp;&nbsp;
+            <a href="#" id="{$val.id} " class="tablelink online">{$val['online']==1?'下线':''}</a>
+        </td>
+
+        </tr>
+        {/volist}
+
+
+        </tbody>
+    </table>
+
+        <div class="pagin">
+            {$pages}
+            <!--<div id="page">{page}</div>-->
+        </div>
+  
+    </div>
+    </div>  
+       
+	</div> 
+ 
+	<script type="text/javascript">
+      $("#usual1 ul").idTabs(); 
+    </script>
+    
+    <script type="text/javascript">
+	$('.tablelist tbody tr:odd').addClass('odd');
+	</script>
+
+</body>
+</html>

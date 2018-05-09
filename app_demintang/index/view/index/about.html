@@ -1,0 +1,39 @@
+{include file="public/header" /}
+        <!--列表页-->
+        <div class="listhbg hbg">
+            <div class="list-content">
+            	<div class="listleft">
+            		<div class="prodet">
+            			{$title}
+            		</div>
+            		
+            	</div>
+            	<!--列表文章-->
+            	<div class="listright">
+            		<div class="local">
+            			<p class="local1">
+            				当前位置：<a href="{:url('Index/index')}">网站首页</a>--<span>{$title}</span>
+            			</p>
+            		</div>
+            		<div class="proline">
+            			<img src="__STATIC__/index/img/proline.png"/>
+            		</div>
+            		<div class="pro-content">
+            			<div class="listarticle">
+            				<div class="arttitle">
+            					<p>河南省郑州市德欣堂中医门诊</p>
+            				</div>
+            				
+            				<div class="arttxt" style="text-indent: 0;font-size: 20px;line-height: 40px;">
+            					<span><strong>联系电话</strong>：0371-63295120 <br />
+                                <strong>邮编</strong>：450001 <br />
+                                <strong>地址</strong>：河南省郑州市高新技术产业开发区雪松路与莲花街交叉口向南50米 <br />
+                                <strong>乘车路线</strong>：郑州市内乘坐B2路公交车到雪松站下车或乘坐地铁一号线到河南工业大学站下车</span>
+            				</div>
+            			</div>
+            			<iframe src="{:url('Index/map')}" width="100%" height="600px" frameborder="0" scrolling="no"></iframe>            			
+            		</div>
+            	</div>
+            </div>
+         </div>
+{include file="public/footer" /}

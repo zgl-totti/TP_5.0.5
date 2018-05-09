@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <link href="__STATIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__STATIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="__STATIC__/admin/js/jQuery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/jquery.idTabs.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/select-ui.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/admin/js/layer/layer.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+            $(".select1").uedSelect({
+                width : 345
+            });
+            $(".select2").uedSelect({
+                width : 167
+            });
+            $(".select3").uedSelect({
+                width : 100
+            });
+
+            /*向分类表中添加分类*/
+            $('.btn').click(function(){
+                $.post('{:url("Section/edit")}',$("#form1").serialize(),function(res) {
+                    if (res.status == 1) {
+                        layer.msg(res.info, {icon: 6}, function () {
+                            location = '{:url("Section/index")}';
+                        });
+                    } else {
+                        layer.msg(res.info, {icon: 5});
+                    }
+                },'json')
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">科室管理</a></li>
+        <li><a href="#">编辑科室</a></li>
+    </ul>
+</div>
+<div class="formbody">
+    <div id="usual1" class="usual">
+        <div id="tab1" class="tabson">
+            <form action="" method="post" id="form1">
+                <ul class="forminfo">
+                    <li><label>科室名称<b>*</b></label><input name="cname" type="text" class="dfinput" value="{$info.cname}" style="width:240px;"/></li>
+                    <li><label>顶级分类<b>*</b></label>
+                        <input type="hidden" name="id" value="{$info.id}"/>
+                        <div class="vocation">
+                            <select class="select2" name="pid">
+                                <option>请选择</option>
+                                {volist name="list" id="val"}
+                                    <option value="{$val.id}" {$val['id']==$info['pid']?'selected':''}>{$val.cname}</option>
+                                {/volist}
+                            </select>
+                        </div>
+                    </li>
+                    <li><label>科室简介<b>*</b></label>
+                        <textarea name="intro" rows="20" cols="60" style="border: 1px solid #008000">{$info.intro}</textarea>
+                    </li>
+                    <li><label>&nbsp;</label><input type="button" class="btn" value="马上编辑"/></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
