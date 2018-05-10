@@ -10,3 +10,24 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+
+
+/**
+ * 通用API接口
+ * @param int $status
+ * @param string $message
+ * @param array $data
+ * @param int $httpCode
+ * @return \think\response\Json
+ * @author totti_zgl
+ * @date 2018/5/10 9:28
+ */
+function show(int $status,string $message,array $data=[],int $httpCode=200)
+{
+    $data=[
+        'status'=>$status,
+        'message'=>$message,
+        'data'=>$data
+    ];
+    return json($data,$httpCode);
+}
