@@ -2,8 +2,11 @@
 
 namespace app\api\controller;
 
+use app\common\lib\exception\ApiException;
 use app\common\model\Admin;
 use think\Controller;
+use think\exception\HttpException;
+use think\Log;
 use think\Request;
 
 class Test extends Controller
@@ -86,7 +89,9 @@ class Test extends Controller
             $data = $info->toArray();
             return api(1, '更新成功', $data, 202);
         }catch (\Exception $e) {
-            return api(0,$e->getMessage(),[],404);
+            //Log::record('错误异常'.$e->getMessage());
+            exception($e->getMessage(), 404,'\app\common\lib\exception\ApiException');
+            //return api(0,$e->getMessage(),[],404);
         }
     }
 
