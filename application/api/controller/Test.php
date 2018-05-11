@@ -2,8 +2,6 @@
 
 namespace app\api\controller;
 
-use app\common\lib\exception\ApiException;
-use app\common\lib\exception\ApiHandleException;
 use app\common\model\Admin;
 use think\Controller;
 use think\Request;
@@ -18,7 +16,7 @@ class Test extends Controller
     public function index()
     {
         $data=Admin::all();
-        return show(1,'ok',$data,200);
+        return api(1,'ok',$data,200);
     }
 
     /**
@@ -45,7 +43,7 @@ class Test extends Controller
             $data['password']=md5($data['password'].$data['token']);
             $admin= new Admin();
             $admin->allowField(true)->save($data);
-            return show(1,'添加成功',$admin->toArray(),200);
+            return api(1,'添加成功',$admin->toArray(),201);
         }
     }
 
@@ -58,7 +56,7 @@ class Test extends Controller
     public function read($id)
     {
         $info=Admin::get($id)->toArray();
-        return show(1,'',$info,200);
+        return api(1,'',$info,200);
     }
 
     /**
@@ -81,11 +79,15 @@ class Test extends Controller
      */
     public function update(Request $request, $id)
     {
-        $info=Admin::get($id);
-        $info->status=$info['status']==0?1:0;
-        $info->save();
-        $data=$info->toArray();
-        return show(1,'更新成功',$data,200);
+        try {
+            $info = Admin::get($id);
+            $info->status = $info['status'] == 1 ? 0 : 1;
+            $info->save();
+            $data = $info->toArray();
+            return api(1, '更新成功', $data, 202);
+        }catch (\Exception $e) {
+            return api(0,$e->getMessage(),[],404);
+        }
     }
 
     /**
@@ -97,6 +99,6 @@ class Test extends Controller
     public function delete($id)
     {
         Admin::get($id)->delete();
-        return show(1,'删除成功',[],204);
+        return api(1,'删除成功',[],204);
     }
 }

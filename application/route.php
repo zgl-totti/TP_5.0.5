@@ -11,8 +11,8 @@
 use think\Route;
 
 
-Route::resource('test','api/test');
-Route::resource('order','api/order');
+Route::resource('api/test','api/test');
+Route::resource('api/order','api/order');
 
 
 return [

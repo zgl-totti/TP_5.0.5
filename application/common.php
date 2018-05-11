@@ -22,7 +22,7 @@
  * @author totti_zgl
  * @date 2018/5/10 9:28
  */
-function show(int $status,string $message,array $data=[],int $httpCode=200)
+function api(int $status,string $message,array $data=[],int $httpCode=200)
 {
     $data=[
         'status'=>$status,

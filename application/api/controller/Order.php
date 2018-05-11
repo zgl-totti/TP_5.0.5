@@ -14,8 +14,8 @@ class Order extends Controller
      */
     public function index()
     {
-        $data=\app\common\model\Order::all();
-        return show(1,'',$data,200);
+        $data=\app\common\model\Order::paginate(10)->toArray();
+        return api(1,'',$data,200);
     }
 
     /**
@@ -48,7 +48,7 @@ class Order extends Controller
     public function read($id)
     {
         $info=\app\common\model\Order::get($id)->toArray();
-        return show(1,'',$info,200);
+        return api(1,'',$info,200);
     }
 
     /**
@@ -74,7 +74,7 @@ class Order extends Controller
         $info=\app\common\model\Order::get($id);
         $info->status=$info['status']==1?0:1;
         $info->save();
-        return show(1,'更新成功',$info->toArray(),200);
+        return api(1,'更新成功',$info->toArray(),202);
     }
 
     /**
@@ -86,6 +86,6 @@ class Order extends Controller
     public function delete($id)
     {
         \app\common\model\Order::get($id)->delete();
-        return show(1,'删除成功',[],204);
+        return api(1,'删除成功',[],204);
     }
 }

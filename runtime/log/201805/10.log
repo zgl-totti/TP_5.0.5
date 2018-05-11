@@ -1471,3 +1471,142 @@
 [ sql ] [ SQL ] UPDATE `new_order`  SET `status`=0  WHERE  `id` = 1 [ RunTime:0.003001s ]
 
 ---------------------------------------------------------------
+[ 2018-05-10T15:04:31+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.031200s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T15:04:58+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.015600s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `new_order`  SET `status`=1  WHERE  `id` = 1 [ RunTime:0.015600s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T15:04:59+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.003001s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `new_order`  SET `status`=0  WHERE  `id` = 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T15:05:01+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.000000s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] UPDATE `new_order`  SET `status`=1  WHERE  `id` = 1 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T15:05:44+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.015600s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] DELETE FROM `new_order`    WHERE  `id` = 4 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T17:26:05+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.034001s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] DELETE FROM `new_order`    WHERE  `id` = 1 [ RunTime:0.002000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T17:26:17+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ error ] [0]致命错误: Call to a member function toArray() on null
+
+---------------------------------------------------------------
+[ 2018-05-10T17:26:25+08:00 ] [ error ] [0]method not exist:think\db\Query->pagination
+
+---------------------------------------------------------------
+[ 2018-05-10T17:26:51+08:00 ] [ error ] [0]类型错误: Too few arguments to function think\db\Query::where(), 0 passed and at least 1 expected
+
+---------------------------------------------------------------
+[ 2018-05-10T17:27:05+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 0,10 [ RunTime:0.002000s ]
+[ error ] [0]类型错误: Argument 3 passed to show() must be of the type array, object given, called in F:\phpStudy-2018\PHPTutorial\WWW\TP_5.0.5\application\api\controller\Order.php on line 18
+
+---------------------------------------------------------------
+[ 2018-05-10T17:27:22+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 0,10 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T17:27:57+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.001001s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 0,2 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T17:28:08+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 0,2 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T17:28:11+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 2,2 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T17:28:17+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011000s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 4,2 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T17:28:23+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.011001s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 6,2 [ RunTime:0.000000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T09:35:28+00:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5/public/index.php/order
+[ log ] 127.0.0.1/TP_5.0.5/public/index.php/order [运行时间：0.063004s][吞吐率：15.87req/s] [内存消耗：1,320.55kb] [文件加载：42]
+[ error ] [64]Default value for parameters with an object type can only be NULL[F:\phpStudy-2018\PHPTutorial\WWW\TP_5.0.5\application\common.php:25]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-05-10T09:35:39+00:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5/public/index.php/order
+[ log ] 127.0.0.1/TP_5.0.5/public/index.php/order [运行时间：0.029002s][吞吐率：34.48req/s] [内存消耗：1,320.55kb] [文件加载：42]
+[ error ] [64]Default value for parameters with an object type can only be NULL[F:\phpStudy-2018\PHPTutorial\WWW\TP_5.0.5\application\common.php:25]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-05-10T09:35:46+00:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5/public/index.php/order
+[ log ] 127.0.0.1/TP_5.0.5/public/index.php/order [运行时间：0.027001s][吞吐率：37.04req/s] [内存消耗：1,320.55kb] [文件加载：42]
+[ error ] [64]Default value for parameters with an object type can only be NULL[F:\phpStudy-2018\PHPTutorial\WWW\TP_5.0.5\application\common.php:25]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-05-10T09:35:47+00:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5/public/index.php/order
+[ log ] 127.0.0.1/TP_5.0.5/public/index.php/order [运行时间：0.027002s][吞吐率：37.03req/s] [内存消耗：1,320.55kb] [文件加载：42]
+[ error ] [64]Default value for parameters with an object type can only be NULL[F:\phpStudy-2018\PHPTutorial\WWW\TP_5.0.5\application\common.php:25]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-05-10T09:35:48+00:00 ] 127.0.0.1 127.0.0.1 GET /TP_5.0.5/public/index.php/order
+[ log ] 127.0.0.1/TP_5.0.5/public/index.php/order [运行时间：0.029002s][吞吐率：34.48req/s] [内存消耗：1,320.55kb] [文件加载：42]
+[ error ] [64]Default value for parameters with an object type can only be NULL[F:\phpStudy-2018\PHPTutorial\WWW\TP_5.0.5\application\common.php:25]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-05-10T17:36:05+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.009001s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 0,10 [ RunTime:0.001000s ]
+
+---------------------------------------------------------------
+[ 2018-05-10T17:41:23+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.012001s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 0,10 [ RunTime:0.001000s ]
+[ error ] [0]类型错误: Argument 3 passed to show() must be of the type array, object given, called in F:\phpStudy-2018\PHPTutorial\WWW\TP_5.0.5\application\api\controller\Order.php on line 18
+
+---------------------------------------------------------------
+[ 2018-05-10T17:41:39+08:00 ] [ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:dbname=tp_5.0.5_new;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `new_order` [ RunTime:0.002000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `new_order` LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `new_order` LIMIT 0,10 [ RunTime:0.002001s ]
+
+---------------------------------------------------------------
