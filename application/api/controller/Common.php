@@ -1,23 +1,43 @@
 <?php
 namespace app\api\controller;
 
+use app\common\lib\Auth;
+use app\common\lib\exception\ApiException;
 use think\Controller;
 
 class Common extends Controller
 {
-    public function __construct()
+    public $headers;
+    /**
+     * 初始化方法
+     */
+    public function _initialize()
     {
-        $this->checkSign();
+        $this->checkRequestAuth();
     }
 
-    public function checkSign()
+    /**
+     * 检查请求是否合法
+     * @return \think\response\Json
+     */
+    public function checkRequestAuth()
     {
-        $headers=input('param.');
-        if(empty($headers['sign']))
-        {
-            return api(0,'非法操作',[],401);
+        $headers=request()->header();
+
+        //基础参数校验
+        if(empty($headers['sign'])) {
+            throw new ApiException('sign不合法',400);
         }
 
+        if(in_array($headers['app_type'],config('app_types'))){
+            throw new ApiException('app_type类型不合法',400);
+        }
 
+        //校验sign合法性
+        if(empty(Auth::checkSign($headers))){
+            throw new ApiException('校验失败',401);
+        }
+
+        $this->headers=$headers;
     }
 }

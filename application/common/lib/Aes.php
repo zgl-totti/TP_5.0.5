@@ -3,21 +3,21 @@ namespace app\common\lib;
 
 class Aes
 {
-    private $iv;
-    private $key;
+    private $aes_key;
+    private $aes_iv;
 
     function __construct()
     {
-        $this->key = hash('sha256', config('app.key'), true);
-        $this->iv = config('app.iv');
+        $this->aes_key = hash('sha256', config('app.key'), true);
+        $this->aes_iv = config('app.key');
     }
 
-    public function encrypt($str)
+    public function encrypt($str='')
     {
-        $data['iv']=base64_encode(substr($this->iv,0,16));
-        $data['value']=openssl_encrypt($str, 'AES-256-CBC',$this->key,0,base64_decode($data['iv']));
-        $encrypt=base64_encode(json_encode($data));
-        return $encrypt;
+        $aes_iv=base64_encode(substr($this->aes_iv,0,16));
+        $data=openssl_encrypt($str, 'AES-256-CBC',$this->aes_key,0,$aes_iv);
+        $data=base64_encode($data);
+        return $data;
     }
 
     public function decrypt($encrypt)
