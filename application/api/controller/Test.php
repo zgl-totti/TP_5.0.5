@@ -2,6 +2,7 @@
 
 namespace app\api\controller;
 
+use app\common\lib\Aes;
 use app\common\lib\exception\ApiException;
 use app\common\model\Admin;
 use think\Controller;
@@ -84,13 +85,14 @@ class Test extends Controller
     {
         try {
             $info = Admin::get($id);
-            $info->status = $info['status'] == 1 ? 0 : 1;
+            $info->status = $info['stat us'] == 1 ? 0 : 1;
             $info->save();
             $data = $info->toArray();
             return api(1, '更新成功', $data, 202);
         }catch (\Exception $e) {
+            throw new ApiException($e->getMessage(),404);
             //Log::record('错误异常'.$e->getMessage());
-            exception($e->getMessage(), 404,'\app\common\lib\exception\ApiException');
+            //exception($e->getMessage(), 404,'\app\common\lib\exception\ApiException');
             //return api(0,$e->getMessage(),[],404);
         }
     }

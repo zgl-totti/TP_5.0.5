@@ -125,4 +125,52 @@ class Order extends Base{
         $objWriter=\PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
         $objWriter->save('php://output');
     }
+
+
+    /**
+     * Excel导入
+     * @param $file
+     * @return array
+     * @author totti_zgl
+     * @date 2018/5/14 10:55
+     */
+    public function inputExcel(){
+        $files=request()->file('file');
+        $file=$files->validate(['size'=>3145728,'ext'=>'xls'])
+            ->move(ROOT_PATH.'public'.DS.'uploads'.DS.'excel');
+        if(empty($file)){
+            exception('上传失败',401);
+        }
+        $file_name=$file->getFilename();
+
+        $objReader=\PHPExcel_IOFactory::createReader('Excel2007');
+        //加载Excel路径
+        $objPHPExcel=$objReader->load($file_name);
+        $sheet=$objPHPExcel->getSheet(0);
+        //取得总行数
+        $highestRow=$sheet->getHighestRow();
+        //取得总列数
+        $highestColumn=$sheet->getHighestColumn();
+
+        $objWorkerSheet=$objPHPExcel->getActiveSheet();
+        $highestRow=$objWorkerSheet->getHighestRow();
+        $highestColumn=$objWorkerSheet->getHighestColumn();
+        $highestColumnIndex=\PHPExcel_Cell::columnIndexFromString($highestColumn);
+
+        //设置行的初始位置,从第几行获取数据
+        for($row=1;$row<$highestRow;$row++){
+            $arr=[];
+            //设置列的初始位置,$highestColumnIndex的列数索引从0开始
+            for($col=0;$col<$highestColumnIndex;$col++){
+                //获取单元格数据
+                $arr[$col]=$objWorkerSheet->getCellByColumnAndRow($col,$row)->getValue();
+            }
+            //获取数据,过滤空行
+            !empty($arr) && $list[]=$arr;
+        }
+        //删除excel文件
+        unlink($file);
+
+        return $list;
+    }
 }
