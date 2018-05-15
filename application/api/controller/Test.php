@@ -10,7 +10,7 @@ use think\exception\HttpException;
 use think\Log;
 use think\Request;
 
-class Test extends Controller
+class Test extends Common
 {
     /**
      * 显示资源列表

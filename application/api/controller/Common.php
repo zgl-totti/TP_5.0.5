@@ -29,14 +29,14 @@ class Common extends Controller
             throw new ApiException('sign不合法',400);
         }
 
-        if(in_array($headers['app_type'],config('app_types'))){
-            throw new ApiException('app_type类型不合法',400);
+        if(!in_array($headers['type'],config('app.app_types'))){
+            throw new ApiException('app类型不合法',400);
         }
 
         //校验sign合法性
-        if(empty(Auth::checkSign($headers))){
+        /*if(!Auth::checkSign($headers)){
             throw new ApiException('校验失败',401);
-        }
+        }*/
 
         $this->headers=$headers;
     }

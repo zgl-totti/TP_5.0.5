@@ -27,21 +27,23 @@ class Auth
         return $str;
     }
 
-    public static function checkSign(array $data): bool
+    public static function checkSign(array $data)
     {
         $str=(new Aes())->decrypt($data['sign']);
+
         if(empty($str)){
             return false;
         }
 
         parse_str($str,$arr);
-        if(!is_array($arr) || empty($arr)){
+
+        if(!is_array($arr) || $arr != config('app.aes_key')){
             return false;
         }
 
-        if((time()-ceil($arr['time']/1000))>config('app.app_sign_time')){
+        /*if((time()-ceil($arr['time']/1000))>config('app.app_sign_time')){
             return false;
-        }
+        }*/
 
         return true;
     }
