@@ -1,6 +1,8 @@
 <?php
 namespace app\common\lib;
 
+use think\Cache;
+
 class Auth
 {
     public static function setPassword($data)
@@ -37,13 +39,18 @@ class Auth
 
         parse_str($str,$arr);
 
-        if(!is_array($arr) || $arr != config('app.aes_key')){
+        if(!is_array($arr) || empty($arr) || $arr['type'] != $data['type']){
             return false;
         }
 
-        /*if((time()-ceil($arr['time']/1000))>config('app.app_sign_time')){
+        if((time()-ceil($arr['time']/1000))>config('app.app_sign_time')){
             return false;
-        }*/
+        }
+
+        //唯一性判定
+        if(Cache::get($data['sign'])){
+            return false;
+        }
 
         return true;
     }

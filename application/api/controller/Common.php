@@ -3,6 +3,7 @@ namespace app\api\controller;
 
 use app\common\lib\Auth;
 use app\common\lib\exception\ApiException;
+use think\Cache;
 use think\Controller;
 
 class Common extends Controller
@@ -34,9 +35,11 @@ class Common extends Controller
         }
 
         //校验sign合法性
-        /*if(!Auth::checkSign($headers)){
+        if(!Auth::checkSign($headers)){
             throw new ApiException('校验失败',401);
-        }*/
+        }
+
+        Cache::set($headers['sign'],1,config('app.app_sign_cache_time'));
 
         $this->headers=$headers;
     }

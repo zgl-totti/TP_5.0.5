@@ -7,5 +7,6 @@ return
         'ios',
         'android'
     ],
-    'app_sign_time'=>100
+    'app_sign_time'=>10,   //sign过期时间
+    'app_sign_cache_time'=>20,  //缓存时间
 ];
