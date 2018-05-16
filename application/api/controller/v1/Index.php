@@ -1,11 +1,13 @@
 <?php
 
-namespace app\api\controller;
+namespace app\api\controller\v1;
 
+use app\common\model\Advertise;
+use app\common\model\Goods;
 use think\Controller;
 use think\Request;
 
-class Order extends Controller
+class Index extends Controller
 {
     /**
      * 显示资源列表
@@ -14,8 +16,16 @@ class Order extends Controller
      */
     public function index()
     {
-        $data=\app\common\model\Order::paginate(10)->toArray();
-        return api(1,'',$data,200);
+        $goods=Goods::where('status',1)
+            ->field(['id','goods_name'])
+            ->limit(10)
+            ->select();
+        $advertise=Advertise::where('status',1)
+            ->field(['id'])
+            ->limit(5)
+            ->select();
+        $data=[compact('goods','advertise')];
+        return api(1,'ok',$data,200);
     }
 
     /**
@@ -47,8 +57,7 @@ class Order extends Controller
      */
     public function read($id)
     {
-        $info=\app\common\model\Order::get($id)->toArray();
-        return api(1,'',$info,200);
+        //
     }
 
     /**
@@ -71,10 +80,7 @@ class Order extends Controller
      */
     public function update(Request $request, $id)
     {
-        $info=\app\common\model\Order::get($id);
-        $info->status=$info['status']==1?0:1;
-        $info->save();
-        return api(1,'更新成功',$info->toArray(),202);
+        //
     }
 
     /**
@@ -85,7 +91,6 @@ class Order extends Controller
      */
     public function delete($id)
     {
-        \app\common\model\Order::get($id)->delete();
-        return api(1,'删除成功',[],204);
+        //
     }
 }

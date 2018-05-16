@@ -12,7 +12,7 @@ use think\Route;
 
 
 Route::resource('api/test','api/test');
-Route::resource('api/order','api/order');
+Route::resource('api/:ver/order','api/:ver/order');
 
 
 return [
