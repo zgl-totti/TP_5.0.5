@@ -2,9 +2,11 @@
 
 namespace app\api\controller\v1;
 
+use app\common\lib\exception\ApiException;
 use app\common\model\Advertise;
 use app\common\model\Goods;
 use think\Controller;
+use think\Exception;
 use think\Request;
 
 class Index extends Controller
@@ -16,14 +18,23 @@ class Index extends Controller
      */
     public function index()
     {
-        $goods=Goods::where('status',1)
-            ->field(['id','goods_name'])
-            ->limit(10)
-            ->select();
-        $advertise=Advertise::where('status',1)
-            ->field(['id'])
-            ->limit(5)
-            ->select();
+        try{
+            $goods=Goods::where('status',1)
+                ->field(['id','goods_name'])
+                ->limit(10)
+                ->select();
+            $advertise=Advertise::where('status',1)
+                ->field(['id'])
+                ->limit(5)
+                ->select();
+        }catch (Exception $e){
+            throw new ApiException($e->getMessage(),400,0);
+        }
+
+        if (empty($goods) || empty($advertise)){
+            throw new ApiException('数据为空',404,0);
+        }
+
         $data=[compact('goods','advertise')];
         return api(1,'ok',$data,200);
     }

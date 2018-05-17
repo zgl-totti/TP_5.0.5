@@ -3,6 +3,8 @@
 namespace app\api\controller\v1;
 
 use app\api\controller\Common;
+use app\common\lib\exception\ApiException;
+use think\Exception;
 use think\Request;
 
 class Order extends Common
@@ -14,7 +16,16 @@ class Order extends Common
      */
     public function index()
     {
-        $data=\app\common\model\Order::paginate(10)->toArray();
+        try{
+            $data=\app\common\model\Order::paginate(10);
+        }catch (Exception $e){
+            throw new ApiException($e->getMessage(),400,0);
+        }
+
+        if(empty($data)){
+            throw new ApiException('数据为空',404,0);
+        }
+
         return api(1,'',$data,200);
     }
 
@@ -47,7 +58,16 @@ class Order extends Common
      */
     public function read($id)
     {
-        $info=\app\common\model\Order::get($id)->toArray();
+        try{
+            $info=\app\common\model\Order::get($id);
+        }catch (Exception $e){
+            throw new ApiException($e->getMessage(),400,0);
+        }
+
+        if(empty($info)){
+            throw new ApiException('数据为空',404,0);
+        }
+
         return api(1,'',$info,200);
     }
 
@@ -71,9 +91,17 @@ class Order extends Common
      */
     public function update(Request $request, $id)
     {
-        $info=\app\common\model\Order::get($id);
-        $info->status=$info['status']==1?0:1;
-        $info->save();
+        try{
+            $info=\app\common\model\Order::get($id);
+            $info->status=$info['status']==1?0:1;
+        }catch (Exception $e){
+            throw new ApiException($e->getMessage(),400,0);
+        }
+
+        if(empty($info->save())){
+            throw new ApiException('更新失败',404,0);
+        }
+
         return api(1,'更新成功',$info->toArray(),202);
     }
 
@@ -85,7 +113,16 @@ class Order extends Common
      */
     public function delete($id)
     {
-        \app\common\model\Order::get($id)->delete();
+        try{
+            $row=\app\common\model\Order::get($id)->delete();
+        }catch (Exception $e){
+            throw new ApiException($e->getMessage(),400,0);
+        }
+
+        if(empty($row)){
+            throw new ApiException('删除失败',404,0);
+        }
+
         return api(1,'删除成功',[],204);
     }
 }

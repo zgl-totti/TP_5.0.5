@@ -3,7 +3,9 @@
 namespace app\api\controller\v1;
 
 use app\api\controller\Common;
+use app\common\lib\exception\ApiException;
 use think\Controller;
+use think\Exception;
 use think\Request;
 
 class Goods extends Common
@@ -23,10 +25,20 @@ class Goods extends Common
             $where['cate_id'] = $data['cate_id'] ?? 0;
         }
         $where['status']=1;
-        $list=\app\common\model\Goods::where($where)
-            ->field(['id','goods_name'])
-            ->limit(10)
-            ->select();
+
+        try{
+            $list=\app\common\model\Goods::where($where)
+                ->field(['id','goods_name'])
+                ->limit(10)
+                ->select();
+        }catch (Exception $e){
+            throw new ApiException($e->getMessage(),400,0);
+        }
+
+        if(empty($list)){
+            return new ApiException('数据为空',404);
+        }
+
         return api(1,'ok',$list,200);
     }
 
@@ -59,7 +71,22 @@ class Goods extends Common
      */
     public function read($id)
     {
-        //
+        $id=input('param.id',0,'intval');
+        if(empty($id)){
+            throw new ApiException('id不存在',404,0);
+        }
+
+        try{
+            $info=\app\common\model\Goods::find($id);
+        }catch (Exception $e){
+            throw new ApiException($e->getMessage(),400,0);
+        }
+
+        if(empty($info) || $info->status != 1){
+            throw new ApiException('该商品不存在',404,0);
+        }
+
+        return api(1,'ok',$info,200);
     }
 
     /**
