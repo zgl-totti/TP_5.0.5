@@ -39,7 +39,7 @@ class Goods extends Common
             return new ApiException('数据为空',404);
         }
 
-        return api(1,'ok',$list,200);
+        return api(1,'ok',$list->toArray(),200);
     }
 
     /**
@@ -86,7 +86,7 @@ class Goods extends Common
             throw new ApiException('该商品不存在',404,0);
         }
 
-        return api(1,'ok',$info,200);
+        return api(1,'ok',$info->toArray(),200);
     }
 
     /**

@@ -10,26 +10,35 @@
 // +----------------------------------------------------------------------
 use think\Route;
 
-
 Route::resource('api/test','api/test');
-Route::resource('api/:ver/order','api/:ver/order');
+Route::resource('api/:ver/order','api/:ver.order');
+Route::resource('api/:ver/goods','api/:ver.goods');
+Route::resource('api/:ver/index','api/:ver.index');
 
 
-return [
-    /*//配置多域名指定模块
+/*return [
+    //配置多域名指定模块
     '__domain__' => [
         'test1' => 'index',
         'test2' => 'admin'
-    ],*/
+    ],
 
+    // 定义资源路由
+    '__rest__'=>[
+        'api/test'=>'api/test',
+        'api/:ver/order'=>'api/:ver.order',
+        'api/:ver/goods'=>'api/:ver.goods',
+        'api/:ver/index'=>'api/:ver.index',
+    ],
 
     '__pattern__' => [
         'name' => '\w+',
     ],
+
     '[hello]'     => [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
-];
+];*/
 

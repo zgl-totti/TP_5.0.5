@@ -4,6 +4,7 @@ namespace app\api\controller\v1;
 
 use app\api\controller\Common;
 use app\common\lib\exception\ApiException;
+use think\Controller;
 use think\Exception;
 use think\Request;
 
@@ -26,7 +27,7 @@ class Order extends Common
             throw new ApiException('数据为空',404,0);
         }
 
-        return api(1,'',$data,200);
+        return api(1,'',$data->toArray(),200);
     }
 
     /**
@@ -68,7 +69,7 @@ class Order extends Common
             throw new ApiException('数据为空',404,0);
         }
 
-        return api(1,'',$info,200);
+        return api(1,'',$info->toArray(),200);
     }
 
     /**
@@ -98,7 +99,8 @@ class Order extends Common
             throw new ApiException($e->getMessage(),400,0);
         }
 
-        if(empty($info->save())){
+        $row=$info->save();
+        if(empty($row)){
             throw new ApiException('更新失败',404,0);
         }
 

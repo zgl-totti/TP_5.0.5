@@ -3,6 +3,7 @@
 namespace app\api\controller;
 
 use app\common\lib\Aes;
+use app\common\lib\Auth;
 use app\common\lib\exception\ApiException;
 use app\common\model\Admin;
 use think\Controller;
@@ -10,7 +11,7 @@ use think\exception\HttpException;
 use think\Log;
 use think\Request;
 
-class Test extends Common
+class Test extends Controller
 {
     /**
      * 显示资源列表
@@ -85,7 +86,7 @@ class Test extends Common
     {
         try {
             $info = Admin::get($id);
-            $info->status = $info['stat us'] == 1 ? 0 : 1;
+            $info->status = $info['status'] == 1 ? 0 : 1;
             $info->save();
             $data = $info->toArray();
             return api(1, '更新成功', $data, 202);

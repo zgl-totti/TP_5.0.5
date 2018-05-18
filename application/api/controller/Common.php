@@ -30,7 +30,7 @@ class Common extends Controller
             throw new ApiException('sign不合法',400);
         }
 
-        if(!in_array($headers['type'],config('app.app_types'))){
+        if(empty($headers['type']) || !in_array($headers['type'],config('app.app_types'))){
             throw new ApiException('app类型不合法',400);
         }
 

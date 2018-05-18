@@ -2,6 +2,7 @@
 
 namespace app\api\controller\v1;
 
+use app\api\controller\Common;
 use app\common\lib\exception\ApiException;
 use app\common\model\Advertise;
 use app\common\model\Goods;
@@ -9,7 +10,7 @@ use think\Controller;
 use think\Exception;
 use think\Request;
 
-class Index extends Controller
+class Index extends Common
 {
     /**
      * 显示资源列表
