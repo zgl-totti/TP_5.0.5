@@ -6,12 +6,53 @@ use app\api\controller\Common;
 use app\common\lib\exception\ApiException;
 use app\common\model\Advertise;
 use app\common\model\Goods;
+use app\common\model\Version;
 use think\Controller;
 use think\Exception;
+use think\Log;
 use think\Request;
 
 class Index extends Common
 {
+    //版本初始化接口
+    public function init()
+    {
+        try{
+            $version=Version::where('app_type',$this->headers['app_type'])
+                ->order('id desc')
+                ->find();
+        }catch (Exception $e){
+            throw new ApiException($e->getMessage(),400);
+        }
+
+        if(empty($version)){
+            return new ApiException('error',404);
+        }
+
+        //1为强制更新,2为更新,3为不更新
+        if($version->version>$this->headers['version']){
+            $version->is_update=$version->is_force==1?2:1;
+        }else{
+            $version->is_update=0;
+        }
+
+        //记录用户的基本信息
+        $actives=[
+            'version'=>$this->headers['version'],
+            'app_type'=>$this->headers['app_type'],
+            'did'=>$this->headers['did']
+        ];
+        try{
+            $actives= new AppActives();
+            $actives->save($actives);
+        }catch (Exception $e){
+            Log::record($e->getMessage());
+        }
+
+        return api(1,'ok',$version,200);
+    }
+
+
     /**
      * 显示资源列表
      *
