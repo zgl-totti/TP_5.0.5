@@ -9,4 +9,6 @@ return
     ],
     'app_sign_time'=>10,   //sign过期时间
     'app_sign_cache_time'=>20,  //缓存时间
+
+    'login_time_out_days'=>7,   //登录Token过期天数
 ];
