@@ -54,4 +54,13 @@ class Auth
 
         return true;
     }
+
+    //生成唯一Token
+    public static function setAppLoginToken($phone='')
+    {
+        $str = md5(uniqid(md5(strtotime(true)),true));
+        $str = sha1($str.$phone);
+
+        return $str;
+    }
 }
