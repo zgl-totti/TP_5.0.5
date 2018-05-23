@@ -11,6 +11,7 @@ namespace app\api\controller\v1;
 
 use app\api\controller\Common;
 use app\common\lib\Alidayu;
+use think\Cache;
 
 class Identify extends Common
 {
@@ -27,6 +28,8 @@ class Identify extends Common
 
         $id=input('param.id');
         if(Alidayu::getInstance()->setSmsIdentify($id)){
+            //清除缓存
+            Cache::rm($id);
             return api(1,'ok',[],201);
         }else{
             return api(0,'error',[],403);
