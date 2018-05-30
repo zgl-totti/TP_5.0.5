@@ -30,15 +30,18 @@ class Login
             return api(0,'手机短信验证码不合法',[],403);
         }
 
-        $code=Alidayu::getInstance()->checkSmsIdentify($post['phone']);
-        if($code != Aes::decrypt($post['code'])){
-            return api(0,'验证码错误',[],403);
+        if($post['code']){
+            $code=Alidayu::getInstance()->checkSmsIdentify($post['phone']);
+            if($code != Aes::decrypt($post['code'])){
+                return api(0,'验证码错误',[],403);
+            }
         }
+
 
         $token=Auth::setAppLoginToken($post['phone']);
 
         $user=User::get(['phone'=>$post['phone']]);
-        if(empty($user)){
+        if(empty($user) || $user->status != 1){
             $data=[
                 'token'=>$token,
                 'phone'=>$post['phone'],
@@ -52,6 +55,12 @@ class Login
                 return api(1,'登录成功',$res,201);
             }
             return api(1,'登录失败',[],400);
+        }
+
+        if($post['password']){
+            if(md5($post['password']) != $user->password){
+                return api(0,'密码不正确',[],403);
+            }
         }
 
         $data=[
