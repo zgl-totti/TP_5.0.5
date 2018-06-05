@@ -14,6 +14,10 @@ Route::resource('api/test','api/test');
 Route::resource('api/:ver/order','api/:ver.order');
 Route::resource('api/:ver/goods','api/:ver.goods');
 Route::resource('api/:ver/index','api/:ver.index');
+Route::resource('api/:ver/login','api/:ver.login');
+Route::resource('api/:ver/authBase','api/:ver.authBase');
+Route::resource('api/:ver/identify','api/:ver.identify');
+Route::resource('api/:ver/upvote','api/:ver.upvote');
 
 
 /*return [
