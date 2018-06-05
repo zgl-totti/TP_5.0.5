@@ -19,6 +19,10 @@ Route::resource('api/:ver/authBase','api/:ver.authBase');
 Route::resource('api/:ver/identify','api/:ver.identify');
 Route::resource('api/:ver/upvote','api/:ver.upvote');
 
+//评论
+Route::post('api/:ver/comment','api/:ver.comment/save');
+Route::get('api/:ver/comment/:id','api/:ver.comment/read');
+
 
 /*return [
     //配置多域名指定模块
