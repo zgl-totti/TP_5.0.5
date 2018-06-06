@@ -5,6 +5,7 @@ namespace app\api\controller;
 use app\common\lib\Aes;
 use app\common\lib\Auth;
 use app\common\lib\exception\ApiException;
+use app\common\lib\Jpush;
 use app\common\model\Admin;
 use think\Controller;
 use think\exception\HttpException;
@@ -108,5 +109,15 @@ class Test extends Controller
     {
         Admin::get($id)->delete();
         return api(1,'删除成功',[],204);
+    }
+
+    /**
+     * 极光推送测试
+     */
+    public function pushTest()
+    {
+        $title='';
+        $obj= new Jpush();
+        $obj->push($title);
     }
 }
