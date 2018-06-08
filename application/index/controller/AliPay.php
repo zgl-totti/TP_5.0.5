@@ -11,7 +11,7 @@ namespace app\index\controller;
 
 use think\Controller;
 
-class Pay extends Controller
+class AliPay extends Controller
 {
     public $config;
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="margin-left: 10px;color:#556B2F;font-size:30px;font-weight: bolder;">扫描支付模式二</div><br/>
+    <img alt="||<?php echo $num?>||" src="qrcode.php?data=<?php echo urlencode($url2);?>" style="width:150px;height:150px;"/>
+    <div id="myDiv"></div>
+    <div id="timer">0</div>
+</body>
+<script type="text/javascript">
+    $(function () {
+        var myIntval=setInterval(check(),3000);
+
+        function check() {
+            $('#timer').innerHTML=parseInt($('#timer').innerHTML)+1;
+
+            var order_sn='';
+            $.post('', {order_sn:order_sn}, function (res) {
+                if(res.code=='SUCCESS'){
+                    $('myDiv').innerHTML='支付成功';
+
+                    clearInterval(myIntval);
+                    setTimeout("location.href='success.php'",3000);
+
+                }else if(res.code=='REFUND'){
+                    $('myDiv').innerHTML='转入退款';
+                    clearInterval(myIntval);
+                }else if(res.code=='NOTPAY'){
+                    $('myDiv').innerHTML='请扫码支付';
+                }else if(res.code=='CLOSED'){
+                    $('myDiv').innerHTML='已关闭';
+                    clearInterval(myIntval);
+                }else if(res.code=='REVOKED'){
+                    $('myDiv').innerHTML='已撤销';
+                    clearInterval(myIntval);
+                }else if(res.code=='USERPAYING'){
+                    $('myDiv').innerHTML='用户支付中';
+                }else if(trade_state=='PAYERROR'){
+                    $('myDiv').innerHTML='支付失败';
+                    clearInterval(myIntval);
+                }
+            }, 'json')
+        }
+    })
+</script>
+</html>
