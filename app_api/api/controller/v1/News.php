@@ -65,7 +65,7 @@ class News extends Common {
 
         $cats = config('cat.lists');
         $news->catname = $cats[$news->catid];
-        return show(config('code.success'), 'OK', $news, 200);x
+        return show(config('code.success'), 'OK', $news, 200);
     }
 
 }
