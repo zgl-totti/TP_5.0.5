@@ -27,7 +27,20 @@ class Product extends Base{
         }
         $param['query']['keywords']=$keywords;
         $param['query']['cname']=$cname;
-        $list=\app\common\model\Product::with('getSection')->where($where)->where($condition)->paginate(10,false,$param);
+
+        $list=\app\common\model\Product::with('getSection')
+            ->where($where)
+            ->where($condition)
+            ->paginate(10,false,$param);
+
+        $list1=\app\common\model\Product::with('getSection')
+            ->where($where)
+            ->where('id','in',function ($query) use ($cname){
+                $query->table('section')->where('cname','like',$cname.'%')->field('id');
+            })
+            ->paginate(10,false,$param);
+
+
         $this->assign('list',$list);
         $this->assign('keywords',$keywords);
         $this->assign('cname',$cname);

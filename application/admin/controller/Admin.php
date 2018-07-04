@@ -26,10 +26,12 @@ class Admin extends Base{
     public function test(){
         $where['username']=input('post.username');
         $keywords=input('post.keywords');
+
         $field="date_format('create_time', '%y-%m-%d') as 'data',
         sum('binary total') as 'total',
         sum(IF(is_register= 0,1,0)) as 't1',
         sum(IF(is_register= 1,1,0)) as 't2' ";
+
         $list=\app\common\model\Admin::where($where)
             ->field($field)
             ->where(function ($query) use ($keywords){
@@ -37,6 +39,7 @@ class Admin extends Base{
             })
             ->group('day')
             ->select();
+
         return $list;
     }
 
