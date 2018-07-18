@@ -5,7 +5,7 @@ use think\Validate;
 
 class Admin extends Validate{
     protected $rule=[
-        'username'=>'require|min:5|max:12',
+        'username'=>'require|unique:Admin,username|min:5|max:12',
         'password'=>'require|min:5|max:12',
         'captcha'=>'require|captcha'
     ];
@@ -21,9 +21,9 @@ class Admin extends Validate{
         'captcha.captcha'=>'验证码错误'
     ];
 
-    protected $scene=[
-        'login'=>['username','password','captcha'],
-        'add'=>['username','password'],
-        'edit'=>['username','password'],
+
+    protected $scene = [
+        'add' => ['username','password','captcha'],
+        'edit' => ['password','username.unique'=>'require|unique:User,username^id'],//验证username和id唯一
     ];
 }
