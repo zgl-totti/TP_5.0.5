@@ -12,6 +12,16 @@ class Admin extends Model
     protected $resultSetType = 'collection';
 
     /**
+     * 类型转换，会在写入和读取的时候自动进行类型转换处理
+     */
+    protected $type = [
+        'status' => 'integer',
+        'score' => 'float',
+        'birthday' => 'datetime',
+        'info' => 'array',
+    ];
+
+    /**
      * 获取器：获取数据的字段值后自动进行处理
      */
     public function getStatusAttr($value)
@@ -26,6 +36,17 @@ class Admin extends Model
     public function setNameAttr($value)
     {
         return strtolower($value);
+    }
+
+
+    /**
+     * 数据完成,对字段的值自动进行处理后写入数据库
+     */
+    protected $auto = ['name', 'ip'];
+
+    protected function setIpAttr()
+    {
+        return request()->ip();
     }
 
     /**
@@ -52,6 +73,11 @@ class Admin extends Model
                 return false;
             }
         });
+    }
+
+    public function user()
+    {
+        return $this->hasOne(Users::class,'user_id','user_id')->setAlias(['Admin'=>'a']);
     }
 
 }
