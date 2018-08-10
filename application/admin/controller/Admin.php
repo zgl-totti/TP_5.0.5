@@ -12,8 +12,8 @@ class Admin extends Base{
         }else{
             $where='';
         }
-        $data['query']['keywords']=$keywords;
-        $list=\app\common\model\Admin::where($where)->paginate(10,false,$data);
+        $param['query']['keywords']=$keywords;
+        $list=\app\common\model\Admin::where($where)->paginate(10,false,$param);
         $firstRow=($list->currentPage()-1)*$list->listRows();
         $this->assign('keywords',$keywords);
         $this->assign('list',$list);
@@ -36,7 +36,7 @@ class Admin extends Base{
             ->field($field)
             ->where(function ($query) use ($keywords){
                 $keywords && $query->where('username','like',$keywords);
-            })
+            },'exists')
             ->group('day')
             ->select();
 

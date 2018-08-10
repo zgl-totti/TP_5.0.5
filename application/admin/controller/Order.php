@@ -2,6 +2,8 @@
 namespace app\admin\controller;
 
 
+use think\Exception;
+
 class Order extends Base{
     public function index(){
         $keywords=trim(input('get.keywords'));
@@ -9,11 +11,13 @@ class Order extends Base{
         $time2=trim(input('get.time2'));
         $time3=strtotime($time1);
         $time4=strtotime($time2);
+
         if($keywords){
             $where['orderno']=['like',"%$keywords%"];
         }else{
             $where='';
         }
+
         if($time1 && $time2){
             $condition['create_time']=['between',[$time3,$time4]];
         }elseif($time1 && !$time2){
@@ -23,12 +27,17 @@ class Order extends Base{
         }else{
             $condition='';
         }
-        $data['query']['keywords']=$keywords;
+
+        $param['query']['keywords']=$keywords;
+        $param['query']['time1']=$time1;
+        $param['query']['time2']=$time2;
+
         $list=\app\common\model\Order::where($where)
             ->where($condition)
             ->with('orderStatus')
             ->with('users')
-            ->paginate(10,false,$data);
+            ->paginate(10,false,$param);
+
         $firstRow=($list->currentPage()-1)*$list->listRows();
         $this->assign('keywords',$keywords);
         $this->assign('time1',$time1);
@@ -139,7 +148,7 @@ class Order extends Base{
         $file=$files->validate(['size'=>3145728,'ext'=>'xls'])
             ->move(ROOT_PATH.'public'.DS.'uploads'.DS.'excel');
         if(empty($file)){
-            exception('上传失败',401);
+            throw new Exception('上传失败',401);
         }
         $file_name=$file->getFilename();
 
