@@ -4,46 +4,48 @@ namespace app\admin\controller;
 
 use think\Exception;
 
-class Order extends Base{
-    public function index(){
-        $keywords=trim(input('get.keywords'));
-        $time1=trim(input('get.time1'));
-        $time2=trim(input('get.time2'));
-        $time3=strtotime($time1);
-        $time4=strtotime($time2);
+class Order extends Base
+{
+    public function index()
+    {
+        $keywords = trim(input('get.keywords'));
+        $time1 = trim(input('get.time1'));
+        $time2 = trim(input('get.time2'));
+        $time3 = strtotime($time1);
+        $time4 = strtotime($time2);
 
-        if($keywords){
-            $where['orderno']=['like',"%$keywords%"];
-        }else{
-            $where='';
+        if ($keywords) {
+            $where['orderno'] = ['like', "%$keywords%"];
+        } else {
+            $where = '';
         }
 
-        if($time1 && $time2){
-            $condition['create_time']=['between',[$time3,$time4]];
-        }elseif($time1 && !$time2){
-            $condition['create_time']=['gt',$time3];
-        }elseif($time2 && !$time1){
-            $condition['create_time']=['lt',$time4];
-        }else{
-            $condition='';
+        if ($time1 && $time2) {
+            $condition['create_time'] = ['between', [$time3, $time4]];
+        } elseif ($time1 && !$time2) {
+            $condition['create_time'] = ['gt', $time3];
+        } elseif ($time2 && !$time1) {
+            $condition['create_time'] = ['lt', $time4];
+        } else {
+            $condition = '';
         }
 
-        $param['query']['keywords']=$keywords;
-        $param['query']['time1']=$time1;
-        $param['query']['time2']=$time2;
+        $param['query']['keywords'] = $keywords;
+        $param['query']['time1'] = $time1;
+        $param['query']['time2'] = $time2;
 
-        $list=\app\common\model\Order::where($where)
+        $list = \app\common\model\Order::where($where)
             ->where($condition)
             ->with('orderStatus')
             ->with('users')
-            ->paginate(10,false,$param);
+            ->paginate(10, false, $param);
 
-        $firstRow=($list->currentPage()-1)*$list->listRows();
-        $this->assign('keywords',$keywords);
-        $this->assign('time1',$time1);
-        $this->assign('time2',$time2);
-        $this->assign('list',$list);
-        $this->assign('pages',$list->render());
+        $firstRow = ($list->currentPage() - 1) * $list->listRows();
+        $this->assign('keywords', $keywords);
+        $this->assign('time1', $time1);
+        $this->assign('time2', $time2);
+        $this->assign('list', $list);
+        $this->assign('pages', $list->render());
         $this->assign(compact('firstRow'));
         return $this->fetch();
     }
@@ -54,23 +56,29 @@ class Order extends Base{
      * @author totti_zgl
      * @date 2018/4/4 17:39
      */
-    public function export(){
-        $orderno=trim(input('param.search'));
-        if($orderno){
-            $where['order_syn']=['like',"%$orderno%"];
-        }else{
-            $where='';
+    public function export()
+    {
+        //处理大数据量的导出
+        set_time_limit(0);                                  #设置超时时间
+        ini_set("memory_limit", "1024M");         #设置内存,防止内存溢出
+        \PHPExcel_CachedObjectStorageFactory::cache_in_memory_gzip;  #单元格缓存为MemoryGZip
+
+        $orderno = trim(input('param.search'));
+        if ($orderno) {
+            $where['order_syn'] = ['like', "%$orderno%"];
+        } else {
+            $where = '';
         }
-        $list=\app\common\model\Order::with('orderStatus')
+        $list = \app\common\model\Order::with('orderStatus')
             ->where($where)
             ->select();
-        $objPHPExcel= new \PHPExcel();
+        $objPHPExcel = new \PHPExcel();
 
         $objPHPExcel->setActiveSheetIndex(0)
             ->setCellValue('A1', '编号')
             ->setCellValue('B1', '订单号')
-            ->setCellValue('C1','订单状态')
-            ->setCellValue('D1','添加时间');
+            ->setCellValue('C1', '订单状态')
+            ->setCellValue('D1', '添加时间');
 
         //设置表格宽度
         $objPHPExcel->setActiveSheetIndex()->getColumnDimension('B')->setWidth(35);
@@ -80,12 +88,12 @@ class Order extends Base{
         $objPHPExcel->getActiveSheet()->getStyle('B')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
         $objPHPExcel->getActiveSheet()->getStyle('D')->getAlignment()->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
-        foreach ($list as $k=>$v){
+        foreach ($list as $k => $v) {
             $objPHPExcel->setActiveSheetIndex()
-                ->setCellValue('A'.($k+2),$v['id'])
-                ->setCellValue('B'.($k+2),$v['orderno'])
-                ->setCellValue('C'.($k+2),$v['orderStatus']['statusname'])
-                ->setCellValue('D'.($k+2),date('Y:m:d H:i:s',$v['createtime']));
+                ->setCellValue('A' . ($k + 2), $v['id'])
+                ->setCellValue('B' . ($k + 2), $v['orderno'])
+                ->setCellValue('C' . ($k + 2), $v['orderStatus']['statusname'])
+                ->setCellValue('D' . ($k + 2), date('Y:m:d H:i:s', $v['createtime']));
         }
 
 
@@ -127,11 +135,11 @@ class Order extends Base{
         //发送标题强制用户下载文件
         ob_end_clean();
         header('Content-Type: application/vnd.ms-excel;charset=UTF-8');
-        header('Content-Disposition: attachment;filename="订单列表_'.date('Y/m/d').'.xls"');
+        header('Content-Disposition: attachment;filename="订单列表_' . date('Y/m/d') . '.xls"');
         header('Cache-Control: max-age=0');
 
 
-        $objWriter=\PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
+        $objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
         $objWriter->save('php://output');
     }
 
@@ -143,39 +151,40 @@ class Order extends Base{
      * @author totti_zgl
      * @date 2018/5/14 10:55
      */
-    public function inputExcel(){
-        $files=request()->file('file');
-        $file=$files->validate(['size'=>3145728,'ext'=>'xls'])
-            ->move(ROOT_PATH.'public'.DS.'uploads'.DS.'excel');
-        if(empty($file)){
-            throw new Exception('上传失败',401);
+    public function inputExcel()
+    {
+        $files = request()->file('file');
+        $file = $files->validate(['size' => 3145728, 'ext' => 'xls'])
+            ->move(ROOT_PATH . 'public' . DS . 'uploads' . DS . 'excel');
+        if (empty($file)) {
+            throw new Exception('上传失败', 401);
         }
-        $file_name=$file->getFilename();
+        $file_name = $file->getFilename();
 
-        $objReader=\PHPExcel_IOFactory::createReader('Excel2007');
+        $objReader = \PHPExcel_IOFactory::createReader('Excel2007');
         //加载Excel路径
-        $objPHPExcel=$objReader->load($file_name);
-        $sheet=$objPHPExcel->getSheet(0);
+        $objPHPExcel = $objReader->load($file_name);
+        $sheet = $objPHPExcel->getSheet(0);
         //取得总行数
-        $highestRow=$sheet->getHighestRow();
+        $highestRow = $sheet->getHighestRow();
         //取得总列数
-        $highestColumn=$sheet->getHighestColumn();
+        $highestColumn = $sheet->getHighestColumn();
 
-        $objWorkerSheet=$objPHPExcel->getActiveSheet();
-        $highestRow=$objWorkerSheet->getHighestRow();
-        $highestColumn=$objWorkerSheet->getHighestColumn();
-        $highestColumnIndex=\PHPExcel_Cell::columnIndexFromString($highestColumn);
+        $objWorkerSheet = $objPHPExcel->getActiveSheet();
+        $highestRow = $objWorkerSheet->getHighestRow();
+        $highestColumn = $objWorkerSheet->getHighestColumn();
+        $highestColumnIndex = \PHPExcel_Cell::columnIndexFromString($highestColumn);
 
         //设置行的初始位置,从第几行获取数据
-        for($row=1;$row<$highestRow;$row++){
-            $arr=[];
+        for ($row = 1; $row < $highestRow; $row++) {
+            $arr = [];
             //设置列的初始位置,$highestColumnIndex的列数索引从0开始
-            for($col=0;$col<$highestColumnIndex;$col++){
+            for ($col = 0; $col < $highestColumnIndex; $col++) {
                 //获取单元格数据
-                $arr[$col]=$objWorkerSheet->getCellByColumnAndRow($col,$row)->getValue();
+                $arr[$col] = $objWorkerSheet->getCellByColumnAndRow($col, $row)->getValue();
             }
             //获取数据,过滤空行
-            !empty($arr) && $list[]=$arr;
+            !empty($arr) && $list[] = $arr;
         }
         //删除excel文件
         unlink($file);

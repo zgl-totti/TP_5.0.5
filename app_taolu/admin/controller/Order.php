@@ -250,6 +250,12 @@ class Order extends Base{
                 return $res;
             }
         }
+
+        //处理大数据量的导出
+        set_time_limit(0);                                  #设置超时时间
+        ini_set("memory_limit", "1024M");         #设置内存,防止内存溢出
+        \PHPExcel_CachedObjectStorageFactory::cache_in_memory_gzip;  #单元格缓存为MemoryGZip
+
         header("Content-Type:application/vnd.ms-excel");
         header("Content-Disposition: attachment;filename=$file_name.$file_suffix");
         //根据业务，自己进行模板赋值。
