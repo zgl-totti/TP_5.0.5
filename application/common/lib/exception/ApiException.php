@@ -1,6 +1,12 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2018/5/10
+ * Time: 9:01
+ */
 
-namespace app\common\service\exception;
+namespace app\common\lib\exception;
 
 
 use think\Exception;
@@ -18,4 +24,5 @@ class ApiException extends Exception
         $this->httpCode=$httpCode;
         $this->code=$code;
     }
+
 }

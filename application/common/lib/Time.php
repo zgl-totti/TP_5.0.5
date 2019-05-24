@@ -1,6 +1,11 @@
 <?php
-
-namespace app\common\service;
+/**
+ * Created by PhpStorm.
+ * User: baidu
+ * Date: 17/7/28
+ * Time: 上午12:27
+ */
+namespace app\common\lib;
 
 
 /**

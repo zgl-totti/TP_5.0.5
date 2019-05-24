@@ -1,6 +1,6 @@
 <?php
 
-namespace app\common\service;
+namespace app\common\lib;
 
 //引入鉴权类
 use Qiniu\Auth;

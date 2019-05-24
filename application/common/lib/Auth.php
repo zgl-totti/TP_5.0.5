@@ -1,5 +1,5 @@
 <?php
-namespace app\common\service;
+namespace app\common\lib;
 
 use think\Cache;
 
