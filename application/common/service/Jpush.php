@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zgl
- * Date: 2018/6/7
- * Time: 6:28
- */
 
-namespace app\common\lib;
+namespace app\common\service;
 
 use JPush\Client;
 use think\Exception;

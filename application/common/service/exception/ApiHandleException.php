@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/5/10
- * Time: 9:01
- */
 
-namespace app\common\lib\exception;
+namespace app\common\service\exception;
 
 
 use think\exception\Handle;
@@ -27,5 +21,4 @@ class ApiHandleException extends Handle
 
         return api(0,$e->getMessage(),[],$this->httpCode);
     }
-
 }
