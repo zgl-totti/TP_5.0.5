@@ -5,7 +5,7 @@ namespace app\index\controller;
 use think\Controller;
 use think\Request;
 
-class Order extends Controller
+class Order extends AuthBase
 {
     /**
      * 显示资源列表
