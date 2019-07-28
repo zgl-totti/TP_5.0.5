@@ -68,11 +68,11 @@ class AuthBase extends Common
             return false;
         }
 
-        if(!preg_match('/||/',$token)){
+        if(!preg_match('/&&/',$token)){
             return false;
         }
 
-        list($token,$id)=explode('||',$token);
+        list($token,$id)=explode('&&',$token);
         $user=User::get(['token'=>$token]);
         if(!$user || $user->status != 1){
             return false;
