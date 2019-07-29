@@ -9,6 +9,7 @@ use think\Controller;
 class Common extends Controller
 {
     public $headers;
+
     /**
      * 初始化方法
      */

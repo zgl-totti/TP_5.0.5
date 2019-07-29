@@ -39,7 +39,6 @@ class AuthBase extends Common
             throw new ApiException('未登录',401);
         }
 
-
         /*if(Request::instance()->isAjax()){
 
             throw new ApiException('未登录',401);
