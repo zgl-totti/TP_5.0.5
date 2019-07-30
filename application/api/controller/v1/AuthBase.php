@@ -39,7 +39,6 @@ class AuthBase extends Common
             throw new ApiException('未登录',401);
         }
 
-
         /*if(Request::instance()->isAjax()){
 
             throw new ApiException('未登录',401);
@@ -68,11 +67,11 @@ class AuthBase extends Common
             return false;
         }
 
-        if(!preg_match('/||/',$token)){
+        if(!preg_match('/&&/',$token)){
             return false;
         }
 
-        list($token,$id)=explode('||',$token);
+        list($token,$id)=explode('&&',$token);
         $user=User::get(['token'=>$token]);
         if(!$user || $user->status != 1){
             return false;
