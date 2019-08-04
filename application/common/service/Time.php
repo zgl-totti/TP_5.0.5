@@ -2,7 +2,6 @@
 
 namespace app\common\service;
 
-
 /**
  * 时间
  * Class IAuth

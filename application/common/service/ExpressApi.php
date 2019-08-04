@@ -41,7 +41,6 @@ class ExpressApi
         $this->show = $show;
     }
 
-
     /**
      * 设置返回物流信息条目数, 0:返回多行完整的信息; 1:只返回一行信息
      * @param number $muti

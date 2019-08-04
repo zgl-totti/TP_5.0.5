@@ -1,9 +1,14 @@
 <?php
+
 namespace app\common\service;
 
+/*
+ * AES 加密/解密
+ */
 class Aes
 {
     private $aes_key;
+
     private $aes_iv;
 
     function __construct()
@@ -12,6 +17,9 @@ class Aes
         $this->aes_iv = substr(md5(config('app.aes_key')),0,16);
     }
 
+    /*
+     * 加密
+     */
     public function encrypt($str='')
     {
         $data=openssl_encrypt($str,"AES-128-CBC",$this->aes_key,OPENSSL_RAW_DATA,$this->aes_iv);
@@ -20,6 +28,9 @@ class Aes
         return $data;
     }
 
+    /*
+     * 解密
+     */
     public function decrypt($str)
     {
         $str=base64_decode($str);
@@ -27,5 +38,4 @@ class Aes
 
         return $data;
     }
-
 }

@@ -12,10 +12,7 @@ class Alidayu
 
     private static $_instance = null;
 
-    private function __construct()
-    {
-
-    }
+    private function __construct(){}
 
     //静态方法，单例模式统一入口
     public static function getInstance()
@@ -61,7 +58,6 @@ class Alidayu
         return false;
     }
 
-
     //根据手机号码查验验证码
     public function checkSmsIdentify($phone)
     {
@@ -71,5 +67,4 @@ class Alidayu
 
         return Cache::get($phone);
     }
-
 }

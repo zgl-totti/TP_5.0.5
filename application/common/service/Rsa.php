@@ -1,6 +1,6 @@
 <?php
 
-namespace app\common\lib;
+namespace app\common\service;
 
 /*
  * RSA 加密/解密
