@@ -3,6 +3,8 @@
 namespace app\common\service;
 
 
+use app\common\model\Order;
+
 class Skill
 {
     public static $redisObj;
@@ -163,5 +165,26 @@ EOF;
         apcu_add(self::$APCU_LOCAL_STOCK,$num);
 
         return $num;
+    }
+
+    /*
+     * 订单处理（采用定时任务方式）
+     */
+    public function order()
+    {
+        $data=self::connectRedis()->rPop(self::$REDIS_REMOTE_QUEUE);
+        $arr=json_decode($data,true);
+        if(empty($arr) || !is_array($arr) || !isset($arr['user_id']) || !isset($arr['product_id'])){
+            return;
+        }
+
+        $order = new Order();
+        $order->order_sn='';
+        $order->user_id=$arr['user_id'];
+        $order->product_id=$arr['product_id'];
+        $row=$order->save();
+        if(!$row){
+            return;
+        }
     }
 }
