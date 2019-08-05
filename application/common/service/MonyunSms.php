@@ -2,7 +2,6 @@
 
 namespace app\common\service;
 
-
 use think\Cache;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;

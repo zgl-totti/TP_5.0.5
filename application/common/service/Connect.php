@@ -12,10 +12,7 @@ class Connect
 {
     private static $_instance = null;
 
-    private function __construct()
-    {
-
-    }
+    private function __construct(){}
 
     //静态方法，单例模式统一入口
     public static function getInstance()
