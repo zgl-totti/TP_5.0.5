@@ -16,8 +16,11 @@ class Skill
     {
         if(self::$redisObj) return self::$redisObj;
 
+        $host=$config['host'] ?: '127.0.0.1';
+        $port=$config['port'] ?: '6379';
+
         self::$redisObj = new \Redis();
-        self::$redisObj->connect('127.0.0.1','6379');
+        self::$redisObj->connect($host,$port);
 
         return self::$redisObj;
     }
@@ -101,8 +104,14 @@ class Skill
             self::output([],-1,'该商品已售完');
         }
 
+        //秒杀人数控制
+        $count=self::connectRedis()->lLen(self::$REDIS_REMOTE_QUEUE);
+        if($count>100){
+            self::output([],-1,'秒杀已结束');
+        }
+
         //写入创建订单队列
-        $arr=json_encode(['user_id'=>self::$userId,'product_id'=>self::$productId]);
+        $arr=json_encode(['user_id'=>self::$userId,'product_id'=>self::$productId,'time'=>microtime()]);
         self::connectRedis()->lPush(self::$REDIS_REMOTE_QUEUE,$arr);
 
         //排队进度
@@ -170,7 +179,7 @@ EOF;
     /*
      * 订单处理（采用定时任务方式）
      */
-    public function order()
+    public function order_1()
     {
         $data=self::connectRedis()->rPop(self::$REDIS_REMOTE_QUEUE);
         $arr=json_decode($data,true);
@@ -182,9 +191,38 @@ EOF;
         $order->order_sn='';
         $order->user_id=$arr['user_id'];
         $order->product_id=$arr['product_id'];
+        $order->time=$arr['time'];
         $row=$order->save();
         if(!$row){
-            return;
+            self::connectRedis()->lPush(self::$REDIS_REMOTE_QUEUE,$data);
+        }
+    }
+
+    /*
+     * 订单处理（采用死循环方式）
+     */
+    public function order_2()
+    {
+        while(1) {
+            $data = self::connectRedis()->rPop(self::$REDIS_REMOTE_QUEUE);
+            $arr = json_decode($data, true);
+            if (empty($arr) || !is_array($arr) || !isset($arr['user_id']) || !isset($arr['product_id'])) {
+                sleep(2);
+                continue;
+            }
+
+            $order = new Order();
+            $order->order_sn = '';
+            $order->user_id = $arr['user_id'];
+            $order->product_id = $arr['product_id'];
+            $order->time = $arr['time'];
+            $row = $order->save();
+            if (!$row) {
+                self::connectRedis()->lPush(self::$REDIS_REMOTE_QUEUE, $data);
+            }
+
+            //每两秒执行一次
+            sleep(2);
         }
     }
 }
