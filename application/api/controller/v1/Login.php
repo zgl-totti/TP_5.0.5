@@ -1,17 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zgl
- * Date: 2018/5/22
- * Time: 23:42
- */
 
 namespace app\api\controller\v1;
 
-
-use app\common\lib\Aes;
-use app\common\lib\Alidayu;
-use app\common\lib\Auth;
+use app\common\service\Aes;
+use app\common\service\Alidayu;
+use app\common\service\Auth;
 use app\common\model\User;
 
 class Login

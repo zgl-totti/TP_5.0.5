@@ -3,11 +3,10 @@
 namespace app\api\controller\v1;
 
 use app\api\controller\Common;
-use app\common\lib\exception\ApiException;
+use app\common\exception\ApiException;
 use app\common\model\Advertise;
 use app\common\model\Goods;
 use app\common\model\Version;
-use think\Controller;
 use think\Exception;
 use think\Log;
 use think\Request;

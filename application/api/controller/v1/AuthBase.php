@@ -1,17 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zgl
- * Date: 2018/5/23
- * Time: 21:13
- */
 
 namespace app\api\controller\v1;
 
-
 use app\api\controller\Common;
-use app\common\lib\Aes;
-use app\common\lib\exception\ApiException;
+use app\common\service\Aes;
+use app\common\exception\ApiException;
 use app\common\model\User;
 
 

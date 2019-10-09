@@ -1,16 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: zgl
- * Date: 2018/5/20
- * Time: 23:27
- */
 
 namespace app\api\controller\v1;
 
-
 use app\api\controller\Common;
-use app\common\lib\Alidayu;
+use app\common\service\Alidayu;
 use think\Cache;
 
 class Identify extends Common

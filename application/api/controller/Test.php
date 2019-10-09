@@ -2,10 +2,10 @@
 
 namespace app\api\controller;
 
-use app\common\lib\Aes;
-use app\common\lib\Auth;
-use app\common\lib\exception\ApiException;
-use app\common\lib\Jpush;
+use app\common\exception\ApiException;
+use app\common\service\Aes;
+use app\common\service\Auth;
+use app\common\service\Jpush;
 use app\common\model\Admin;
 use think\Controller;
 use think\exception\HttpException;
@@ -21,8 +21,8 @@ class Test extends Controller
      */
     public function index()
     {
-        $data=Admin::all();
-        return api(1,'ok',$data,200);
+        $data = Admin::all();
+        return api(1, 'ok', $data, 200);
     }
 
     /**
@@ -38,37 +38,37 @@ class Test extends Controller
     /**
      * 保存新建的资源
      *
-     * @param  \think\Request  $request
+     * @param  \think\Request $request
      * @return \think\Response
      */
     public function save(Request $request)
     {
-        $data=input('post.');
-        $validator=validate('Admin');
-        if($validator->scene('add')->check($data)){
-            $data['password']=md5($data['password'].$data['token']);
-            $admin= new Admin();
+        $data = input('post.');
+        $validator = validate('Admin');
+        if ($validator->scene('add')->check($data)) {
+            $data['password'] = md5($data['password'] . $data['token']);
+            $admin = new Admin();
             $admin->allowField(true)->save($data);
-            return api(1,'添加成功',$admin->toArray(),201);
+            return api(1, '添加成功', $admin->toArray(), 201);
         }
     }
 
     /**
      * 显示指定的资源
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \think\Response
      */
     public function read($id)
     {
-        $info=Admin::get($id)->toArray();
-        return api(1,'',$info,200);
+        $info = Admin::get($id)->toArray();
+        return api(1, '', $info, 200);
     }
 
     /**
      * 显示编辑资源表单页.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \think\Response
      */
     public function edit($id)
@@ -79,8 +79,8 @@ class Test extends Controller
     /**
      * 保存更新的资源
      *
-     * @param  \think\Request  $request
-     * @param  int  $id
+     * @param  \think\Request $request
+     * @param  int $id
      * @return \think\Response
      */
     public function update(Request $request, $id)
@@ -91,8 +91,8 @@ class Test extends Controller
             $info->save();
             $data = $info->toArray();
             return api(1, '更新成功', $data, 202);
-        }catch (\Exception $e) {
-            throw new ApiException($e->getMessage(),404);
+        } catch (\Exception $e) {
+            throw new ApiException($e->getMessage(), 404);
             //Log::record('错误异常'.$e->getMessage());
             //exception($e->getMessage(), 404,'\app\common\lib\exception\ApiException');
             //return api(0,$e->getMessage(),[],404);
@@ -102,13 +102,13 @@ class Test extends Controller
     /**
      * 删除指定资源
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \think\Response
      */
     public function delete($id)
     {
         Admin::get($id)->delete();
-        return api(1,'删除成功',[],204);
+        return api(1, '删除成功', [], 204);
     }
 
     /**
@@ -116,8 +116,8 @@ class Test extends Controller
      */
     public function pushTest()
     {
-        $title='';
-        $obj= new Jpush();
+        $title = '';
+        $obj = new Jpush();
         $obj->push($title);
     }
 }

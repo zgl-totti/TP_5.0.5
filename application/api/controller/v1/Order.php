@@ -3,8 +3,7 @@
 namespace app\api\controller\v1;
 
 use app\api\controller\Common;
-use app\common\lib\exception\ApiException;
-use think\Controller;
+use app\common\exception\ApiException;
 use think\Exception;
 use think\Request;
 

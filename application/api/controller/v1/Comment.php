@@ -2,7 +2,6 @@
 
 namespace app\api\controller\v1;
 
-
 use think\Exception;
 
 class Comment extends AuthBase
