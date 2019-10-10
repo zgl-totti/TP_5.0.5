@@ -71,4 +71,53 @@ class SwooleMysql
             });
         });
     }
+
+    /*
+     * swoole子进程
+     */
+    public function process()
+    {
+        $process = new swoole_process(function (swoole_process $pro){
+            //子进程
+            //php redis.php
+            $pro->exec('/usr/local/php/bin/php',[__DIR__ . '/WebSocket.php']);
+        },false);
+
+        $pid=$process->start();
+        echo $pid;
+
+        swoole_process::wait();
+    }
+
+    /*
+     * 多进程场景
+     */
+    public function worker()
+    {
+        $workers=[];
+        $urls=[
+            'http://www.baidu.com',
+            'https://www.issjy.com',
+            'https://z.threelion.cn',
+            'https://garbage.threelion.cn'
+        ];
+
+        for($i=0;$i<count($urls)+1;$i++){
+            //子进程
+            $process=new swoole_process(function (swoole_process $worker) use($urls,$i){
+                $content=HttpClient::curl($urls[$i]);
+                //输出到管道
+                $worker->write($content);
+                //第二个参数为true,表示不输出到屏幕
+            },true);
+
+            $pid=$process->start();
+            $workers[$pid]=$process;
+        }
+
+        //多进程，总共只占用此前传统的同步顺序执行的一个请求的时间
+        foreach ($workers as $process){
+            echo $process->read();
+        }
+    }
 }

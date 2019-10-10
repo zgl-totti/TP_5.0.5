@@ -13,7 +13,7 @@ class WebSocket
 
     public function __construct()
     {
-        $this->server = new swoole_websocket_serer(self::HOST, self::PORT);
+        $this->server = new swoole_websocket_server(self::HOST, self::PORT);
 
         $this->server->on([
             'worker_num' => 2,
