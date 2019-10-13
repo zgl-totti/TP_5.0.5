@@ -1,6 +1,5 @@
 <?php
-namespace app\common\lib;
-
+namespace app\common\service;
 
 use think\Cache;
 use think\Exception;

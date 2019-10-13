@@ -12,13 +12,14 @@ use Qiniu\Storage\UploadManager;
  * Class Upload
  * @package app\common\lib
  */
-class Upload {
-
+class Upload
+{
     /**
      * 图片上传
      */
-    public static function image() {
-        if(empty($_FILES['file']['tmp_name'])) {
+    public static function image()
+    {
+        if (empty($_FILES['file']['tmp_name'])) {
             exception('您提交的图片数据不合法', 404);
         }
         /// 要上传的文件的
@@ -32,17 +33,17 @@ class Upload {
 
         $config = config('qiniu');
         // 构建一个鉴权对象
-        $auth  = new Auth($config['ak'], $config['sk']);
+        $auth = new Auth($config['ak'], $config['sk']);
         //生成上传的token
         $token = $auth->uploadToken($config['bucket']);
         // 上传到七牛后保存的文件名
-        $key  = date('Y')."/".date('m')."/".substr(md5($file), 0, 5).date('YmdHis').rand(0, 9999).'.'.$ext;
+        $key = date('Y') . "/" . date('m') . "/" . substr(md5($file), 0, 5) . date('YmdHis') . rand(0, 9999) . '.' . $ext;
 
         //初始UploadManager类
         $uploadMgr = new UploadManager();
         list($ret, $err) = $uploadMgr->putFile($token, $key, $file);
 
-        if($err !== null) {
+        if ($err !== null) {
             return null;
         } else {
             return $key;
