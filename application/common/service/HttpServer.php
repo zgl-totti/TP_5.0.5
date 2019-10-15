@@ -25,6 +25,7 @@ class HttpServer
         });
 
         $server->on('request',function ($request,$response) use ($server){
+            $_SERVER=$_GET=$_POST=[];
             if(isset($request->server)){
                 foreach ($request->server as $k=>$v){
                     $_SERVER[strtoupper($k)]=$v;
