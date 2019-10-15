@@ -18,6 +18,7 @@ class HttpServer
         ]);
 
         $server->on('WorkerStart',function (swoole_server $server,$worker_id){
+            // *有坑，需要更改框架中的path和input(*)的代码
             // 定义应用目录
             define('APP_PATH', __DIR__ . '/../../../application/');
             // 加载框架引导文件
@@ -25,6 +26,12 @@ class HttpServer
         });
 
         $server->on('request',function ($request,$response) use ($server){
+            /*
+            //每次请求加载一次框架，性能受影响
+            define('APP_PATH', __DIR__ . '/../../../application/');
+            require_once __DIR__ . '/../../../thinkphp/base.php';
+            */
+
             $_SERVER=$_GET=$_POST=[];
             if(isset($request->server)){
                 foreach ($request->server as $k=>$v){

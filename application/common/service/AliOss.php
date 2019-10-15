@@ -7,10 +7,17 @@ use OSS\OssClient;
 
 class AliOss
 {
+    public $config;
+
+    public $ossClient;
+
     private static $_instance = null;
 
     private function __construct()
     {
+        $config = config('oss');
+        $this->ossClient = new OssClient($config['KeyId'], $config['KeySecret'], $config['EndPoint']);
+        $this->config=$config;
     }
 
     /*
@@ -63,7 +70,7 @@ class AliOss
 
         try {
             //实例化
-            $ossClient = new OssClient($config['KeyId'], $config['KeySecret'], $config['EndPoint']);
+            $ossClient=$this->ossClient;
             //sha1加密 生成文件名 连接后缀
             $fileName = $dir . '/' . sha1(date('YmdHis', time()) . uniqid()) . '.' . $extension;
             //执行阿里云上传
