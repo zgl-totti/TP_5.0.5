@@ -18,7 +18,7 @@ class HttpServer
         ]);
 
         $server->on('WorkerStart',function (swoole_server $server,$worker_id){
-            // *有坑，需要更改框架中的path和input(*)的代码
+            // *有坑，需要更改框架中的path和input(*)的代码，并且每次请求需要重启swoole_server
             // 定义应用目录
             define('APP_PATH', __DIR__ . '/../../../application/');
             // 加载框架引导文件
@@ -27,7 +27,7 @@ class HttpServer
 
         $server->on('request',function ($request,$response) use ($server){
             /*
-            //每次请求加载一次框架，性能受影响
+            //每次请求加载一次框架，性能受影响，但是不需要重启swoole_server
             define('APP_PATH', __DIR__ . '/../../../application/');
             require_once __DIR__ . '/../../../thinkphp/base.php';
             */
