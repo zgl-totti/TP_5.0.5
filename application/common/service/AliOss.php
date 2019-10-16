@@ -88,4 +88,82 @@ class AliOss
 
         return $res;
     }
+
+    /*
+     * oss文件是否存在
+     */
+    public function fileExist($url)
+    {
+        if (empty($url)) {
+            $res = [
+                'code' => 0,
+                'msg' => '文件路径不能为空！'
+            ];
+
+            return $res;
+        }
+
+        $config = config('oss');
+        $file = str_replace($config['oss_url'], '', $url);
+
+        try {
+            $ossClient = new OssClient($config['KeyId'], $config['KeySecret'], $config['EndPoint']);
+            $result = $ossClient->doesObjectExist($config['Bucket'], $file);
+            if ($result) {
+                $res = [
+                    'code' => 1
+                ];
+            } else {
+                $res = [
+                    'code' => 0
+                ];
+            }
+        } catch (OssException $e) {
+            $res = [
+                'code' => 0,
+                'msg' => $e->getMessage()
+            ];
+        }
+
+        return $res;
+    }
+
+    /*
+     * 删除oss文件
+     */
+    public function delFile($url)
+    {
+        if (empty($url)) {
+            $res = [
+                'code' => 0,
+                'msg' => '文件路径不能为空！'
+            ];
+
+            return $res;
+        }
+
+        $config = config('oss');
+        $file = str_replace($config['oss_url'], '', $url);
+
+        try {
+            $ossClient = new OssClient($config['KeyId'], $config['KeySecret'], $config['EndPoint']);
+            $result = $ossClient->deleteObject($config['Bucket'], $file);
+            if ($result) {
+                $res = [
+                    'code' => 1
+                ];
+            } else {
+                $res = [
+                    'code' => 0
+                ];
+            }
+        } catch (OssException $e) {
+            $res = [
+                'code' => 0,
+                'msg' => $e->getMessage()
+            ];
+        }
+
+        return $res;
+    }
 }
