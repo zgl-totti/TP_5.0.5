@@ -31,7 +31,6 @@ class HttpClient extends Controller
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); //设置返回的内容不直接在界面中显示
 
-
         curl_setopt($curl, CURLOPT_HEADER, 0);
         curl_setopt($curl, CURLOPT_CERTINFO, true);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
@@ -205,6 +204,7 @@ class HttpClient extends Controller
         if (stripos($ua, 'micromessenger') !== false) {
             return true;
         }
+
         return false;
     }
 

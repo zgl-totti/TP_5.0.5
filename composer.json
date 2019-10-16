@@ -34,7 +34,12 @@
         "topthink/think-queue": "^1.0",
         "topthink/think-testing": "^1.0",
         "phpoffice/phpexcel": "^1.8",
-        "jpush/jpush": "^3.6"
+        "jpush/jpush": "^3.6",
+        "riverslei/payment": "*",
+        "aferrandini/phpqrcode": "^1.0",
+        "overtrue/wechat": "^4.2",
+        "aliyuncs/oss-sdk-php": "^2.3",
+        "hashids/hashids": "^3.0"
     },
     "extra": {
         "think-path": "thinkphp"
