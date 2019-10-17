@@ -1,6 +1,6 @@
 <?php
 
-namespace app\common\service;
+namespace app\common\swoole;
 
 
 class HttpServer
@@ -80,14 +80,14 @@ class HttpServer
             }
         }
 
-        $_POST['http_server'] = $this->server;
+        $_POST['http_server']=$this->server;
         ob_start();
         //执行应用并响应
         try {
             think\Container::get('app', ['APP_PATH'])
                 ->run()
                 ->send();
-        } catch (\Exception $e) {
+        }catch (\Exception $e){
             // todo
         }
 
@@ -103,16 +103,16 @@ class HttpServer
     public function onTask($server, $taskId, $workId, $data)
     {
         //分发task任务机制，不同的任务走不同的逻辑
-        $task = new \app\common\swoole\Task();
+        $task=new \app\common\swoole\Task();
 
-        $method = $data['method'];
+        $method=$data['method'];
         $task->$method($data['data']);
 
         return true;
 
-        /*print_r($data);
-        sleep(10);
-        return 'on task finish';*/
+        //print_r($data);
+        //sleep(10);
+        //return 'on task finish';
     }
 
     /*

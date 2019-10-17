@@ -16,8 +16,10 @@ class WebSocket
         $this->server = new swoole_websocket_server(self::HOST, self::PORT);
 
         $this->server->on([
-            'worker_num' => 2,
-            'task_worker_num' => 2
+            'enable_static_handler' => true,
+            'document_root' => '/1_TP_5.05/public/static',
+            'worker_num' => 4,
+            'task_worker_num' => 4
         ]);
 
         $this->server->on('open', [$this, 'onOpen']);
@@ -36,10 +38,10 @@ class WebSocket
     {
         var_dump($request->fd);
 
-        if($request->fd==1){
+        if ($request->fd == 1) {
             //每隔2秒执行一次
-            swoole_timer_tick(2000,function ($timer){
-                echo '2s:timerId_'.$timer;
+            swoole_timer_tick(2000, function ($timer) {
+                echo '2s:timerId_' . $timer;
             });
         }
     }
@@ -60,7 +62,7 @@ class WebSocket
         $server->task($data);
 
         //隔2秒后执行
-        swoole_timer_after(2000,function () use ($server,$frame){
+        swoole_timer_after(2000, function () use ($server, $frame) {
             echo '5s_after';
 
             $server->push($frame->fd, 'server_timer_after:' . date('Y-m-d H:i:s'));
@@ -97,5 +99,3 @@ class WebSocket
         echo 'client_id:' . $fd;
     }
 }
-
-new WebSocket();
