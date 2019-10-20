@@ -2,8 +2,10 @@
 
 namespace app\common\service;
 
-
-class HttpServer
+/*
+ * swoole_websocket 是基于 swoole_http_server
+ */
+class WebSocket
 {
     const HOST = '0.0.0.0';
 
@@ -13,7 +15,7 @@ class HttpServer
 
     public function __construct()
     {
-        $this->server = new swoole_http_server(self::HOST, self::PORT);
+        $this->server = new swoole_websocket_server(self::HOST, self::PORT);
 
         $this->server->on([
             'enable_static_handler' => true,
@@ -22,6 +24,8 @@ class HttpServer
             'task_worker_num' => 4
         ]);
 
+        $this->server->on('open', [$this, 'onOpen']);
+        $this->server->on('message', [$this, 'onMessage']);
         $this->server->on('workerstart', [$this, 'onWorkerStart']);
         $this->server->on('request', [$this, 'onRequest']);
         $this->server->on('task', [$this, 'onTask']);
@@ -29,6 +33,40 @@ class HttpServer
         $this->server->on('close', [$this, 'onClose']);
 
         $this->server->start();
+    }
+
+    /*
+     * 监听连接事件
+     */
+    public function onOpen($server, $request)
+    {
+        //swoole开启时把fd放入redis有序集合，关闭时踢出集合
+        Redis::sAdd('live_redis_key',$request->fd);
+    }
+
+    /*
+     * 监听消息事件
+     */
+    public function onMessage($server, $frame)
+    {
+        echo 'ser_push_message:' . $frame->data;
+
+        $data = [
+            'task' => 1,
+            'fd' => $frame->fd
+        ];
+
+        //任务异步执行
+        $server->task($data);
+
+        //隔2秒后执行
+        swoole_timer_after(2000, function () use ($server, $frame) {
+            echo '5s_after';
+
+            $server->push($frame->fd, 'server_timer_after:' . date('Y-m-d H:i:s'));
+        });
+
+        $server->push($frame->fd, 'server_push:' . date('Y-m-d H:i:s'));
     }
 
     /*
@@ -112,7 +150,7 @@ class HttpServer
         $task = new \app\common\swoole\Task();
 
         $method = $data['method'];
-        $task->$method($data['data']);
+        $task->$method($server,$data['data']);
 
         return true;
 
@@ -135,6 +173,9 @@ class HttpServer
      */
     public function onClose($server, $fd)
     {
+        //关闭时把fd删除有序集合
+        Redis::sRem('live_redis_key',$fd);
+
         echo 'client_id:' . $fd;
     }
 }
