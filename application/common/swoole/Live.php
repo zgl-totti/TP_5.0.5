@@ -2,11 +2,14 @@
 
 namespace app\common\swoole;
 
-
+/*
+ * 赛况实时数据后台添加并异步推送到客户端
+ */
 class Live
 {
-    public function push($data)
+    public function push()
     {
+        $data=input('post.');
         //高级用法：走task任务
         $taskData = [
             'method' => 'livePush',

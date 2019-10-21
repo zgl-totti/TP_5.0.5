@@ -2,6 +2,9 @@
 
 namespace app\common\service;
 
+//后台不间断运行脚本，如果有输出则写入a.txt
+//nohup php WebSocket.php > a.txt &
+
 /*
  * swoole_websocket 是基于 swoole_http_server
  */
@@ -11,11 +14,15 @@ class WebSocket
 
     const PORT = 8811;
 
+    const CHART_PORT = 8812;
+
     public $server = null;
 
     public function __construct()
     {
+        //开启两个端口，开展不同的业务
         $this->server = new swoole_websocket_server(self::HOST, self::PORT);
+        $this->server->listen(self::HOST, self::CHART_PORT, SWOOLE_SOCK_TCP);
 
         $this->server->on([
             'enable_static_handler' => true,
@@ -24,6 +31,7 @@ class WebSocket
             'task_worker_num' => 4
         ]);
 
+        $this->server->on('start', [$this, 'onStart']);
         $this->server->on('open', [$this, 'onOpen']);
         $this->server->on('message', [$this, 'onMessage']);
         $this->server->on('workerstart', [$this, 'onWorkerStart']);
@@ -36,12 +44,21 @@ class WebSocket
     }
 
     /*
+     * 启动
+     */
+    public function onStart($server)
+    {
+        //进程起别名
+        swoole_set_process_name('live_master');
+    }
+
+    /*
      * 监听连接事件
      */
     public function onOpen($server, $request)
     {
         //swoole开启时把fd放入redis有序集合，关闭时踢出集合
-        Redis::sAdd('live_redis_key',$request->fd);
+        Redis::sAdd('live_redis_key', $request->fd);
     }
 
     /*
@@ -93,6 +110,13 @@ class WebSocket
         require_once __DIR__ . '/../../../thinkphp/base.php';
         */
 
+        //把静态文件的favicon.ico的服务干掉
+        if ($request->server['request_uri'] == '/favicon.ico') {
+            $response->status(404);
+            $response->end();
+            return;
+        }
+
         $_SERVER = $_GET = $_POST = $_FILES = [];
         if (isset($request->server)) {
             foreach ($request->server as $k => $v) {
@@ -124,6 +148,9 @@ class WebSocket
             }
         }
 
+        //记录日志
+        $this->log();
+
         $_POST['http_server'] = $this->server;
         ob_start();
         //执行应用并响应
@@ -150,7 +177,7 @@ class WebSocket
         $task = new \app\common\swoole\Task();
 
         $method = $data['method'];
-        $task->$method($server,$data['data']);
+        $task->$method($server, $data['data']);
 
         return true;
 
@@ -174,8 +201,30 @@ class WebSocket
     public function onClose($server, $fd)
     {
         //关闭时把fd删除有序集合
-        Redis::sRem('live_redis_key',$fd);
+        Redis::sRem('live_redis_key', $fd);
 
         echo 'client_id:' . $fd;
     }
+
+    /*
+     * 记录日志
+     */
+    public function log()
+    {
+        $arr['time'] = date('Y-m-d H:i:s');
+        $data = array_merge($arr, $_GET, $_POST, $_SERVER);
+
+        $log = '';
+        foreach ($data as $k => $val) {
+            $log .= $k . ':' . $val . ' ';
+        }
+
+        //用swoole异步写入文件
+        $dir = ROOT_PATH . 'runtime/log/' . date('Ym') . '/' . date('d') . '_access.log';
+        swoole_async_writefile($dir, $log . PHP_EOL, function ($filename) {
+            //todo
+        }, FILE_APPEND);
+    }
 }
+
+new WebSocket();

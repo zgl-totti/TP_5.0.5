@@ -2,7 +2,9 @@
 
 namespace app\common\swoole;
 
-
+/*
+ * swoole异步发送验证码
+ */
 class Send
 {
     /*
