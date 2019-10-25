@@ -10,9 +10,9 @@ namespace app\common\service;
  */
 class WebSocket
 {
-    const HOST = '0.0.0.0';
+    const HOST = '0.0.0.0';//0.0.0.0表示监听本机的所有网络地址
 
-    const PORT = 8811;
+    const PORT = 8811;//端口号，1--1024是系统保留
 
     const CHART_PORT = 8812;
 
@@ -27,7 +27,7 @@ class WebSocket
         $this->server->on([
             'enable_static_handler' => true,
             'document_root' => '/1_TP_5.05/public/static',
-            'worker_num' => 4,
+            'worker_num' => 4,//工作的进程数量
             'task_worker_num' => 4
         ]);
 
