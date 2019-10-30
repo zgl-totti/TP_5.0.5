@@ -27,7 +27,7 @@ class WebSocket
         $this->server->on([
             'enable_static_handler' => true,
             'document_root' => '/1_TP_5.05/public/static',
-            'worker_num' => 4,//工作的进程数量
+            'worker_num' => 16,//工作的进程数量
             'task_worker_num' => 4
         ]);
 
