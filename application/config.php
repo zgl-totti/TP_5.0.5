@@ -169,6 +169,7 @@ return [
     'log'                    => [
         // 日志记录方式，内置 file socket 支持扩展
         'type'  => 'test',
+        //'type'  => 'Aliyun',
         // 日志保存目录
         'path'  => LOG_PATH,
         // 日志记录级别
